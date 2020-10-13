@@ -1,1 +1,6 @@
 * @AdalDiazFarina @alexravelo-dev @kevinEliezer @XavYan
+*.css @ManzDev
+*.tsx @raulanatol
+*.jsx @raulanatol
+*.vue @ManzDev
+*test* @raulanatol @DanielRamosAcosta @yodralopez
