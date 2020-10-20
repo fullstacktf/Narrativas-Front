@@ -47,31 +47,21 @@ In this section we want to attribute the recognition that the different artists 
 ### Features stories
 
 <div style="display: flex; flex-direction: row">
-
 <a href="https://www.deviantart.com/tay-sokka/art/Fan-art-Destripando-la-Historia-807394090" target="_blank"><img src="src/assets/img/stories/fan_art_1.jpg" width="200"></a>
-
 <a href="https://www.geekgirlauthority.com/sombra-fan-art/" target="_blank"><img src="src/assets/img/stories/fan_art_2.jpg" width="200"></a>
-
 <a href="https://geektyrant.com/news/adorable-star-wars-fan-art-show-baby-yoda-eating-disneyland-snacks" target="_blank"><img src="src/assets/img/stories/fan_art_3.jpeg" width="200"></a>
-
 <a href="https://www.reddit.com/r/PhoenixMains/comments/foe0yv/phoenix_by_uchobysan/" target="_blank"><img src="src/assets/img/stories/fan_art_4.jpg" width="200"></a>
-
 </div>
 
 <div style="display: flex; flex-direction: row">
-
 <a href="https://www.pinterest.es/pin/94997873377894373/" target="_blank"><img src="src/assets/img/stories/fan_art_5.jpg" width="200"></a>
-
 <a href="https://in.pinterest.com/pin/683069468456761547/" target="_blank"><img src="src/assets/img/stories/fan_art_6.jpg" width="200"></a>
-
 <a href="https://www.dailysabah.com/arts/events/illustrators-muralists-to-share-their-self-isolation-experiences-with-quarantine-diaries" target="_blank"><img src="src/assets/img/stories/fan_art_7.jpg" width="200"></a>
-
 </div>
 
 ### Perfil characters
 
 <div style="display: flex; flex-direction: row">
-
 <a href="https://www.freepik.es/vector-gratis/cocinero-lindo-astronauta-ejemplo-historieta-salchicha-parrilla-concepto-alimentos-ciencia-estilo-dibujos-animados-plana_10479410.htm" target="_blank"><img src="src/assets/img/character_1.jpg" width="200"></a>
 
 <a href="https://www.freepik.es/vector-gratis/joven-sirena_1089253.htm" target="_blank"><img src="src/assets/img/character_2.jpg" width="200"></a>
