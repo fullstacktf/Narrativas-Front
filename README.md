@@ -46,7 +46,7 @@ In this section we want to attribute the recognition that the different artists 
 
 ### Features stories
 
-<div display="flex">
+<div styles="display: flex; flex-direction: row">
 
 <img src="src/assets/img/stories/fan_art_1.jpg" width="200" href="https://www.deviantart.com/tay-sokka/art/Fan-art-Destripando-la-Historia-807394090"/>
 
@@ -58,7 +58,7 @@ In this section we want to attribute the recognition that the different artists 
 
 </div>
 
-<div display="flex">
+<div styles="display: flex; flex-direction: row">
 
 <img src="src/assets/img/stories/fan_art_5.jpg" width="200" href="https://www.pinterest.es/pin/94997873377894373/"></img>
 
@@ -70,7 +70,7 @@ In this section we want to attribute the recognition that the different artists 
 
 ### Perfil characters
 
-<div display="flex">
+<div styles="display: flex; flex-direction: row">
 
 <img src="src/assets/img/character_1.jpg" width="200" href="https://www.freepik.es/vector-gratis/cocinero-lindo-astronauta-ejemplo-historieta-salchicha-parrilla-concepto-alimentos-ciencia-estilo-dibujos-animados-plana_10479410.htm"></img>
 
@@ -92,7 +92,7 @@ In this section we want to attribute the recognition that the different artists 
 
 ### Explore menu'
 
-<div display="flex">
+<div styles="display: flex; flex-direction: row">
 
 <img src="src/assets/img/explore_1.jpg" width="200" href="https://www.freepik.es/vector-gratis/abuela-leyendo-libro-cuento-hadas-nina-nino-sentado-sillon_2238328.htm"></img>
 
@@ -104,7 +104,7 @@ In this section we want to attribute the recognition that the different artists 
 
 ### Images depicting the stories
 
-<div display="flex">
+<div styles="display: flex; flex-direction: row">
 
 <img src="src/assets/img/story_1.jpg" width="200" href="https://www.freepik.es/vector-gratis/caperucita-roja-caminando-bosque_7449114.htm"></img>
 
@@ -118,7 +118,7 @@ In this section we want to attribute the recognition that the different artists 
 
 ### Information section about the tool
 
-<div display="flex">
+<div styles="display: flex; flex-direction: row">
 
 <img src="src/assets/img/collaborate.jpg" width="200" href="https://www.freepik.es/vector-gratis/gente-colaborando-hacer-puzzle_3951674.htm"></img>
 
@@ -132,7 +132,7 @@ In this section we want to attribute the recognition that the different artists 
 
 ### Slider
 
-<div display="flex">
+<div styles="display: flex; flex-direction: row">
 
 <img src="src/assets/img/slide_1.jpg" width="200" href="https://www.freepik.es/vector-gratis/escena-fantasia_1066823.htm"></img>
 
@@ -142,7 +142,7 @@ In this section we want to attribute the recognition that the different artists 
 
 ### Users profile
 
-<div display="flex">
+<div styles="display: flex; flex-direction: row">
 
 <img src="src/assets/img/perfil.jpg" width="200" href="https://pixabay.com/images/id-919048/"></img>
 
@@ -156,7 +156,7 @@ In this section we want to attribute the recognition that the different artists 
 
 ### Parallax
 
-<div display="flex">
+<div styles="display: flex; flex-direction: row">
 
 <img src="src/assets/img/parallaxHome.jpg" width="200" href="https://www.freepik.es/vector-gratis/fondo-espacio-paisaje-planeta_7058939.htm'"></img>
 
