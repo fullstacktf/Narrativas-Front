@@ -1,12 +1,12 @@
-# Projecto Narrativas: Front-end
+# Narrativas proyect: Front-end
 
 ## Mock Ups MVP
 
-### Página de inicio 
+### Home page 
 
 ![Página principal](mockups/home.png)
 
-### Menú "explorar"
+### "Explore" menu
 
 ![Menú explorar](mockups/explore-nav.png)
 
@@ -18,7 +18,7 @@
 
 ![Sign up](mockups/sign-up.png)
 
-### Página de inicio (Signed in)
+### Home page (Signed in)
 
 ![Página principal conectado en la página](mockups/home-signed-in.png)
 
@@ -32,15 +32,15 @@
 ![Menu ejemplo pantalla dos](mockups/menu-slide2.png)
 
 
-### Creación de personajes
+### Character creation
 
 ![Creacion de personajes](mockups/create-character.png)
 
-### Creación de historias
+### Story creation
 
 ![Creacion de historias](mockups/create-story.png)
 
-## Licencias
+## Licenses
 
 In this section we want to attribute the recognition that the different artists who have created these images deserve. If you click on the different images you will be taken to the source page where we take these images
 
