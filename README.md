@@ -52,11 +52,11 @@ In this section we want to attribute the recognition that the different artists 
 
 <img src="src/assets/img/stories/fan_art_2.jpg" width="200" href="https://www.geekgirlauthority.com/sombra-fan-art/"/>
 
-<img src="src/assets/img/stories/fan_art_3.jepg" width="200" href="https://geektyrant.com/news/adorable-star-wars-fan-art-show-baby-yoda-eating-disneyland-snacks"/>
+<img src="src/assets/img/stories/fan_art_3.jpeg" width="200" href="https://geektyrant.com/news/adorable-star-wars-fan-art-show-baby-yoda-eating-disneyland-snacks"/>
 
 <img src="src/assets/img/stories/fan_art_4.jpg" width="200" href="https://www.reddit.com/r/PhoenixMains/comments/foe0yv/phoenix_by_uchobysan/"/>
 
-<div>
+</div>
 
 <div display="flex">
 
@@ -66,7 +66,7 @@ In this section we want to attribute the recognition that the different artists 
 
 <img src="src/assets/img/stories/fan_art_7.jpg" width="200" href="https://www.dailysabah.com/arts/events/illustrators-muralists-to-share-their-self-isolation-experiences-with-quarantine-diaries"></img>
 
-<div>
+</div>
 
 ### Perfil characters
 
@@ -80,7 +80,7 @@ In this section we want to attribute the recognition that the different artists 
 
 <img src="src/assets/img/newCharacter.jpg" width="200" href="https://www.freepik.es/vector-gratis/coleccion-personajes-kawaii-unicornios_4539022.htm"></img>
 
-<div>
+</div>
 
 ### Hero
 
@@ -100,7 +100,7 @@ In this section we want to attribute the recognition that the different artists 
 
 <img src="src/assets/img/explore_3.jpg" width="200" href="https://www.freepik.es/vector-gratis/personas-iconos-ideas-creativas_3585220.htm"></img>
 
-<div>
+</div>
 
 ### Images depicting the stories
 
@@ -114,7 +114,7 @@ In this section we want to attribute the recognition that the different artists 
 
 <img src="src/assets/img/newStory.jpg" width="200" href="https://www.freepik.es/vector-gratis/coleccion-personajes-kawaii-unicornios_4539022.htm"></img>
 
-<div>
+</div>
 
 ### Information section about the tool
 
@@ -128,7 +128,7 @@ In this section we want to attribute the recognition that the different artists 
 
 <img src="src/assets/img/follow.jpg" width="200" href="https://www.freepik.es/vector-gratis/gente-joven-buscando-likes-redes-sociales_4201708.htm"></img>
 
-<div>
+</div>
 
 ### Slider
 
@@ -138,7 +138,7 @@ In this section we want to attribute the recognition that the different artists 
 
 <img src="src/assets/img/slide_2.jpg" width="200" href="https://www.freepik.es/vector-gratis/escena-fantasia_1066823.htm"></img>
 
-<div>
+</div>
 
 ### Users profile
 
@@ -152,7 +152,7 @@ In this section we want to attribute the recognition that the different artists 
 
 <img src="src/assets/img/review_3.jpg" width="200" href="https://pixabay.com/images/id-1274056/"></img>
 
-<div>
+</div>
 
 ### Parallax
 
@@ -162,7 +162,7 @@ In this section we want to attribute the recognition that the different artists 
 
 <img src="src/assets/img/parallaxInicio.jpg" width="200" href="https://www.freepik.es/vector-gratis/futurista-vista-nave-espacial-cafe-tierra-noche_5902291.htm"></img>
 
-<div>
+</div>
 
 
 
