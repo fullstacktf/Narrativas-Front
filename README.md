@@ -4,41 +4,41 @@
 
 ### Home page 
 
-![Página principal](mockups/home.png)
+![Página principal](docs/mockups/home.png)
 
 ### "Explore" menu
 
-![Menú explorar](mockups/explore-nav.png)
+![Menú explorar](docs/mockups/explore-nav.png)
 
 ### Sign in
 
-![Sign in](mockups/sign-in.png)
+![Sign in](docs/mockups/sign-in.png)
 
 ### Sign up
 
-![Sign up](mockups/sign-up.png)
+![Sign up](docs/mockups/sign-up.png)
 
 ### Home page (Signed in)
 
-![Página principal conectado en la página](mockups/home-signed-in.png)
+![Página principal conectado en la página](docs/mockups/home-signed-in.png)
 
 
 ### Menu (Slide 1)
 
-![Menu ejemplo pantalla uno](mockups/menu-slide1.png)
+![Menu ejemplo pantalla uno](docs/mockups/menu-slide1.png)
 
 ### Menu (Slide 2)
 
-![Menu ejemplo pantalla dos](mockups/menu-slide2.png)
+![Menu ejemplo pantalla dos](docs/mockups/menu-slide2.png)
 
 
 ### Character creation
 
-![Creacion de personajes](mockups/create-character.png)
+![Creacion de personajes](docs/mockups/create-character.png)
 
 ### Story creation
 
-![Creacion de historias](mockups/create-story.png)
+![Creacion de historias](docs/mockups/create-story.png)
 
 ## Licenses
 
