@@ -130,5 +130,3 @@ In this section we want to attribute the recognition that the different artists 
 
 
 
-
-
