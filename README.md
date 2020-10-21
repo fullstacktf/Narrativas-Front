@@ -124,9 +124,3 @@ In this section we want to attribute the recognition that the different artists 
 <a href="https://www.freepik.es/vector-gratis/fondo-espacio-paisaje-planeta_7058939.htm" target="_blank"><img src="src/assets/img/parallaxHome.jpg" width="200"></a>
 <a href="https://www.freepik.es/vector-gratis/futurista-vista-nave-espacial-cafe-tierra-noche_5902291.htm" target="_blank"><img src="src/assets/img/parallaxInicio.jpg" width="200"></a> 
 </div>
-
-
-
-
-
-
