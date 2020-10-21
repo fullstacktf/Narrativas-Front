@@ -59,7 +59,7 @@ In this section we want to attribute the recognition that the different artists 
 <a href="https://www.dailysabah.com/arts/events/illustrators-muralists-to-share-their-self-isolation-experiences-with-quarantine-diaries" target="_blank"><img src="src/assets/img/stories/fan_art_7.jpg" width="200"></a>
 </div>
 
-### Perfil characters
+### Characters profile
 
 <div style="display: flex; flex-direction: row">
 <a href="https://www.freepik.es/vector-gratis/cocinero-lindo-astronauta-ejemplo-historieta-salchicha-parrilla-concepto-alimentos-ciencia-estilo-dibujos-animados-plana_10479410.htm" target="_blank"><img src="src/assets/img/character_1.jpg" width="200"></a>
