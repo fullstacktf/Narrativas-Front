@@ -11,7 +11,7 @@ This project can be built in two different ways.
   npm run serve
 ```
 
-Then go to http://localhost:8080 
+The front-end app wil be running at http://localhost:8080.
 
 * **Using docker**
 
@@ -19,7 +19,9 @@ Then go to http://localhost:8080
   make build
 ```
 
-Then go to http://localhost
+The front-end app wil be running at http://localhost.
+
+This app will not work properly if it is not running along side the backend.
 
 ## Mock Ups MVP
 
