@@ -1,5 +1,26 @@
 # Narrativas proyect: Front-end
 
+## Building the project
+
+This project can be built in two different ways.
+
+* **Locally** (node v12 and npm needed)
+
+```bash
+  npm install
+  npm run serve
+```
+
+Then go to http://localhost:8080 
+
+* **Using docker**
+
+```bash
+  make build
+```
+
+Then go to http://localhost
+
 ## Mock Ups MVP
 
 ### Home page 
