@@ -23,45 +23,109 @@ The front-end app wil be running at http://localhost.
 
 This app will not work properly if it is not running along side the backend.
 
-## Mock Ups MVP
+## Mock Ups MVP - PC version
 
 ### Home page 
 
-![Página principal](docs/mockups/home.png)
+![Página principal](docs/PC_mockUps/home.jpg)
 
 ### "Explore" menu
 
-![Menú explorar](docs/mockups/explore-nav.png)
+![Menú explorar](docs/PC_mockUps/ExploreNav.jpg)
 
 ### Sign in
 
-![Sign in](docs/mockups/sign-in.png)
+![Sign in](docs/PC_mockUps/SignIn.jpg)
 
 ### Sign up
 
-![Sign up](docs/mockups/sign-up.png)
+![Sign up](docs/PC_mockUps/SignUp.jpg)
 
 ### Home page (Signed in)
 
-![Página principal conectado en la página](docs/mockups/home-signed-in.png)
+![Página principal conectado en la página](docs/PC_mockUps/homeLogged.jpg)
 
 
 ### Menu (Slide 1)
 
-![Menu ejemplo pantalla uno](docs/mockups/menu-slide1.png)
+![Menu ejemplo pantalla uno](docs/PC_mockUps/slide1.jpg)
 
 ### Menu (Slide 2)
 
-![Menu ejemplo pantalla dos](docs/mockups/menu-slide2.png)
+![Menu ejemplo pantalla dos](docs/PC_mockUps/slide2.jpg)
 
 
 ### Character creation
 
-![Creacion de personajes](docs/mockups/create-character.png)
+![Creacion de personajes](docs/PC_mockUps/createCharacter.jpg)
 
 ### Story creation
 
-![Creacion de historias](docs/mockups/create-story.png)
+![Creacion de historias](docs/PC_mockUps/dashboard.jpg)
+
+### About us
+
+![About us](docs/PC_mockUps/aboutUs.jpg)
+
+### Other menus
+
+![Menus](docs/PC_mockUps/other.jpg)
+
+<!-- #################################################################### -->
+
+## Mock Ups MVP - PC mobile
+
+### Home page 
+
+![Página principal](docs/Mobile_mockups/home.jpg)
+
+### Menu
+
+![Menú explorar](docs/Mobile_mockups/navOpen.jpg)
+
+### "Explore" Menu 
+
+![Menú explorar](docs/Mobile_mockups/navOpenExplore.jpg)
+
+### Sign in
+
+![Sign in](docs/Mobile_mockups/SignIn.jpg)
+
+### Sign up
+
+![Sign up](docs/Mobile_mockups/SignUp.jpg)
+
+### Home page (Signed in)
+
+![Página principal conectado en la página](docs/Mobile_mockups/homeLogged.jpg)
+
+### Menu (Signed in)
+
+![Menú explorar](docs/Mobile_mockups/navOpenLogged.jpg)
+
+### Menu (Slide 1)
+
+![Menu ejemplo pantalla uno](docs/Mobile_mockups/slide1.jpg)
+
+### Menu (Slide 2)
+
+![Menu ejemplo pantalla dos](docs/Mobile_mockups/slide2.jpg)
+
+### Character creation
+
+![Creacion de personajes](docs/Mobile_mockups/createCharacter.jpg)
+
+### New Section (Character creation)
+
+![Creacion de personajes](docs/Mobile_mockups/createCharacter.jpg)
+
+### Story creation
+
+![New section](docs/Mobile_mockups/Section.jpg)
+
+### About us
+
+![About us](docs/Mobile_mockups/AboutUs.jpg)
 
 ## Licenses
 
