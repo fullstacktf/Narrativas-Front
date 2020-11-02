@@ -3,8 +3,8 @@ name: Lint
 on: push
 
 jobs:
-  run-linters:
-    name: Run linters
+  run-linters-and-tests:
+    name: Run linters and tests
     runs-on: ubuntu-latest
 
     steps:
@@ -31,5 +31,8 @@ jobs:
       - name: Install dependencies
         run: npm install
       
-      - name: Run tests
+      - name: Run linters
         run: npm run lint
+
+      - name: Run tests
+        run: npm run test:unit
