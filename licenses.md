@@ -28,10 +28,10 @@ In this section we want to attribute the recognition that the different artists 
 
 ### Hero
 
+<div style="display: flex; flex-direction: row">
 <a href="https://www.freepik.es/vector-gratis/morena-alegre-vestida-sueter-marron-pantalon-negro-calzado-gris-sentada-silla-sus-pies-sobre-escritorio-pensando-lugar-trabajo_9641138.htm" target="_blank"><img src="src/assets/img/Hero.jpg" width="200"></a>
-
 <a href="https://www.freepik.es/vector-gratis/dibujo-astronauta-planetas_4740036.htm" target="_blank"><img src="src/assets/img/heroMobile.jpg" width="200"></a>
-
+</div>
 
 ### Background Tool
 
