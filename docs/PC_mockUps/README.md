@@ -2,46 +2,46 @@
 
 ### Home page 
 
-![Página principal](docs/PC_mockUps/home.jpg)
+![Página principal](home.jpg)
 
 ### "Explore" menu
 
-![Menú explorar](docs/PC_mockUps/ExploreNav.jpg)
+![Menú explorar](ExploreNav.jpg)
 
 ### Sign in
 
-![Sign in](docs/PC_mockUps/SignIn.jpg)
+![Sign in](SignIn.jpg)
 
 ### Sign up
 
-![Sign up](docs/PC_mockUps/SignUp.jpg)
+![Sign up](SignUp.jpg)
 
 ### Home page (Signed in)
 
-![Página principal conectado en la página](docs/PC_mockUps/homeLogged.jpg)
+![Página principal conectado en la página](homeLogged.jpg)
 
 
 ### Menu (Slide 1)
 
-![Menu ejemplo pantalla uno](docs/PC_mockUps/slide1.jpg)
+![Menu ejemplo pantalla uno](slide1.jpg)
 
 ### Menu (Slide 2)
 
-![Menu ejemplo pantalla dos](docs/PC_mockUps/slide2.jpg)
+![Menu ejemplo pantalla dos](slide2.jpg)
 
 
 ### Character creation
 
-![Creacion de personajes](docs/PC_mockUps/createCharacter.jpg)
+![Creacion de personajes](createCharacter.jpg)
 
 ### Story creation
 
-![Creacion de historias](docs/PC_mockUps/dashboard.jpg)
+![Creacion de historias](dashboard.jpg)
 
 ### About us
 
-![About us](docs/PC_mockUps/aboutUs.jpg)
+![About us](aboutUs.jpg)
 
 ### Other menus
 
-![Menus](docs/PC_mockUps/other.jpg)
+![Menus](other.jpg)

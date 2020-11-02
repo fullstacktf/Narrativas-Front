@@ -2,52 +2,52 @@
 
 ### Home page 
 
-![Página principal](docs/Mobile_mockups/home.jpg)
+![Página principal](home.jpg)
 
 ### Menu
 
-![Menú explorar](docs/Mobile_mockups/navOpen.jpg)
+![Menú explorar](navOpen.jpg)
 
 ### "Explore" Menu 
 
-![Menú explorar](docs/Mobile_mockups/navOpenExplore.jpg)
+![Menú explorar](navOpenExplore.jpg)
 
 ### Sign in
 
-![Sign in](docs/Mobile_mockups/SignIn.jpg)
+![Sign in](SignIn.jpg)
 
 ### Sign up
 
-![Sign up](docs/Mobile_mockups/SignUp.jpg)
+![Sign up](SignUp.jpg)
 
 ### Home page (Signed in)
 
-![Página principal conectado en la página](docs/Mobile_mockups/homeLogged.jpg)
+![Página principal conectado en la página](homeLogged.jpg)
 
 ### Menu (Signed in)
 
-![Menú explorar](docs/Mobile_mockups/navOpenLogged.jpg)
+![Menú explorar](navOpenLogged.jpg)
 
 ### Menu (Slide 1)
 
-![Menu ejemplo pantalla uno](docs/Mobile_mockups/slide1.jpg)
+![Menu ejemplo pantalla uno](slide1.jpg)
 
 ### Menu (Slide 2)
 
-![Menu ejemplo pantalla dos](docs/Mobile_mockups/slide2.jpg)
+![Menu ejemplo pantalla dos](slide2.jpg)
 
 ### Character creation
 
-![Creacion de personajes](docs/Mobile_mockups/createCharacter.jpg)
+![Creacion de personajes](createCharacter.jpg)
 
 ### New Section (Character creation)
 
-![Creacion de personajes](docs/Mobile_mockups/createCharacter.jpg)
+![Creacion de personajes](createCharacter.jpg)
 
 ### Story creation
 
-![New section](docs/Mobile_mockups/Section.jpg)
+![New section](Section.jpg)
 
 ### About us
 
-![About us](docs/Mobile_mockups/AboutUs.jpg)
+![About us](AboutUs.jpg)

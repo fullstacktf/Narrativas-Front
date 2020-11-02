@@ -30,7 +30,7 @@ In this section we want to attribute the recognition that the different artists 
 
 <a href="https://www.freepik.es/vector-gratis/morena-alegre-vestida-sueter-marron-pantalon-negro-calzado-gris-sentada-silla-sus-pies-sobre-escritorio-pensando-lugar-trabajo_9641138.htm" target="_blank"><img src="src/assets/img/Hero.jpg" width="200"></a>
 
-<a href="https://www.freepik.es/vector-gratis/dibujo-astronauta-planetas_4740036.htm"></a>
+<a href="https://www.freepik.es/vector-gratis/dibujo-astronauta-planetas_4740036.htm" target="_blank"><img src="src/assets/img/heroMobile.jpg" width="200"></a>
 
 
 ### Background Tool
@@ -68,8 +68,8 @@ In this section we want to attribute the recognition that the different artists 
 <div style="display: flex; flex-direction: row">
 <a href="https://www.freepik.es/vector-gratis/escena-fantasia_1066823.htm" target="_blank"><img src="src/assets/img/slide_1.jpg" width="200"></a>
 <a href="https://www.freepik.es/vector-gratis/escena-fantasia_1066823.htm" target="_blank"><img src="src/assets/img/slide_2.jpg" width="200"></a>
-<a href="https://www.freepik.com/free-vector/fantasy-landscape-with-hand-statues-cartoon-illustration_10245340.htm" target="_blank"><img src="src/assets/img/slide_2.jpg" width="200"></a>
-<a href="https://www.freepik.com/free-vector/fairy-with-three-wands-near-sea-fantasy-illustration_10245351.htm#page=1&query=fantasy&position=7" target="_blank"><img src="src/assets/img/slide_2.jpg" width="200"></a>
+<a href="https://www.freepik.com/free-vector/fantasy-landscape-with-hand-statues-cartoon-illustration_10245340.htm" target="_blank"><img src="src/assets/img/slide1Mobile.jpg" width="200"></a>
+<a href="https://www.freepik.com/free-vector/fairy-with-three-wands-near-sea-fantasy-illustration_10245351.htm#page=1&query=fantasy&position=7" target="_blank"><img src="src/assets/img/slide2Mobile.jpg" width="200"></a>
 </div>
 
 ### Users profile
@@ -90,5 +90,5 @@ In this section we want to attribute the recognition that the different artists 
 
 ### About us
 
-<a href="https://www.freepik.es/vector-gratis/landing-page-presentacion_4125641.htm#page=1&query=about+us&position=1" width="200"></a>
+<a href="https://www.freepik.es/vector-gratis/landing-page-presentacion_4125641.htm#page=1&query=about+us&position=1" width="200" target="_blank"><img src="src/assets/img/heroAboutUs.jpg" width="200">></a>
 
