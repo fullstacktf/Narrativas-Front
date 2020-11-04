@@ -1,0 +1,21 @@
+{
+  "name": "vis_js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "run": "parcel run index.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "uuid": "^8.3.1",
+    "vis-data": "^7.1.0",
+    "vis-network": "^8.5.2",
+    "vis-util": "^4.3.4"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4"
+  }
+}
