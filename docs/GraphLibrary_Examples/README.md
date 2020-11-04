@@ -1,41 +1,25 @@
-# Librerías JS para grafos
+# JavaScript libraries for graphs
 
-Después de probar varias librerías, descartando aquellas que no eran open source y otras que no funcionaban de forma correcta, finalmente nos hemos quedado con dos opciones: vis.js y sigma.js. 
+After trying several libraries, discarding those that were not open source and others that did not work correctly, we have finally been left with two options, ** Vis Network ** and ** SigmaJS **, of which we finished choosing ** Vis Network **.
 
-# Vis.js
+The reason why * SigmaJS * was discarded is because its latest stable version is 1.2.1 and it has not been updated for three years. They are currently working on version 2.0.0, but this version is in alpha and was released just two months ago.
 
-Vis.js es una biblioteca realmente cómoda y fácil de usar, diseñada para manejar grandes cantidades de datos dinámicos y permitir la manipulación e interacción con estos. La biblioteca consta de los componentes *DataSet*, *Timeline*, *Network*, *Graph2d* y *Graph3d*. 
+On the other hand, * Vis Network* is a library that is updated more often, whose stable version is much more recent (this year).
 
-## Usando vis.js
+# Vis Network
 
-A la hora de utilizar **vis.js** no es necesario descargarse la librería en sí ya que se puede referenciar mediante el siguiente enlace:
+Vis Network is a JavaScript library designed to display dynamic, customizable and automatically organised graphs.
+
+## Using Vis Network
+
+It is not necessary to download the library itself as it can be referenced through the following link:
 
 > https://unpkg.com/vis-network/standalone/umd/vis-network.min.js
 
-Igualmente dejo el enlace a la librería donde se explica cómo instalarla:
+But you also have the option to download and use it via NPM. With the following link you can go to the library itself where it is explained how to install it in this way:
 
 > https://github.com/visjs/vis-network
 
-## Ejemplo
+## Example
 
 ![Vis](vis_js/src/vis_example.PNG)
-
-# Sigma.js
-
-Sigma.js es una librería de JavaScript enfocada en el diseño de gráficos.
-
-## Usando sigma.js
-
-Para utilizar **sigma.js** es necesario tener descargado su código fuente (o por lo menos la carpeta src), el cual podemos obtener del siguiente enlace:
-
-> https://github.com/jacomyal/sigma.js
-
-Nosotros subido sólo tenemos los *src* en:
-
-> /sigma_js/js/library/src
-
-Una vez hecho esto simplemente habrá que referenciar los archivos pertinentes en nuestro index.html y ya podremos hacer uso de todas las funciones de **Sigma**.
-
-## Ejemplo
-
-![Sigma](sigma_js/src/sigma_example.PNG)
