@@ -9,8 +9,7 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
-    "stylelint-config-standard": "^20.0.0",
-    "vue": "^2.6.11"
+    "stylelint-config-standard": "^20.0.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
@@ -22,7 +21,8 @@
     "eslint-plugin-vue": "^6.2.2",
     "postcss": "7.0.35",
     "tailwindcss": "1.9.6",
-    "vue-template-compiler": "^2.6.11"
+    "vue-template-compiler": "^2.6.11",
+    "vue": "^2.6.11"
   },
   "eslintConfig": {
     "root": true,
