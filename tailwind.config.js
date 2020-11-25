@@ -4,11 +4,17 @@ module.exports = {
     // purgeLayersByDefault: true,
   },
   purge: [
-    './public/**/*.html',
+    //'./public/**/*.html',
     './src/**/*.vue'
   ],
   theme: {
-    extend: {}
+    extend: {},
+    colors: {
+      gray: "gray",
+      black: "black",
+      white: "white",
+      blue: "#40798C"
+    }
   },
   variants: {},
   plugins: []

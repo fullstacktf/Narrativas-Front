@@ -2,21 +2,31 @@
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Footer/>
   </div>
 </template>
 
 <script>
+
+import "tailwindcss/tailwind.css"
+import "./assets/styles/index.css"
+//import "font-awesome"
 import HelloWorld from './components/HelloWorld.vue'
+import Footer from './components/Footer.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    HelloWorld,
+    Footer
   }
 }
 </script>
 
 <style>
+
+@import './base.css';
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
