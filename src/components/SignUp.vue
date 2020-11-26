@@ -1,12 +1,10 @@
 <template>
   <div class="container mx-auto">
     <div class="flex justify-center px-6 my-12">
-
       <div class="w-full xl:w-3/4 lg:w-11/12 flex">
-
         <div
           class="w-full h-auto bg-gray-400 hidden lg:block lg:w-1/2 bg-cover rounded-l-lg"
-          v-bind:style="{backgroundImage:`url(${getBgImage})`}"
+          v-bind:style="{ backgroundImage: `url(${getBgImage})` }"
         ></div>
 
         <div class="w-full lg:w-1/2 bg-white p-5 rounded-lg lg:rounded-l-none">
@@ -35,19 +33,20 @@
           </div>
           <form class="px-8 pt-8 pb-8 mb-4 bg-white rounded">
             <div class="mb-4">
+              <div class="mb-4">
+                <input
+                  v-model="username"
+                  class="w-full px-3 py-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                  type="text"
+                  placeholder="Username"
+                />
+              </div>
+
               <input
                 v-model="email"
                 class="w-full px-3 py-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
                 type="text"
                 placeholder="Email"
-              />
-            </div>
-            <div class="mb-4">
-              <input
-                v-model="username"
-                class="w-full px-3 py-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-                type="text"
-                placeholder="Username"
               />
             </div>
 
@@ -91,19 +90,19 @@
 
 <script>
 export default {
-  name: 'SignUp',
-  data: function() {
+  name: "SignUp",
+  data: function () {
     return {
       username: "",
       email: "",
-      password: ""
-    }
+      password: "",
+    };
   },
   computed: {
     getBgImage() {
-      return require('@/assets/img/prompt.jpg')
-    }
-  }
-}
+      return require("@/assets/img/prompt.jpg");
+    },
+  },
+};
 </script>
 
