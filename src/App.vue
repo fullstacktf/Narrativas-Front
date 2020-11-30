@@ -1,23 +1,22 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-    <SignUp/>
+    <img alt="Vue logo" src="./assets/logo.png" />
+    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <SignInSignUp type="sign-in" />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-import SignUp from './components/SignUp.vue'
-
+import HelloWorld from "./components/HelloWorld.vue";
+import SignInSignUp from "./components/SignInSignUp.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
     HelloWorld,
-    SignUp
-  }
-}
+    SignInSignUp,
+  },
+};
 </script>
 
 <style>
