@@ -1,31 +1,36 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-    <Footer/>
+    <!--
+    <Slider />
+    <PersonCard name="Alex" filename="Alex" description="Refachero" />
+    <SignInSignUp type="sign-in" />
+    <Footer />
+    -->
   </div>
 </template>
 
 <script>
-
-import "tailwindcss/tailwind.css"
-import "./assets/styles/index.css"
+import "tailwindcss/tailwind.css";
+import "./assets/styles/index.css";
 //import "font-awesome"
-import HelloWorld from './components/HelloWorld.vue'
-import Footer from './components/Footer.vue'
+import Footer from "./components/Footer.vue";
+import Slider from "./components/Slider.vue";
+import PersonCard from "./components/PersonCard.vue";
+import SignInSignUp from "./components/SignInSignUp.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld,
-    Footer
-  }
-}
+    Slider,
+    PersonCard,
+    SignInSignUp,
+    Footer,
+  },
+};
 </script>
 
 <style>
-
-@import './base.css';
+@import "./base.css";
 
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -40,3 +45,4 @@ img {
   margin: auto;
 }
 </style>
+
