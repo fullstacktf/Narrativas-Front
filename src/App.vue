@@ -6,6 +6,7 @@
     <SignInSignUp type="sign-in" />
     <Footer />
     -->
+    <Hero />
   </div>
 </template>
 
@@ -13,18 +14,16 @@
 import "tailwindcss/tailwind.css";
 import "./assets/styles/index.css";
 //import "font-awesome"
-import Footer from "./components/Footer.vue";
-import Slider from "./components/Slider.vue";
-import PersonCard from "./components/PersonCard.vue";
-import SignInSignUp from "./components/SignInSignUp.vue";
+//import Footer from "./components/Footer.vue";
+import Hero from "./components/Hero.vue";
+// import Slider from "./components/Slider.vue";
+// import PersonCard from "./components/PersonCard.vue";
+// import SignInSignUp from "./components/SignInSignUp.vue";
 
 export default {
   name: "App",
   components: {
-    Slider,
-    PersonCard,
-    SignInSignUp,
-    Footer,
+    Hero,
   },
 };
 </script>
