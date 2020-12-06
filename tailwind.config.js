@@ -19,11 +19,7 @@ module.exports = {
         '120': '30rem',
         '128': '32rem',
       }
-    },
-    backgroundImage: ({
-      'slide-1': "url('../img/slide_1.jpg')",
-      'slide-2': "url('../img/slide_2.jpg')",
-    }),
+    }
   },
   variants: {},
   plugins: []
