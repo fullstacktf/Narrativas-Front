@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Oswald:wght@700&family=PT+Sans&display=swap');
+
+:root {
+    --black: #151515
+}
+
+h1 {
+    font-family: 'Oswald', sans-serif;
+}
+
+h3, button {
+    font-family: 'Open Sans', sans-serif;
+}
+
+button {
+    font-weight: bold;
+}
+
+p {
+    font-family: 'PT Sans', sans-serif;
+}
