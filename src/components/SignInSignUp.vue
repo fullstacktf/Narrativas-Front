@@ -130,8 +130,6 @@
 
 
 <script>
-import axios from "axios";
-
 export default {
   name: "SignInSignUp",
   props: {
@@ -158,45 +156,8 @@ export default {
       } else if (screen === "sign-up") {
         this.userLogin();
       }
-    },
-    userRegister: function () {
-      const endpoint = `http://api.rollify.me/auth/register`;
-
-      axios({
-        method: "post",
-        url: endpoint,
-        data: {
-          username: this.username,
-          email: this.email,
-          password: this.password,
-        },
-      })
-        .then((response) => {
-          console.log(response.data);
-        })
-        .catch(function (error) {
-          console.log(error);
-        });
-    },
-    userLogin: function () {
-      const endpoint = `http://api.rollify.me/auth/login`;
-
-      axios({
-        method: "post",
-        url: endpoint,
-        data: {
-          username: this.username,
-          password: this.password,
-        },
-      })
-        .then((response) => {
-          console.log(response.data);
-        })
-        .catch(function (error) {
-          console.log(error);
-        });
-    },
-  },
+    }
+  }
 };
 </script>
 

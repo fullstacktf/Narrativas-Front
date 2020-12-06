@@ -3,10 +3,11 @@
     <!--
     <Slider />
     <PersonCard name="Alex" filename="Alex" description="Refachero" />
-    <SignInSignUp type="sign-in" />
     <Footer />
-    -->
     <Hero />
+    -->
+    <SignInSignUp type="sign-in" />
+
   </div>
 </template>
 
@@ -14,16 +15,16 @@
 import "tailwindcss/tailwind.css";
 import "./assets/styles/index.css";
 //import "font-awesome"
-//import Footer from "./components/Footer.vue";
-import Hero from "./components/Hero.vue";
+// import Footer from "./components/Footer.vue";
+// import Hero from "./components/Hero.vue";
 // import Slider from "./components/Slider.vue";
 // import PersonCard from "./components/PersonCard.vue";
-// import SignInSignUp from "./components/SignInSignUp.vue";
+import SignInSignUp from "./components/SignInSignUp.vue";
 
 export default {
   name: "App",
   components: {
-    Hero,
+    SignInSignUp,
   },
 };
 </script>
