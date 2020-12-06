@@ -1,5 +1,5 @@
 <template>
-  <div class="container flex text-white max-w-full">
+  <div class="container flex text-white max-w-full clip-path">
     <div class="heroImg w-3/5">
       <img src="../assets/img/Hero.jpg" alt="Imagin" />
     </div>
@@ -35,4 +35,7 @@ export default {
 </script>
 
 <style>
+.clip-path {
+  clip-path: polygon(0 0, 100% 0, 100% 95%, 0% 100%);
+}
 </style>
