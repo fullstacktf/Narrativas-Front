@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Oswald:wght@700&family=PT+Sans&display=swap');
 
-:root {
-    --black: #151515
+body {
+    font-family: 'PT Sans', sans-serif;
 }
 
 h1 {
@@ -14,8 +14,4 @@ h3, button {
 
 button {
     font-weight: bold;
-}
-
-p {
-    font-family: 'PT Sans', sans-serif;
 }

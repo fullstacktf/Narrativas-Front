@@ -1,5 +1,5 @@
 <template>
-  <footer class="footer bg-black text-gray">
+  <footer class="footer bg-black text-gray-400">
     <!--bg-red-900-->
     <div class="title">
       <img
@@ -10,16 +10,16 @@
     </div>
 
     <div class="nav space-x-10 mb-10 -mt-5">
-      <a href="" class="hover:text-white hover:bg-primaryColor p-3 rounded"
+      <a href="" class="hover:text-white hover:bg-primary p-3 rounded"
         >About us</a
       >
-      <a href="" class="hover:text-white hover:bg-primaryColor p-3 rounded"
+      <a href="" class="hover:text-white hover:bg-primary p-3 rounded"
         >Privacy Policy</a
       >
-      <a href="" class="hover:text-white hover:bg-primaryColor p-3 rounded"
+      <a href="" class="hover:text-white hover:bg-primary p-3 rounded"
         >Terms of Service</a
       >
-      <a href="" class="hover:text-white hover:bg-primaryColor p-3 rounded"
+      <a href="" class="hover:text-white hover:bg-primary p-3 rounded"
         >Security</a
       >
     </div>
@@ -60,10 +60,3 @@ const getCurrentYear = () => {
   return date.getFullYear();
 };
 </script>
-<!--
-<style scoped>
-.footer{
-    background-color: var(--black);
-    color: gray;
-}
-</style>-->

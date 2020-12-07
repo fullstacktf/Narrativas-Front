@@ -36,7 +36,7 @@
 
           <div class="px-8 pt-4 pb-8 mb-2 text-center">
             <button
-              class="w-full border-2 border-black px-4 py-2 font-bold text-black rounded-full hover:bg-primaryColor-500 focus:outline-none focus:shadow-outline"
+              class="w-full border-2 border-black px-4 py-2 font-bold text-black rounded-full hover:bg-primary focus:outline-none focus:shadow-outline"
               type="button"
             >
               <i class="fab fa-google"></i>
@@ -94,7 +94,7 @@
 
             <div class="mb-6 text-center">
               <button
-                class="w-full px-4 py-2 font-bold text-white bg-primaryColor-500 rounded-full hover:bg-primaryColor-700 focus:outline-none focus:shadow-outline"
+                class="w-full px-4 py-2 font-bold text-white bg-primary rounded-full hover:bg-primary-dark focus:outline-none focus:shadow-outline"
                 type="button"
                 v-on:click="sendData"
               >
@@ -106,7 +106,7 @@
 
             <div v-if="screen === `sign-in`" class="text-center">
               <a
-                class="inline-block text-sm text-primaryColor-500 align-baseline hover:text-primaryColor-800 cursor-pointer"
+                class="inline-block text-sm text-primary align-baseline hover:text-primary-dark cursor-pointer"
                 v-on:click="screen = `sign-up`"
               >
                 Create an Account!
@@ -115,7 +115,7 @@
 
             <div class="text-center">
               <a
-                class="inline-block text-sm text-primaryColor-500 align-baseline hover:text-primaryColor-800"
+                class="inline-block text-sm text-primary align-baseline hover:text-primary-dark"
                 href="#"
               >
                 Forgot Password?

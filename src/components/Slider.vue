@@ -20,9 +20,7 @@
     </div>
 
     <div class="w-full h-2 flex">
-      <div
-        class="w-1/2 h-full bg-primaryColor-500 inline-block cursor-pointer"
-      ></div>
+      <div class="w-1/2 h-full bg-primary inline-block cursor-pointer"></div>
       <div
         class="w-1/2 h-full bg-gray-600 inline-block cursor-pointer"
         v-on:click="isStorySlider = !isStorySlider"
@@ -38,7 +36,7 @@
             <p class="text-xl">CREATE YOUR</p>
             <p class="text-6xl">CHARACTERS</p>
             <button
-              class="bg-purple-600 hover:bg-purple-800 text-white font-bold py-2 px-4 rounded-full text-xl mt-4 focus:outline-none"
+              class="bg-secondary hover:bg-secondary-dark text-white font-bold py-2 px-4 rounded-full text-xl mt-4 focus:outline-none"
             >
               Get Started
             </button>
@@ -54,9 +52,7 @@
           class="w-1/2 h-full bg-gray-600 inline-block cursor-pointer"
           v-on:click="isStorySlider = !isStorySlider"
         ></div>
-        <div
-          class="w-1/2 h-full bg-primaryColor-500 inline-block cursor-pointer"
-        ></div>
+        <div class="w-1/2 h-full bg-primary inline-block cursor-pointer"></div>
       </div>
     </div>
   </div>
