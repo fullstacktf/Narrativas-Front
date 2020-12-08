@@ -34,11 +34,7 @@
 export default {
   name: "Hero",
   mounted() {
-    window.onresize = () => {
-      this.screenWidth = window.innerWidth;
-      this.addRemoveClasses();
-    };
-    this.addRemoveClasses();
+   this.onResize();
   },
   data() {
     return {
@@ -51,6 +47,13 @@ export default {
     },
   },
   methods: {
+    onResize() {
+        addEventListener("resize", () => { 
+        this.screenWidth = window.innerWidth;
+        this.addRemoveClasses();
+      })
+      this.addRemoveClasses();
+    },
     addRemoveClasses() {
       const container = this.$el;
       if (this.screenWidth < 768) {

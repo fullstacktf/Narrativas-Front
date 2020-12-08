@@ -76,19 +76,7 @@
 export default {
 	name: 'Header',
 	mounted() {
-		window.onresize = () => {
-			this.screenWidth = window.innerWidth;
-			console.log("1");
-			if (this.screenWidth < 768) {
-				console.log("2");
-				this.enable = false;
-				const element  = this.$el.querySelector(".navigationBar");
-				element.classList.remove("line");
-			} else {
-				console.log("3");
-				this.hamburgerEnable = false;
-			}
-    	};
+		this.onResize()
   	},
 	data() {
 		return {
@@ -104,6 +92,21 @@ export default {
     	}
   	},
 	methods: {
+		onResize() {
+			addEventListener("resize", () => { 
+				this.screenWidth = window.innerWidth;
+				console.log("1");
+				if (this.screenWidth < 768) {
+					console.log("2");
+					this.enable = false;
+					const element  = this.$el.querySelector(".navigationBar");
+					element.classList.remove("line");
+				} else {
+					console.log("3");
+					this.hamburgerEnable = false;
+				}
+    		})
+		},
 		exploreMenuState() {
 			this.enable = !this.enable;
 			const element  = this.$el.querySelector(".navigationBar");

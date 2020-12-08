@@ -9,7 +9,7 @@
     
     <Header />
     <Hero />
-    <Footer />
+    <!-- <Footer /> -->
   </div>
 </template>
 
@@ -17,7 +17,7 @@
 import "tailwindcss/tailwind.css";
 import "./assets/styles/index.css";
 
-import Footer from "./components/Footer.vue";
+// import Footer from "./components/Footer.vue";
 import Hero from "./components/Hero.vue";
 import Header from "./components/Header.vue";
 // import Slider from "./components/Slider.vue";
@@ -30,7 +30,6 @@ export default {
   components: {
     Header,
     Hero,
-    Footer,
   }
 };
 </script>
