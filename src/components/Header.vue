@@ -40,7 +40,7 @@
 		<div class="flex flex-col text-left w-screen bg-black text-white text-md md:hidden relative z-0" v-show="hamburgerEnable">
 			<a class="py-2 pl-10 hover:bg-blue-500 flex justify-between" v-on:click="mobileExploreState">Explore <span class="text-md text-white pr-12"><i class="fas fa-sort-down"></i></span></a>
 			
-			<div class = "exploreMobile w-screen h-full flex flex-col items-start bg-black text-white py-2 relative z-10" v-show="mobileExploreEnable">
+			<div class = "exploreMobile w-screen h-full flex flex-col items-start bg-black text-white py-2 relative z-10 transition easy-in duration-700" v-show="mobileExploreEnable">
 				<div class="w-3/4 flex flex-col pl-6">
 					<h1 class="py-2">Create your own stories online</h1>
 					<div class="flex justify-between">
