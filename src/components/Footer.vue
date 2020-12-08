@@ -71,7 +71,7 @@
 export default {
   name: "Footer",
   mounted() {
-    window.onresize = () => (this.screenWidth = window.innerWidth);
+    addEventListener("resize", () => (this.screenWidth = window.innerWidth));
   },
   data() {
     return {

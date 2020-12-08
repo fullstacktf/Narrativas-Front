@@ -34,10 +34,10 @@
 export default {
   name: "Hero",
   mounted() {
-    window.onresize = () => {
+    addEventListener("resize", () => {
       this.screenWidth = window.innerWidth;
       this.addRemoveClasses();
-    };
+    });
     this.addRemoveClasses();
   },
   data() {
