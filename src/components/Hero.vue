@@ -52,22 +52,15 @@ export default {
   },
   methods: {
     addRemoveClasses() {
-      let element;
-
+      const container = this.$el;
       if (this.screenWidth < 768) {
-        element = document.querySelector(".container");
-        element.classList.remove("clip-path");
-        element = document.querySelector(".start");
-        element.classList.add("bg-img");
-        element = document.querySelector(".title");
-        element.classList.add("text-shadow");
+        container.classList.remove("clip-path");
+        container.querySelector(".start").classList.add("bg-img");
+        container.querySelector(".title").classList.add("text-shadow");
       } else {
-        element = document.querySelector(".container");
-        element.classList.add("clip-path");
-        element = document.querySelector(".start");
-        element.classList.remove("bg-img");
-        element = document.querySelector(".title");
-        element.classList.remove("text-shadow");
+        container.classList.add("clip-path");
+        container.querySelector(".start").classList.remove("bg-img");
+        container.querySelector(".title").classList.remove("text-shadow");
       }
     },
   },

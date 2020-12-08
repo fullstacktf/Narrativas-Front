@@ -1,5 +1,5 @@
 <template>
-	<div class="god"> 
+	<div> 
 		<nav class="navigationBar max-w-full h-18 lg:h-20 bg-black text-gray-600 text-lg flex items-center justify-between flex-row relative z-10">
 			<div class="flex flex-row items-center">
 				<img class="h-20 mr-6 lg:mx-10 xl:mx-20" src="../assets/img/logo.svg" alt="Logo">
@@ -77,15 +77,18 @@ export default {
 	name: 'Header',
 	mounted() {
 		window.onresize = () => {
-			this.screenWidth = window.innerWidth
+			this.screenWidth = window.innerWidth;
+			console.log("1");
 			if (this.screenWidth < 768) {
+				console.log("2");
 				this.enable = false;
-				const element  = document.querySelector(".navigationBar");
+				const element  = this.$el.querySelector(".navigationBar");
 				element.classList.remove("line");
 			} else {
+				console.log("3");
 				this.hamburgerEnable = false;
 			}
-		}
+    	};
   	},
 	data() {
 		return {
@@ -103,7 +106,7 @@ export default {
 	methods: {
 		exploreMenuState() {
 			this.enable = !this.enable;
-			const element  = document.querySelector(".navigationBar");
+			const element  = this.$el.querySelector(".navigationBar");
 			element.classList.toggle("line");
 		},	
 		hamburgerMenuState() {
@@ -111,13 +114,13 @@ export default {
 		},
 		mobileExploreState() {
 			this.mobileExploreEnable = !this.mobileExploreEnable;
-			const element  = document.querySelector(".exploreMobile");
+			const element  = this.$el.querySelector(".exploreMobile");
 			element.classList.toggle("lineLeft");
 			console.log(element);
 		}
 
-	}
-}
+	},
+};
 </script>
 
 <style>

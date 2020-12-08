@@ -6,6 +6,7 @@
     <PersonCard name="Alex" filename="Alex" description="Fullstack" />
     <InformationBlock />
     -->
+    
     <Header />
     <Hero />
     <Footer />
