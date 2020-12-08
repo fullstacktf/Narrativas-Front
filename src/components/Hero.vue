@@ -55,15 +55,22 @@ export default {
       this.addRemoveClasses();
     },
     addRemoveClasses() {
-      const container = this.$el;
+      let element;
+
       if (this.screenWidth < 768) {
-        container.classList.remove("clip-path");
-        container.querySelector(".start").classList.add("bg-img");
-        container.querySelector(".title").classList.add("text-shadow");
+        element = document.querySelector(".container");
+        element.classList.remove("clip-path");
+        element = document.querySelector(".start");
+        element.classList.add("bg-img");
+        element = document.querySelector(".title");
+        element.classList.add("text-shadow");
       } else {
-        container.classList.add("clip-path");
-        container.querySelector(".start").classList.remove("bg-img");
-        container.querySelector(".title").classList.remove("text-shadow");
+        element = document.querySelector(".container");
+        element.classList.add("clip-path");
+        element = document.querySelector(".start");
+        element.classList.remove("bg-img");
+        element = document.querySelector(".title");
+        element.classList.remove("text-shadow");
       }
     },
   },
@@ -85,3 +92,4 @@ export default {
   text-shadow: 2px 2px 8px black;
 }
 </style>
+
