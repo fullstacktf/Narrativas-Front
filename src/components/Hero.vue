@@ -1,24 +1,24 @@
 <template>
-  <div class="container flex text-white max-w-full clip-path">
-    <div class="heroImg w-3/5">
+  <div class="container flex text-white h-screen max-w-full">
+    <div v-show="!isMobile" class="heroImg w-3/5">
       <img src="../assets/img/Hero.jpg" alt="Imagin" />
     </div>
     <div
-      class="start text-left bg-tertiary p-6 w-2/5 pl-10 flex flex-col justify-around"
+      class="start md:text-left md:bg-tertiary p-6 md:w-2/5 pl-10 flex flex-col justify-around"
     >
       <div class="top">
-        <div class="title text-6xl">
+        <div class="title text-5xl md:text-6xl text-shadow">
           <h1>CREATE YOUR OWN UNIQUE STORY</h1>
         </div>
         <div class="startBtn mt-10">
           <button
-            class="rounded-full py-3 px-6 bg-secondary hover:bg-secondary-dark text-xs font-bold"
+            class="rounded-full py-3 px-6 bg-primary hover:bg-primary-dark md:bg-secondary md:hover:bg-secondary-dark text-xs font-bold"
           >
             Get Started
           </button>
         </div>
       </div>
-      <div class="bottom mt-40">
+      <div class="bottom mt-40" v-show="!isMobile">
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nibh
           turpis, rhoncus nec dui eget, interdum semper ante. Donec venenatis,
@@ -33,11 +33,59 @@
 <script>
 export default {
   name: "Hero",
+  mounted() {
+    window.onresize = () => {
+      this.screenWidth = window.innerWidth;
+      this.addRemoveClasses();
+    };
+    this.addRemoveClasses();
+  },
+  data() {
+    return {
+      screenWidth: window.innerWidth,
+    };
+  },
+  computed: {
+    isMobile() {
+      return this.screenWidth < 768;
+    },
+  },
+  methods: {
+    addRemoveClasses() {
+      let element;
+
+      if (this.screenWidth < 768) {
+        element = document.querySelector(".container");
+        element.classList.remove("clip-path");
+        element = document.querySelector(".start");
+        element.classList.add("bg-img");
+        element = document.querySelector(".title");
+        element.classList.add("text-shadow");
+      } else {
+        element = document.querySelector(".container");
+        element.classList.add("clip-path");
+        element = document.querySelector(".start");
+        element.classList.remove("bg-img");
+        element = document.querySelector(".title");
+        element.classList.remove("text-shadow");
+      }
+    },
+  },
 };
 </script>
 
 <style>
 .clip-path {
   clip-path: polygon(0 0, 100% 0, 100% 95%, 0% 100%);
+}
+
+.bg-img {
+  background-image: url("../assets/img/heroMobile.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.text-shadow {
+  text-shadow: 2px 2px 8px black;
 }
 </style>
