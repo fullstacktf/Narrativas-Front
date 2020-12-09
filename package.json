@@ -36,6 +36,11 @@
     "env": {
       "node": true
     },
+    "jest": {
+      "setupFilesAfterEnv": [
+        "<rootDir>/testSetupFile.ts"
+      ]
+    },
     "extends": [
       "plugin:vue/essential",
       "eslint:recommended"
