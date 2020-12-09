@@ -8,6 +8,7 @@
     -->
     <Header />
     <Hero />
+    <Parallax :url="assets/img/parallaxHome.jpg"></Parallax>
     <!-- <Footer /> -->
   </div>
 </template>
@@ -19,6 +20,7 @@ import "./assets/styles/index.css";
 // import Footer from "./components/Footer.vue";
 import Hero from "./components/Hero.vue";
 import Header from "./components/Header.vue";
+import Parallax from "./components/Parallax.vue"
 // import Slider from "./components/Slider.vue";
 // import PersonCard from "./components/PersonCard.vue";
 // import SignInSignUp from "./components/SignInSignUp.vue";
@@ -29,6 +31,7 @@ export default {
   components: {
     Header,
     Hero,
+    Parallax,
   }
 };
 </script>

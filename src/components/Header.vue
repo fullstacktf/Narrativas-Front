@@ -95,14 +95,11 @@ export default {
 		onResize() {
 			addEventListener("resize", () => { 
 				this.screenWidth = window.innerWidth;
-				console.log("1");
 				if (this.screenWidth < 768) {
-					console.log("2");
 					this.enable = false;
 					const element  = this.$el.querySelector(".navigationBar");
 					element.classList.remove("line");
 				} else {
-					console.log("3");
 					this.hamburgerEnable = false;
 				}
     		})
