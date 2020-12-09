@@ -1,7 +1,7 @@
 <template>
-  <div class="container flex text-white h-screen max-w-full">
+  <div role="hero" class="container flex text-white h-screen max-w-full">
     <div v-show="!isMobile" class="heroImg w-3/5">
-      <img src="../assets/img/Hero.jpg" alt="Imagin" />
+      <img src="@/assets/img/Hero.jpg" alt="Imagine" />
     </div>
     <div
       class="start md:text-left md:bg-tertiary p-6 md:w-2/5 pl-10 flex flex-col justify-around"
@@ -19,7 +19,7 @@
         </div>
       </div>
       <div class="bottom mt-40" v-show="!isMobile">
-        <p>
+        <p role="description">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nibh
           turpis, rhoncus nec dui eget, interdum semper ante. Donec venenatis,
           massa eget vestibulum feugiat, augue nibh ultrices tellus, facilisis
@@ -76,7 +76,7 @@ export default {
 }
 
 .bg-img {
-  background-image: url("../assets/img/heroMobile.jpg");
+  background-image: url("../../assets/img/heroMobile.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
