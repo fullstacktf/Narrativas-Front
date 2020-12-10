@@ -20,8 +20,8 @@
       </div>
       <div class="bottom lg:mt-24" v-show="!isMobile">
         <p role="description">
-        Create non-linear stories and share them with people. As a writer or videogame developer, Rollify
-        allows you to map your idea before making it come true.
+          Create non-linear stories and share them with people. As a writer or videogame
+          developer, Rollify allows you to map your idea before making it come true.
         </p>
       </div>
     </div>
@@ -32,7 +32,7 @@
 export default {
   name: "Hero",
   mounted() {
-   this.onResize();
+    this.onResize();
   },
   data() {
     return {
@@ -46,10 +46,10 @@ export default {
   },
   methods: {
     onResize() {
-        addEventListener("resize", () => {
+      addEventListener("resize", () => {
         this.screenWidth = window.innerWidth;
         this.addRemoveClasses();
-      })
+      });
       this.addRemoveClasses();
     },
     addRemoveClasses() {
@@ -83,4 +83,3 @@ export default {
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
   }
 </style>
-
