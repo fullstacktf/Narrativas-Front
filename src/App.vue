@@ -1,45 +1,45 @@
 <template>
   <div id="app">
-    <!--
-    <Slider />
-    <SignInSignUp type="sign-in" />
-    <InformationBlock />
-    -->
-    <PersonCard name="Adal" filename="Adal" description="Adal es un Adal muy Adal" />
-    <!-- <Header /> -->
-    <!-- <div style="height:1000px;">Content very important :)</div> -->
-    <!-- <Hero /> -->
-    <!-- <Footer /> -->
+    <Header/>
+    <router-view/>
+    <Footer />
   </div>
 </template>
 
 <script>
 import "tailwindcss/tailwind.css";
 import "./assets/styles/index.css";
-
-// import Footer from "./components/Footer/Footer.vue";
-// import Hero from "./components/Hero/Hero.vue";
-// import Header from "./components/Header/Header.vue";
+//import "font-awesome"
+// import Hero from "./components/Hero.vue";
 // import Slider from "./components/Slider.vue";
-import PersonCard from "./components/PersonCard/PersonCard.vue";
-// import SignInSignUp from "./components/SignInSignUp.vue";
-// import InformationBlock from "./components/InformationBlock.vue";
+// import PersonCard from "./components/PersonCard.vue";
+//import SignInSignUp from "./components/SignInSignUp.vue";
+
+import Header from './components/Header/Header'
+import Footer from './components/Footer/Footer'
 
 export default {
   name: "App",
   components: {
-    PersonCard
+    Header,
+    Footer
   },
 };
 </script>
 
 <style>
 @import "./base.css";
+
 #app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   text-align: center;
+  color: #2c3e50;
 }
 
 img {
   margin: auto;
 }
 </style>
+
