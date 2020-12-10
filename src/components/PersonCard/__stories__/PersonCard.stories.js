@@ -1,7 +1,7 @@
 import PersonCard from '../PersonCard.vue';
 
 export default {
-  title: 'Example/PersonCard',
+  title: 'Example/Person Card',
   component: PersonCard,
   argTypes: {
     filename: { control: { type: 'select', options: [ 'Adal', 'Alex', 'Himar', 'Kevin' ] } }
