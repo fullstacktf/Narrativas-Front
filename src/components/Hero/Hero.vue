@@ -68,7 +68,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .clip-path {
   clip-path: polygon(0 0, 100% 0, 100% 95%, 0% 100%);
 }
