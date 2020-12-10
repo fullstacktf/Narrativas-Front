@@ -23,7 +23,7 @@ export default {
 </script>
 
 <style>
-@import "./base.css";
+@import "@/assets/styles/base.css";
 
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

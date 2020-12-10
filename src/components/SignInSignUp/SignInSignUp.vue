@@ -10,16 +10,16 @@
         <div class="w-full lg:w-1/2 bg-white p-5 rounded-lg lg:rounded-l-none">
           <div class="flex justify-end">
             <span class="text-right text-xs text-gray-600 px-4">
-              <div v-if="screen === `sign-in`">New to rollify?</div>
-              <div v-if="screen === `sign-up`">Already a member?</div>
+              <div v-if="isSignUp">New to rollify?</div>
+              <div v-else>Already a member?</div>
             </span>
             <span
               class="text-right text-xs text-gray-800 underline cursor-pointer"
             >
-              <a v-if="screen === `sign-in`" v-on:click="screen = `sign-up`"
+              <a v-if="isSignUp" v-on:click="alterSign"
                 >Sign Up</a
               >
-              <a v-if="screen === `sign-up`" v-on:click="screen = `sign-in`"
+              <a v-else v-on:click="alterSign"
                 >Sign In</a
               >
             </span>
@@ -30,8 +30,8 @@
             </button>
           </div>
           <h3 class="pt-4 text-2xl text-center my-8">
-            <div v-if="screen === `sign-in`">Sign in to Rollify</div>
-            <div v-if="screen === `sign-up`">Sign up to Rollify</div>
+            <div v-if="isSignUp">Sign in to Rollify</div>
+            <div v-else>Sign up to Rollify</div>
           </h3>
 
           <div class="px-8 pt-4 pb-8 mb-2 text-center">
@@ -45,8 +45,8 @@
           </div>
 
           <div class="text-center text-sm text-gray-800">
-            <div v-if="screen === `sign-up`">Or Sign up with us</div>
-            <div v-if="screen === `sign-in`">Or Sign in with us</div>
+            <div v-if="isSignUp">Or Sign up with us</div>
+            <div v-else>Or Sign in with us</div>
           </div>
           <form class="px-8 pt-8 pb-8 mb-4 bg-white rounded">
             <div class="mb-4">
@@ -61,7 +61,7 @@
               </div>
 
               <input
-                v-if="screen === `sign-up`"
+                v-if="isSignUp"
                 v-model="email"
                 class="w-full px-3 py-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
                 type="text"
@@ -83,7 +83,7 @@
               </p>
             </div>
 
-            <div class="mb-4" v-if="screen === `sign-in`">
+            <div class="mb-4" v-if="isSignUp">
               <input
                 class="mr-2 leading-tight"
                 type="checkbox"
@@ -98,13 +98,13 @@
                 type="button"
                 v-on:click="sendData"
               >
-                <div v-if="screen === `sign-up`">Sign Up</div>
-                <div v-if="screen === `sign-in`">Sign In</div>
+                <div v-if="isSignUp">Sign Up</div>
+                <div v-else>Sign In</div>
               </button>
             </div>
             <hr class="mb-6 border-t" />
 
-            <div v-if="screen === `sign-in`" class="text-center">
+            <div v-if="isSignUp" class="text-center">
               <a
                 class="inline-block text-sm text-primary align-baseline hover:text-primary-dark cursor-pointer"
                 v-on:click="screen = `sign-up`"
@@ -130,32 +130,40 @@
 
 
 <script>
+import '../../assets/styles/index.css';
+import '../../assets/styles/base.css';
 export default {
   name: "SignInSignUp",
   props: {
-    type: String,
+    type: Boolean,
   },
   data: function () {
     return {
       username: "",
       email: "",
       password: "",
-      screen: this.type,
       information: "",
+      signType: this.type
     };
   },
   computed: {
     getBgImage() {
       return require("@/assets/img/prompt.jpg");
     },
+    isSignUp() {
+      return this.signType;
+    }
   },
   methods: {
     sendData: function (event) {
-      if (this.screen === "sign-in") {
+      if (this.type === "sign-in") {
         this.userRegister();
-      } else if (screen === "sign-up") {
+      } else if (this.type === "sign-up") {
         this.userLogin();
       }
+    },
+    alterSign: function (event) {
+      this.signType = !this.signType;
     }
   }
 };
