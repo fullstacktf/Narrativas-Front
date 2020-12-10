@@ -1,8 +1,6 @@
 <template>
   <div id="app">
-    <Header />
-    <router-view />
-    <Footer />
+    <HeroAboutUs />
   </div>
 </template>
 
