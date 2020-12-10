@@ -12,6 +12,9 @@ export default {
         element.classList.add("clip-path")
     },
     props: ['url'],
+    data () {
+        link = this.url;
+    }
 }
 </script>
 
