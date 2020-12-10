@@ -18,7 +18,7 @@
           </button>
         </div>
       </div>
-      <div class="bottom lg:mt-40" v-show="!isMobile">
+      <div class="bottom lg:mt-24" v-show="!isMobile">
         <p role="description">
           Create non-linear stories and share them with people. As a writer or videogame
           developer, Rollify allows you to map your idea before making it come true.
@@ -69,10 +69,6 @@ export default {
 </script>
 
 <style scoped>
-.clip-path {
-  clip-path: polygon(0 0, 100% 0, 100% 95%, 0% 100%);
-}
-
 .bg-img {
   background-image: url("../../assets/img/heroMobile.jpg");
   background-repeat: no-repeat;
@@ -81,5 +77,9 @@ export default {
 
 .text-shadow {
   text-shadow: 2px 2px 8px black;
+}
+
+.clip-path {
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
 }
 </style>
