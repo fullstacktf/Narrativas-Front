@@ -26,7 +26,7 @@
       isReversed
       image="follow"
       title="follow stories"
-      subtitle="Follow the stories of your frineds"
+      subtitle="Follow the stories of your friends"
       description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco"
     />
   </div>

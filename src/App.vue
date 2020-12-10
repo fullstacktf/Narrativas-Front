@@ -1,26 +1,28 @@
 <template>
   <div id="app">
-    <HeroAboutUs />
+    <Header/>
+    <router-view/>
+    <Footer />
   </div>
 </template>
 
 <script>
 import "tailwindcss/tailwind.css";
 import "./assets/styles/index.css";
-
-// import Footer from "./components/Footer/Footer.vue";
-// import Hero from "./components/Hero/Hero.vue";
-import HeroAboutUs from "./components/Hero/HeroAboutUs.vue";
-// import Header from "./components/Header/Header.vue";
+//import "font-awesome"
+// import Hero from "./components/Hero.vue";
 // import Slider from "./components/Slider.vue";
-// import PersonCard from "./components/PersonCard/PersonCard.vue";
-// import SignInSignUp from "./components/SignInSignUp.vue";
-// import InformationBlock from "./components/InformationBlock.vue";
+// import PersonCard from "./components/PersonCard.vue";
+//import SignInSignUp from "./components/SignInSignUp.vue";
+
+import Header from './components/Header/Header'
+import Footer from './components/Footer/Footer'
 
 export default {
   name: "App",
   components: {
-    HeroAboutUs,
+    Header,
+    Footer
   },
 };
 </script>
@@ -40,3 +42,4 @@ img {
   margin: auto;
 }
 </style>
+

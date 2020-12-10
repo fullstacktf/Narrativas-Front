@@ -5,9 +5,11 @@
     </div>
     <div class="h-72 w-136 mt-8 flex justify-center align-middle" v-bind:class="{ 'md:mr-16': this.isReversed }">
       <div class="h-64 w-96 md:w-112 text-left">
-          <i class="fas fa-hearth bg-primary"></i>
-           <h3 class="text-xl font-bold mt-2">
+          <div class="flex">
+            <i class="fas fa-hearth">icon</i>
+            <h3 class="text-xl font-bold mt-2 ml-4">
              {{ this.title.toUpperCase() }}</h3>
+          </div>
            <h2 class="text-3xl mt-2">{{this.subtitle}}</h2>
            <p class="mt-2">{{ this.description }}</p>
       </div>
@@ -28,9 +30,9 @@ export default {
   },
   methods: {
     getImageUrl() {
-      return require('@/assets/img/'+this.image+'.jpg')
-    }
-  }
+      return require("@/assets/img/" + this.image + ".jpg");
+    },
+  },
 };
 </script>
 
