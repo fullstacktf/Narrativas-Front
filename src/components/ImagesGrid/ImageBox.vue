@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="w-40 h-40" v-bind:style="{backgroundImage: 'url(' + this.setBackground() + ')'}"></div>
+    <div class="w-40 h-40 bg-rpimary" v-bind:style="{backgroundImage: 'url(' + this.setBackground() + ')'}"></div>
     <div class="flex">
       <h2>{{ this.title }}</h2>
       <span>1234</span>
