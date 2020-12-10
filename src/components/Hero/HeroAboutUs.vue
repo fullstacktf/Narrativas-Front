@@ -1,17 +1,13 @@
 <template>
-  <div class="container w-full h-screen flex text-white">
-    <div class="start md:text-left p-6 w-full md:w-2/5 pl-10 flex flex-col justify-around">
-      <div class="">
-        <h1 class="title text-5xl md:text-6xl text-shadow text-secondary">ABOUT US</h1>
-        <button
-          class="rounded-full py-3 px-6 bg-secondary hover:bg-secondary-dark text-xs font-bold"
-        >
-          Get Started
-        </button>
-      </div>
+  <div class="container bg-white text-white max-w-full flex">
+    <div class="start md:text-left w-full md:w-1/4 h-screen flex flex-col items-center md:items-end justify-center">
+      <h1 class="title text-5xl md:text-6xl text-shadow text-secondary">ABOUT US</h1>
+      <button class="rounded-full py-3 px-6 bg-secondary hover:bg-secondary-dark text-xs font-bold md:mr-40">
+        Get Started
+      </button>
     </div>
-    <div v-show="!isMobile" md:class="w-3/5">
-      <img src="@/assets/img/heroAboutUs.jpg" alt="Imagine" />
+    <div v-show="!isMobile" class=" md:w-7/12 flex items-center justify-center">
+      <img class="h-screen w-screen py-24" src="@/assets/img/heroAboutUs.jpg" alt="Imagine" />
     </div>
   </div>
 </template>
