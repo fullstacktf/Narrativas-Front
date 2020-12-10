@@ -1,6 +1,6 @@
 <template>
-  <div class="container flex text-white h-screen max-w-full">
-    <div class="start md:text-left p-6 md:w-2/5 pl-10 flex flex-col justify-around">
+  <div class="container w-full h-screen flex text-white">
+    <div class="start md:text-left p-6 w-full md:w-2/5 pl-10 flex flex-col justify-around">
       <div class="">
         <h1 class="title text-5xl md:text-6xl text-shadow text-secondary">ABOUT US</h1>
         <button

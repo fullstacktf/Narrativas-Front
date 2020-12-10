@@ -1,12 +1,13 @@
 <template>
-  <div role="personCard" class="w-56 rounded overflow-hidden shadow-lg">
+  <div role="personCard" class="w-56 rounded overflow-hidden shadow-lg flex flex-col items-center">
     <img alt="Character image" class="w-32 h-32 mt-8 rounded-full" :src="setUrl(filename)" />
-    <h3 class="my-4 mx-4 text-secondary font-bold">{{ name }}</h3>
-    <p class="mx-2 my-4 text-sm">{{ description }}</p>
+    <h3 class="mt-2 mx-4 text-secondary font-bold">{{ name }}</h3>
+    <p class="mx-2 mb-4 text-sm">{{ description }}</p>
   </div>
 </template>
 
 <script>
+import '../../assets/styles/index.css'
 export default {
   name: "PersonCard",
   props: {

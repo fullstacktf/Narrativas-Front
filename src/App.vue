@@ -1,8 +1,12 @@
 <template>
   <div id="app">
+<<<<<<< HEAD
     <Header/>
     <router-view/>
     <Footer />
+=======
+    <HeroAboutUs />
+>>>>>>> f8139610160f02d23053dbd2a888673bb8953ce2
   </div>
 </template>
 

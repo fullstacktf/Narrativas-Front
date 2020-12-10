@@ -7,9 +7,10 @@
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint",
-    "test": "vue-cli-service test:unit --watch",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "storybook:build": "vue-cli-service storybook:build -c config/storybook",
+    "storybook:serve": "vue-cli-service storybook:serve -p 6006 -c config/storybook",
+    "test": "vue-cli-service test:unit --watch"
   },
   "dependencies": {
     "axios": "^0.21.0",
@@ -41,6 +42,7 @@
     "postcss": "7.0.35",
     "tailwindcss": "1.9.6",
     "vue": "^2.6.11",
+    "vue-cli-plugin-storybook": "~2.0.0",
     "vue-template-compiler": "^2.6.11"
   },
   "eslintConfig": {
