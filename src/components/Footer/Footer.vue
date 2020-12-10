@@ -32,17 +32,16 @@
     </div>
     <div class="media flex justify-center space-x-10 text-2xl">
       <a role="twitter" href="https://twitter.com/">
-        <!-- <i class="fa fa-twitter hover:text-white"></i> -->
-        <FontAwesomeIcon :icon="['fab', 'twitter']"></FontAwesomeIcon>
+        <i class="fa fa-twitter hover:text-white"></i>
       </a>
       <a role="instagram" href="https://www.instagram.com/">
-        <!-- <i class="fa fa-instagram hover:text-white"></i> -->
+        <i class="fa fa-instagram hover:text-white"></i>
       </a>
       <a role="github" href="https://github.com/fullstacktf/Narrativas-Front">
-        <!-- <i class="fa fa-github hover:text-white"></i> -->
+        <i class="fa fa-github hover:text-white"></i>
       </a>
       <a role="facebook" href="https://www.facebook.com/">
-        <!-- <i class="fa fa-facebook hover:text-white"></i> -->
+        <i class="fa fa-facebook hover:text-white"></i>
       </a>
     </div>
     <div v-if="isMobile" class="copyright-mobile"></div>
