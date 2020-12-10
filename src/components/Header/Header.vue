@@ -2,12 +2,14 @@
 	<header role="header">
 		<nav class="navigationBar max-w-full h-18 lg:h-20 bg-black text-gray-400 text-lg flex items-center justify-between flex-row relative z-10">
 			<div class="flex flex-row items-center">
-				<img class="h-20 mr-6 lg:mx-10 xl:mx-20" src="@/assets/img/logo.svg" alt="Logo">
-				<div class="flex flex-row" v-if="!isMobile">
+        <a href="/">
+				  <img class="h-20 mr-6 lg:mx-10 xl:mx-20" src="@/assets/img/logo.svg" alt="Logo">
+				</a>
+        <div class="flex flex-row" v-if="!isMobile">
 					<a class="hover:text-white mr-10 lg:mr-16 xl:mr-32  cursor-pointer" v-on:click="exploreMenuState">Explore</a>
-					<a class="hover:text-white truncate" href="">About us</a>
+					<a class="hover:text-white truncate" href="/about">About us</a>
 				</div>
-			</div>  
+			</div>
 			<div class="pr-32 flex flex-row items-center" v-if="!isMobile">
 				<a class="hover:text-white mr-6 lg:mr-10 xl:mr-20" href="">Sign in</a>
 				<a class="text-white inline-block rounded-lg bg-primary py-2 px-4" href="">Sign up</a>
@@ -39,7 +41,7 @@
 		<!-- Nav list -->
 		<div class="flex flex-col text-left w-screen bg-black text-white text-md md:hidden relative z-0" v-if="hamburgerEnable">
 			<a class="py-2 pl-10 hover:bg-primary flex justify-between" v-on:click="mobileExploreState">Explore <span class="text-md text-white pr-12"><i class="fas fa-sort-down"></i></span></a>
-			
+
 			<div class = "exploreMobile w-screen h-full flex flex-col items-start bg-black text-white py-2 relative z-10 transition easy-in duration-700" v-if="mobileExploreEnable">
 				<div class="w-3/4 flex flex-col pl-6">
 					<h3 class="py-2">Create your own stories online</h3>
@@ -64,7 +66,7 @@
 				</div>
 			</div>
 
-			<a class="py-2 pl-10 hover:bg-primary" href="">About us</a>
+			<a class="py-2 pl-10 hover:bg-primary" href="/about">About us</a>
 			<a class="py-2 pl-10 hover:bg-primary" href="">Sign in</a>
 			<a class="py-2 pl-10 hover:bg-primary" href="">Sign up</a>
 		</div>
@@ -93,7 +95,7 @@ export default {
   	},
 	methods: {
 		onResize() {
-			addEventListener("resize", () => { 
+			addEventListener("resize", () => {
 				this.screenWidth = window.innerWidth;
 				console.log("1");
 				if (this.screenWidth < 768) {
@@ -111,7 +113,7 @@ export default {
 			this.enable = !this.enable;
 			const element  = this.$el.querySelector(".navigationBar");
 			element.classList.toggle("line");
-		},	
+		},
 		hamburgerMenuState() {
 			this.hamburgerEnable = !this.hamburgerEnable;
 		},

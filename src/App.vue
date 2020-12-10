@@ -1,15 +1,8 @@
 <template>
   <div id="app">
-    <!--
-    <Slider />
-    <SignInSignUp type="sign-in" />
-    <InformationBlock />
-    <PersonCard name="Adal" filename="Adal" description="Adal es un Adal muy Adal" />
     <Header />
-    <Hero />
+    <router-view />
     <Footer />
-    -->
-    <HeroAboutUs />
   </div>
 </template>
 
@@ -29,15 +22,20 @@ import HeroAboutUs from "./components/Hero/HeroAboutUs.vue";
 export default {
   name: "App",
   components: {
-    HeroAboutUs
+    HeroAboutUs,
   },
 };
 </script>
 
 <style>
 @import "./base.css";
+
 #app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   text-align: center;
+  color: #2c3e50;
 }
 
 img {

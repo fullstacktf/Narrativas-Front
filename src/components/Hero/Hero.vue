@@ -1,6 +1,6 @@
 <template>
   <div role="hero" class="container flex text-white h-screen max-w-full">
-    <div v-show="!isMobile" class="heroImg w-3/5">
+    <div v-show="!isMobile" class="heroImg w-3/5 bg-white">
       <img src="@/assets/img/Hero.jpg" alt="Imagine" />
     </div>
     <div
@@ -18,11 +18,10 @@
           </button>
         </div>
       </div>
-      <div class="bottom mt-40" v-show="!isMobile">
+      <div class="bottom lg:mt-40" v-show="!isMobile">
         <p role="description">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nibh turpis,
-          rhoncus nec dui eget, interdum semper ante. Donec venenatis, massa eget
-          vestibulum feugiat, augue nibh ultrices tellus, facilisis est lorem et ipsum.
+          Create non-linear stories and share them with people. As a writer or videogame
+          developer, Rollify allows you to map your idea before making it come true.
         </p>
       </div>
     </div>
