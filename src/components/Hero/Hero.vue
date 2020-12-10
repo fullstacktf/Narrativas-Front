@@ -1,5 +1,5 @@
 <template>
-  <div role="hero" class="container flex text-white h-screen max-w-full">
+  <div role="hero" class="container flex text-white h-screen max-w-full relative z-0 ">
     <div v-show="!isMobile" class="heroImg w-3/5 bg-white">
       <img src="@/assets/img/Hero.jpg" alt="Imagine" />
     </div>

@@ -1,6 +1,6 @@
 <template>
 	<header role="header">
-		<nav class="navigationBar max-w-full h-18 lg:h-20 bg-black text-gray-400 text-lg flex items-center justify-between flex-row relative z-10">
+		<nav class="navigationBar max-w-full h-18 lg:h-20 bg-black text-gray-400 text-lg flex items-center justify-between flex-row relative z-20">
 			<div class="flex flex-row items-center">
         <a href="/">
 				  <img class="h-20 mr-6 lg:mx-10 xl:mx-20" src="@/assets/img/logo.svg" alt="Logo">
@@ -20,7 +20,7 @@
 		</nav>
 
 		<!-- Explore menu -->
-		<div class = "invisible md:visible w-screen h-full flex flex-row justify-center bg-black text-white pt-10 relative z-0" v-if="enable">
+		<div class = "invisible md:visible w-screen flex flex-row justify-center bg-black text-white pt-10 absolute z-10" v-if="enable">
 			<div class="md:w-8/12 xl:w-3/12 pr-10 md:px-16 flex flex-col justify-center">
 				<img class="cursor-pointer" src="@/assets/img/explore_1.jpg" alt="">
 				<h3 class="py-2">Create your own stories online</h3>
@@ -39,7 +39,7 @@
 		</div>
 
 		<!-- Nav list -->
-		<div class="flex flex-col text-left w-screen bg-black text-white text-md md:hidden relative z-0" v-if="hamburgerEnable">
+		<div class="flex flex-col text-left w-screen bg-black text-white text-md md:hidden absolute z-10" v-if="hamburgerEnable">
 			<a class="py-2 pl-10 hover:bg-primary flex justify-between" v-on:click="mobileExploreState">Explore <span class="text-md text-white pr-12"><i class="fas fa-sort-down"></i></span></a>
 
 			<div class = "exploreMobile w-screen h-full flex flex-col items-start bg-black text-white py-2 relative z-10 transition easy-in duration-700" v-if="mobileExploreEnable">
