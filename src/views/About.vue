@@ -1,11 +1,14 @@
 <template>
-  <div>
-    About
-  </div>
+  <HeroAboutUs />
 </template>
 
 <script>
+import HeroAboutUs from "@/components/Hero/HeroAboutUs.vue";
+
 export default {
-  name: 'About'
-}
+  name: "About",
+  components: {
+    HeroAboutUs,
+  },
+};
 </script>

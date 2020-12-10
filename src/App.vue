@@ -1,11 +1,8 @@
 <template>
   <div id="app">
-    <!-- 
-      <Header />
+    <Header />
     <router-view />
-    <Footer /> 
-    -->
-    <HeroAboutUs />
+    <Footer />
   </div>
 </template>
 
@@ -13,19 +10,14 @@
 import "tailwindcss/tailwind.css";
 import "./assets/styles/index.css";
 
-// import Footer from "./components/Footer/Footer.vue";
-// import Hero from "./components/Hero/Hero.vue";
-import HeroAboutUs from "./components/Hero/HeroAboutUs.vue";
-// import Header from "./components/Header/Header.vue";
-// import Slider from "./components/Slider.vue";
-// import PersonCard from "./components/PersonCard/PersonCard.vue";
-// import SignInSignUp from "./components/SignInSignUp.vue";
-// import InformationBlock from "./components/InformationBlock.vue";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
 
 export default {
   name: "App",
   components: {
-    HeroAboutUs,
+    Header,
+    Footer,
   },
 };
 </script>

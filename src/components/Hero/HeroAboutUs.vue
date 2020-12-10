@@ -1,27 +1,35 @@
 <template>
-  <div class="container w-full h-screen flex text-white">
+  <div class="container bg-white max-w-full flex justify-center">
     <div
-      class="start md:text-left p-6 w-full md:w-2/5 pl-10 flex flex-col justify-around"
+      class="start md:text-left w-full md:w-1/4 h-screen flex flex-col items-center justify-center md:items-end"
     >
-      <div class="">
-        <h1 class="title text-5xl md:text-6xl text-shadow text-secondary">ABOUT US</h1>
-        <p class="text-black">
-          Phasellus suscipit libero turpis, nec ornare quam venenatis placerat.
-        </p>
-        <p class="text-white md:text-gray-400">
-          Suspendisse a urna sit amet tortor accumsan molestie. Mauris sit amet lorem vel
-          arcu ullamcorper congue. Lorem ipsum dolor sit amet, consectetur adipiscing
-          elit.
-        </p>
+      <div class="w-7/12 flex flex-col items-center md:items-start">
+        <h1 class="title text-5xl md:text-6xl text-shadow text-secondary pb-2">
+          ABOUT US
+        </h1>
+        <div v-show="!isMobile" class="flex flex-col">
+          <h3 class="text-black font-bold">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit
+          </h3>
+          <p class="py-2">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor finibus
+            lorem, ut cursus quam ullamcorper quis. Sed ac laoreet dolor. Vestibulum ut
+            orci consectetur, imperdiet nibh sit amet, luctus odio.
+          </p>
+        </div>
         <button
-          class="rounded-full py-3 px-6 bg-secondary hover:bg-secondary-dark text-xs font-bold"
+          class="mt-2 text-white rounded-full py-3 px-6 bg-secondary hover:bg-secondary-dark text-xs font-bold"
         >
           Get Started
         </button>
       </div>
     </div>
-    <div v-show="!isMobile" md:class="w-3/5">
-      <img src="@/assets/img/heroAboutUs.jpg" alt="Imagine" />
+    <div v-show="!isMobile" class="md:w-7/12 flex items-center justify-center">
+      <img
+        class="h-screen w-screen py-24"
+        src="@/assets/img/heroAboutUs.jpg"
+        alt="Imagine"
+      />
     </div>
   </div>
 </template>
