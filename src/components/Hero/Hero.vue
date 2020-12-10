@@ -20,10 +20,9 @@
       </div>
       <div class="bottom mt-40" v-show="!isMobile">
         <p role="description">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nibh
-          turpis, rhoncus nec dui eget, interdum semper ante. Donec venenatis,
-          massa eget vestibulum feugiat, augue nibh ultrices tellus, facilisis
-          est lorem et ipsum.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nibh turpis,
+          rhoncus nec dui eget, interdum semper ante. Donec venenatis, massa eget
+          vestibulum feugiat, augue nibh ultrices tellus, facilisis est lorem et ipsum.
         </p>
       </div>
     </div>
@@ -34,7 +33,7 @@
 export default {
   name: "Hero",
   mounted() {
-   this.onResize();
+    this.onResize();
   },
   data() {
     return {
@@ -48,10 +47,10 @@ export default {
   },
   methods: {
     onResize() {
-        addEventListener("resize", () => { 
+      addEventListener("resize", () => {
         this.screenWidth = window.innerWidth;
         this.addRemoveClasses();
-      })
+      });
       this.addRemoveClasses();
     },
     addRemoveClasses() {
@@ -85,4 +84,3 @@ export default {
   text-shadow: 2px 2px 8px black;
 }
 </style>
-
