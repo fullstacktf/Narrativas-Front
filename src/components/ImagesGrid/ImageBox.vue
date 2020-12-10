@@ -1,9 +1,13 @@
 <template>
   <div class="m-4">
-    <img class="w-40 h-40 bg-cover bg-center cursor-pointer" v-bind:style="{backgroundImage: 'url(' + this.setImage() + ')'}"/>
+    <img
+      class="w-40 h-40 bg-cover bg-center cursor-pointer"
+      v-bind:style="{ backgroundImage: 'url(' + this.setImage() + ')' }"
+    />
     <div class="flex justify-between">
       <h2>{{ this.title }}</h2>
-      <span class="text-left">{{this.getLikes()}}
+      <span class="text-left text-sm mt-018"
+        >{{ this.getLikes() }}
         <i class="fas fa-heart text-red-500"></i>
       </span>
     </div>
@@ -23,7 +27,7 @@ export default {
     },
     getLikes() {
       return Math.floor(Math.random() * 10000);
-    }
+    },
   },
 };
 </script>
