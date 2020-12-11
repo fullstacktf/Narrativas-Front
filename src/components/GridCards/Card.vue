@@ -1,8 +1,10 @@
 <template>
   <div class="container w-56 h-88 relative">
     <div class="card w-56 h-80 rounded-lg overflow-hidden">
-      <div class="profile w-full h-full" v-bind:style="{ background: `url(${getBgImage}) center/ cover` }">
-      </div>
+      <div
+        class="profile w-full h-full"
+        v-bind:style="{ background: `url(${getBgImage}) center/ cover` }"
+      ></div>
       <div class="text w-full h-48 flex flex-col items-start bg-white">
         <h1 class="title text-black mt-5 flex pl-4">
           <span>Description</span>
@@ -10,15 +12,18 @@
         <p class="content text-gray-500 p-4 text-sm">{{ content }}</p>
       </div>
     </div>
-    <div class="name text-black pb-2">
+    <div class="name text-black pb-2 flex justify-between w-full">
       <h1>{{ name }}</h1>
+      <button>
+        <i class="fa fa-pencil text-gray-400" aria-hidden="true"></i>
+      </button>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "StoryCharacterCard",
+  name: "Card",
   props: {
     name: String,
     content: String,
@@ -26,7 +31,7 @@ export default {
   },
   computed: {
     getBgImage() {
-      return require("@/assets/img/"+this.filename+".jpg");
+      return require("@/assets/img/" + this.filename + ".jpg");
     },
   },
 };
