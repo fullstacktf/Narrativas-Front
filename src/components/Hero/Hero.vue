@@ -29,6 +29,8 @@
 </template>
 
 <script>
+import '../../assets/styles/index.css';
+import '../../assets/styles/base.css';
 export default {
   name: "Hero",
   mounted() {

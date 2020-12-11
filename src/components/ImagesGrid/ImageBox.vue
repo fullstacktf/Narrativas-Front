@@ -1,9 +1,15 @@
 <template>
-  <div>
-    <div class="w-40 h-40 bg-rpimary" v-bind:style="{backgroundImage: 'url(' + this.setBackground() + ')'}"></div>
-    <div class="flex">
+  <div class="m-4">
+    <img
+      class="w-40 h-40 bg-cover bg-center cursor-pointer"
+      v-bind:style="{ backgroundImage: 'url(' + this.setImage() + ')' }"
+    />
+    <div class="flex justify-between">
       <h2>{{ this.title }}</h2>
-      <span>1234</span>
+      <span class="text-left text-sm mt-018"
+        >{{ this.getLikes() }}
+        <i class="fas fa-heart text-red-500"></i>
+      </span>
     </div>
   </div>
 </template>
@@ -18,6 +24,9 @@ export default {
   methods: {
     setImage() {
       return require("@/assets/img/" + this.image + ".jpg");
+    },
+    getLikes() {
+      return Math.floor(Math.random() * 10000);
     },
   },
 };
