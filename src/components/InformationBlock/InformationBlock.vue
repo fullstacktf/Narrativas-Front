@@ -4,7 +4,7 @@
       image="collaborate"
       title="collaborate"
       subtitle="Collaborate with your team to create fantastic stories"
-      description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco"
+      description="You can create your stories by your own or create them with your friends. Your choice!"
     />
 
     <InformationRow
@@ -12,14 +12,14 @@
       image="customize"
       title="customization"
       subtitle="Customize your character"
-      description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco"
+      description="Here you can be creative, as you can create whatever you want. Even you can create your characters for role playing!"
     />
 
     <InformationRow
       image="relationship"
       title="relationships"
       subtitle="Create relationships between your characters"
-      description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco"
+      description="A story without relations between its characters it's just nothing. You can create multiple characters and relate them!"
     />
 
     <InformationRow
@@ -27,7 +27,7 @@
       image="follow"
       title="follow stories"
       subtitle="Follow the stories of your friends"
-      description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco"
+      description="Or anyone! Share your stories and take a look what the community has created. Just a nice way to get new ideas!"
     />
   </div>
 </template>
