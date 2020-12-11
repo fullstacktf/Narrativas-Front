@@ -86,6 +86,8 @@ export default {
 			hamburgerEnable: false,
 			mobileExploreEnable: false,
 			screenWidth: window.innerWidth
+			
+
 		}
 	},
 	computed: {
