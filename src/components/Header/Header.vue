@@ -21,10 +21,16 @@
         </div>
       </div>
       <div class="pr-32 flex flex-row items-center" v-if="!isMobile">
-        <a class="hover:text-white mr-6 lg:mr-10 xl:mr-20" href="">Sign in</a>
+        <a
+          class="hover:text-white mr-6 lg:mr-10 xl:mr-20"
+          href="#"
+          v-on:click="emitSignPopup(false)"
+          >Sign in</a
+        >
         <a
           class="text-white inline-block rounded-lg bg-primary py-2 px-4"
-          href=""
+          href="#"
+          v-on:click="emitSignPopup(true)"
           >Sign up</a
         >
       </div>
@@ -135,13 +141,15 @@
       </div>
 
       <a class="py-2 pl-10 hover:bg-primary" href="/about">About us</a>
-      <a class="py-2 pl-10 hover:bg-primary" href="">Sign in</a>
-      <a class="py-2 pl-10 hover:bg-primary" href="">Sign up</a>
+      <a class="py-2 pl-10 hover:bg-primary" href="#">Sign in</a>
+      <a class="py-2 pl-10 hover:bg-primary" href="#">Sign up</a>
     </div>
   </header>
 </template>
 
 <script>
+import EventBus from "@/event-bus";
+
 export default {
   name: "Header",
   mounted() {
@@ -153,6 +161,7 @@ export default {
       hamburgerEnable: false,
       mobileExploreEnable: false,
       screenWidth: window.innerWidth,
+      isSignOpened: false,
     };
   },
   computed: {
@@ -187,6 +196,21 @@ export default {
       element.classList.toggle("lineLeft");
       console.log(element);
     },
+    emitSignPopup(isSignUp) {
+      if (this.isSignOpened) {
+        EventBus.$emit("DELETE_SIGN_POPUP");
+      } else {
+        EventBus.$emit("SIGN_POPUP", isSignUp);
+      }
+      this.isSignOpened = !this.isSignOpened;
+    }
+  },
+  mounted() {
+    EventBus.$on("REMOVE_SIGN_POPUP", () => {
+      if (this.isSignOpened) {
+        this.isSignOpened = false;
+      }
+    });
   },
 };
 </script>

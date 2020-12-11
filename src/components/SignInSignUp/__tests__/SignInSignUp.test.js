@@ -7,7 +7,7 @@ describe('SignInSignUp', () => {
   test('should render component', () => {
     render(SignInSignUp, {
       props: {
-        type: 'sign-in'
+        type: false
       }
     });
     const sign = screen.queryByText('New to rollify?');
