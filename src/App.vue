@@ -1,6 +1,9 @@
 <template>
   <div id="app">
-    <Header/>
+    <Header />
+    <!-- <HeaderSignIn /> -->
+    <router-view />
+    <Footer />
   </div>
 </template>
 
@@ -10,12 +13,15 @@ import "./assets/styles/index.css";
 import "./assets/styles/base.css";
 
 import Header from "./components/Header/Header";
-// import Footer from "./components/Footer/Footer";
+// import HeaderSignIn from "./components/Header/HeaderSignIn";
+import Footer from "./components/Footer/Footer";
 
 export default {
   name: "App",
   components: {
     Header,
+    // HeaderSignIn,
+    Footer,
   },
 };
 </script>

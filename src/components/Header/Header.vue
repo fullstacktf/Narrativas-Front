@@ -1,6 +1,6 @@
 <template>
 	<div> 
-		<nav class="navigationBar max-w-full h-18 lg:h-20 bg-black text-gray-600 text-lg flex items-center justify-between flex-row relative z-10" v-if="!this.signIn">
+		<nav class="navigationBar max-w-full h-18 lg:h-20 bg-black text-gray-600 text-lg flex items-center justify-between flex-row relative z-20">
 			<div class="flex flex-row items-center">
 				<img class="h-20 mr-6 lg:mx-10 xl:mx-20" src="@/assets/img/logo.svg" alt="Logo"/>
 				<div class="flex flex-row" v-if="!isMobile">
@@ -17,26 +17,8 @@
 			</div>
 		</nav>
 
-    <nav class="navigationBar max-w-full h-18 lg:h-20 bg-black text-gray-600 text-lg flex items-center justify-between md:justify-around flex-row relative z-10" v-if="this.signIn">
-			<img v-if="!isMobile" class="h-20 mr-6 lg:mx-10 xl:mx-20" src="@/assets/img/logo_completo.png" alt="Logo"/>
-      <img v-else class="m-0 h-20 mr-6 lg:mx-10 xl:mx-20" src="@/assets/img/logo.svg" alt="Logo"/>
-      <div class="" v-if="!isMobile">
-				<a class="hover:text-white truncate cursor-pointer">About us</a>
-        <a class="hover:text-white truncate ml-10 lg:ml-16 cursor-pointer">Explore Story</a>
-        <a class="hover:text-white truncate m-10 lg:ml-16 cursor-pointer">Dashboard</a> 
-			</div>
-      <div class="flex items-center" v-if="!isMobile">
-        <i class="fas fa-plus pr-1 cursor-pointer text-white"></i><i class="fas fa-sort-down cursor-pointer text-white"></i>
-        <button class="bg-white rounded-full w-12 h-12 ml-5"></button>
-      </div>
-
-			<div class="mr-10" v-if="isMobile">
-					<i class="fas fa-bars hambugerButton text-white text-2xl cursor-pointer" v-on:click="hamburgerMenuStateSignIn"></i>
-			</div>
-		</nav>
-
 		<!-- Explore menu -->
-		<div class = "invisible md:visible w-screen h-full flex flex-row justify-center bg-black text-white pt-10 relative z-0" v-if="enable">
+		<div class = "invisible md:visible w-screen flex flex-row justify-center bg-black text-white pt-10 absolute z-10" v-if="enable">
 			<div class="md:w-8/12 xl:w-3/12 pr-10 md:px-16 flex flex-col justify-center" v-for="section of Sections" :key="section">
 				<img class="cursor-pointer" :src="section.img" alt="">
 				<h3 class="py-2">{{section.title}}</h3>
@@ -44,8 +26,8 @@
 			</div>
 		</div>
 
-		<!-- Nav list Sign out -->
-		<div class="flex flex-col text-left w-screen bg-black text-white text-md md:hidden relative z-0" v-if="hamburgerEnable">
+		<!-- Nav list -->
+		<div class="flex flex-col text-left w-screen bg-black text-white text-md md:hidden absolute z-10" v-if="hamburgerEnable">
 			<a class="py-2 pl-10 hover:bg-primary flex justify-between cursor-pointer" v-on:click="mobileExploreState">Explore <span class="text-md text-white pr-12"><i class="fas fa-sort-down"></i></span></a>
 			
 			<div class = "exploreMobile w-screen h-full flex flex-col items-start bg-black text-white py-2 relative z-10" v-show="mobileExploreEnable" v-for="section of Sections" :key="section">
@@ -62,22 +44,6 @@
 			<a class="py-2 pl-10 hover:bg-primary" href="">Sign in</a>
 			<a class="py-2 pl-10 hover:bg-primary" href="">Sign up</a>
 		</div>
-
-    <!-- Nav list Sign In -->
-		<div class="flex flex-col text-left w-screen bg-black text-white text-md md:hidden relative z-0" v-if="hamburgerEnableSignIn">
-			<div class="flex flex-col border-b-2 border-white">
-        <a class="py-2 pl-10 hover:bg-primary" href="">About us</a>
-			  <a class="py-2 pl-10 hover:bg-primary" href="">Explore Stories</a>
-			  <a class="py-2 pl-10 hover:bg-primary" href="">Dashboard</a>
-        <a class="py-2 pl-10 hover:bg-primary" href="">Your stories</a>
-			  <a class="py-2 pl-10 hover:bg-primary" href="">Your character</a>
-      </div>
-      <div class="flex flex-col">
-        <a class="py-2 pl-10 hover:bg-primary" href="">Settings</a>
-        <a class="py-2 pl-10 hover:bg-primary" href="">Profile</a>
-			  <a class="py-2 pl-10 hover:bg-primary" href="">Logout</a>
-      </div>
-		</div>
 	</div>
 
 </template>
@@ -90,10 +56,8 @@ export default {
   	},
 	data() {
 		return {
-			signIn: false,
 			enable: false,
       hamburgerEnable: false,
-      hamburgerEnableSignIn: false,
 			mobileExploreEnable: false,
 			screenWidth: window.innerWidth,
 			Sections: [
@@ -146,9 +110,6 @@ export default {
 			const element  = this.$el.querySelector(".exploreMobile");
 			element.classList.toggle("lineLeft");
     },
-    hamburgerMenuStateSignIn() {
-      this.hamburgerEnableSignIn = !this.hamburgerEnableSignIn;
-    }
 	},
 };
 </script>
