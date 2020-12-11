@@ -1,45 +1,36 @@
 <template>
   <div id="app">
-    <!--
-    <Slider />
-    <SignInSignUp type="sign-in" />
-    <PersonCard name="Alex" filename="Alex" description="Fullstack" />
-    <InformationBlock />
-    -->
     <Header />
-    <Hero />
-    <Parallax :url="assets/img/parallaxHome.jpg"></Parallax>
-    <!-- <Footer /> -->
+    <router-view />
+    <Footer />
   </div>
 </template>
 
 <script>
 import "tailwindcss/tailwind.css";
 import "./assets/styles/index.css";
+import "./assets/styles/base.css";
 
-// import Footer from "./components/Footer.vue";
-import Hero from "./components/Hero.vue";
-import Header from "./components/Header.vue";
-import Parallax from "./components/Parallax.vue"
-// import Slider from "./components/Slider.vue";
-// import PersonCard from "./components/PersonCard.vue";
-// import SignInSignUp from "./components/SignInSignUp.vue";
-// import InformationBlock from "./components/InformationBlock.vue";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
 
 export default {
   name: "App",
   components: {
     Header,
-    Hero,
-    Parallax,
-  }
+    Footer,
+  },
 };
 </script>
 
 <style>
-@import "./base.css";
+
 #app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   text-align: center;
+  color: #2c3e50;
 }
 
 img {
