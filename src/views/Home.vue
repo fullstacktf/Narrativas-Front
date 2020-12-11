@@ -1,5 +1,5 @@
 <template>
-  <div id="home" class="overflow-hidden">
+  <div>
     <Hero />
     <InformationBlock />
     <LateralSlide image="parallaxInicio" />
