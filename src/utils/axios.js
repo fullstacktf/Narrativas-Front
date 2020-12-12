@@ -12,7 +12,6 @@ export default class Client {
   }
 
   async userRegister(data) {
-    console.log("Registro")
     return await axios.post(DOMAIN + '/auth/register', data).then(response => response)
   }
 
