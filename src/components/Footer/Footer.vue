@@ -7,28 +7,20 @@
         class="w-52 h-40 pt-5"
         alt="ROLLIFY"
       />
-      <img
-        v-else
-        src="@/assets/img/logo_completo.png"
-        class="w-52 h-40"
-        alt="ROLLIFY"
-      />
+      <img v-else src="@/assets/img/logo_completo.png" class="w-52 h-40" alt="ROLLIFY" />
     </div>
 
     <div
       class="nav flex flex-col md:flex-row justify-center items-center md:space-x-10 mb-5 -mt-5"
     >
-      <a href="" class="hover:text-white md:hover:bg-primary p-3 rounded">About us</a
-      >
+      <a href="" class="hover:text-white md:hover:bg-primary p-3 rounded">About us</a>
       <a href="" class="hover:text-white md:hover:bg-primary p-3 rounded"
         >Privacy Policy</a
       >
       <a href="" class="hover:text-white md:hover:bg-primary p-3 rounded"
         >Terms of Service</a
       >
-      <a href="" class="hover:text-white md:hover:bg-primary p-3 rounded"
-        >Security</a
-      >
+      <a href="" class="hover:text-white md:hover:bg-primary p-3 rounded">Security</a>
     </div>
     <div class="media flex justify-center space-x-10 text-2xl">
       <a role="twitter" href="https://twitter.com/">
@@ -49,14 +41,14 @@
       class="copyright flex justify-center md:justify-between md:pr-4 ml-4 md:pb-4 text-xs text-white md:text-gray-400"
     >
       <p>©{{ currentYear }} Rollify. All rights reserved</p>
-      <button role="button" v-if="!isMobile" class="">
+      <button role="button" v-if="!isMobile" v-on:click="goToTheTop">
         <i class="fas fa-caret-square-up text-2xl"></i>
       </button>
     </div>
     <div v-if="isMobile" class="copyright-mobile"></div>
     <div v-if="isMobile" class="flex justify-center pb-6 space-x-6">
       <p>TOP THE SURFACE</p>
-      <button role="button">
+      <button role="button" v-on:click="goToTheTop">
         <i class="fas fa-caret-square-up text-2xl"></i>
       </button>
     </div>
@@ -64,11 +56,16 @@
 </template>
 
 <script>
-import '../../assets/styles/index.css';
-import '../../assets/styles/base.css';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-import { faTwitter, faInstagram, faGithub, faFacebook } from '@fortawesome/free-brands-svg-icons';
+import "../../assets/styles/index.css";
+import "../../assets/styles/base.css";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+import {
+  faTwitter,
+  faInstagram,
+  faGithub,
+  faFacebook,
+} from "@fortawesome/free-brands-svg-icons";
 
 library.add(faTwitter, faInstagram, faGithub, faFacebook);
 
@@ -87,14 +84,18 @@ export default {
     isMobile() {
       return this.screenWidth < 768;
     },
-    twitterIcon () {
+    twitterIcon() {
       return faTwitter;
-    }
+    },
   },
   methods: {
     getCurrentYear() {
       const date = new Date();
       return date.getFullYear();
+    },
+    goToTheTop() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
     },
   },
 };
