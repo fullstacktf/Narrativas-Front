@@ -16,12 +16,8 @@
             <span
               class="text-right text-xs text-gray-800 underline cursor-pointer"
             >
-              <a v-if="isSignUp" v-on:click="alterSign"
-                >Sign In</a
-              >
-              <a v-else v-on:click="alterSign"
-                >Sign Up</a
-              >
+              <a v-if="isSignUp" v-on:click="alterSign">Sign In</a>
+              <a v-else v-on:click="alterSign">Sign Up</a>
             </span>
             <button
               class="ml-8 text-xs style text-decoration-none focus:outline-none"
@@ -98,7 +94,7 @@
               <button
                 class="w-full px-4 py-2 font-bold text-white bg-primary rounded-full hover:bg-primary-dark focus:outline-none focus:shadow-outline"
                 type="button"
-                v-on:click="sendData"
+                v-on:click="sendData()"
               >
                 <div v-if="isSignUp">Sign Up</div>
                 <div v-else>Sign In</div>
@@ -109,7 +105,7 @@
             <div v-if="!isSignUp" class="text-center">
               <a
                 class="inline-block text-sm text-primary align-baseline hover:text-primary-dark cursor-pointer"
-                v-on:click="screen = `sign-up`"
+                v-on:click="alterSign"
               >
                 Create an Account!
               </a>
@@ -132,9 +128,11 @@
 
 
 <script>
-import '../../assets/styles/index.css';
-import '../../assets/styles/base.css';
-import EventBus from '@/event-bus'
+import "../../assets/styles/index.css";
+import "../../assets/styles/base.css";
+import { userLogin, userRegister } from "../../domain/services/authServices";
+import { getCookie, setCookie } from "@/utils/utils";
+import EventBus from "@/event-bus";
 
 export default {
   name: "SignInSignUp",
@@ -147,7 +145,7 @@ export default {
       email: "",
       password: "",
       information: "",
-      signType: this.type
+      signType: this.type,
     };
   },
   computed: {
@@ -156,23 +154,49 @@ export default {
     },
     isSignUp() {
       return this.signType;
-    }
+    },
   },
   methods: {
-    sendData: function (event) {
-      if (this.type === "sign-in") {
-        this.userRegister();
-      } else if (this.type === "sign-up") {
-        this.userLogin();
+    sendData: function () {
+      this.information = "";
+
+      if (this.signType) {
+        const data = {
+          username: this.username,
+          email: this.email,
+          password: this.password,
+        };
+        userRegister(data)
+          .then((response) => {
+            this.information = "Registro correcto";
+            this.signType = !this.signType;
+          })
+          .catch((error) => {
+            this.information = error.response.data.error;
+          });
+      } else {
+        const data = { username: this.username, password: this.password };
+        userLogin(data)
+          .then((response) => {
+            setCookie("token", response.data);
+            EventBus.$emit("SIGNED_IN");
+          })
+          .catch((error) => {
+            this.information = error.response.data.error;
+          });
       }
     },
     alterSign: function (event) {
+      this.username = "";
+      this.email = "";
+      this.password = "";
+      this.information = "";
       this.signType = !this.signType;
     },
-    emitRemovePopup () {
-      EventBus.$emit('REMOVE_SIGN_POPUP');
+    emitRemovePopup() {
+      EventBus.$emit("REMOVE_SIGN_POPUP");
     },
-  }
+  },
 };
 </script>
 

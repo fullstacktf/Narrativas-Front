@@ -71,8 +71,8 @@
             <a class="pb-2 pt-2 px-5 hover:bg-primary hover:text-white cursor-pointer"
               >Settings</a
             >
-            <a class="py-2 px-5 hover:bg-primary hover:text-white cursor-pointer"
-              >Sign out</a
+            <a class="py-2 px-5 hover:bg-primary hover:text-white cursor-pointer" v-on:click="disconnect()"
+              >Log Out</a
             >
           </div>
         </div>
@@ -108,6 +108,8 @@
 </template>
 
 <script>
+import EventBus from "@/event-bus";
+
 export default {
   name: "Header",
   mounted() {
@@ -171,6 +173,9 @@ export default {
     profileState() {
       this.profile = !this.profile;
     },
+    disconnect() {
+      EventBus.$emit("DISCONNECT");
+    }
   },
 };
 </script>
