@@ -1,7 +1,7 @@
 <template>
 	<div> 
         <nav class="navigationBar max-w-full h-18 lg:h-20 bg-black text-gray-600 text-lg flex items-center justify-between md:justify-around flex-row relative z-10">
-            <img v-if="!isMobile" class="h-20 m-0 mr-6 lg:mx-10 xl:mx-20" src="@/assets/img/logo_completo.png" alt="Logo"/>
+            <img v-if="!isMobile" class="h-20 m-0 py-2 mr-6 lg:mx-10 xl:mx-20" src="@/assets/img/logo_completo.jpg" alt="Logo"/>
             <img v-else class="logo m-0 w-2/12 mr-6 lg:mx-10 xl:mx-20" src="@/assets/img/logo.svg" alt="Logo"/>
             <div class="" v-if="!isMobile">
                 <a class="hover:text-white truncate cursor-pointer">About us</a>
@@ -135,12 +135,12 @@ export default {
 
     .alignPlusMenu {
         top: 5rem;
-        right: 12.5vw;
+        right: 11vw;
     }
 
     .alignProfile {
         top: 5rem;
-        right: 8.5vw;
+        right: 7vw;
     }
 
     .changelogoWidth{

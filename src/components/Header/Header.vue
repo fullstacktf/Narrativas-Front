@@ -44,7 +44,7 @@
 
 		<!-- Explore menu -->
 		<div class = "invisible md:visible w-screen flex flex-row justify-center bg-black text-white pt-10 absolute z-10" v-if="enable">
-			<div class="md:w-8/12 xl:w-3/12 pr-10 md:px-16 flex flex-col justify-center" v-for="section of Sections" :key="section">
+			<div class="md:w-8/12 xl:w-3/12 pr-10 md:px-16 flex flex-col justify-center" v-for="(section, index) in Sections" :key="index">
 				<img class="cursor-pointer" :src="section.img" alt="">
 				<h3 class="py-2">{{section.title}}</h3>
 				<p class="pb-4 text-gray-700 text-sm">{{section.description}}</p>
@@ -56,7 +56,7 @@
 			<a class="py-2 pl-10 hover:bg-primary flex justify-between cursor-pointer" v-on:click="mobileExploreState">Explore <span class="text-md text-white pr-12"><i class="fas fa-sort-down"></i></span></a>
 			
 			<div class = "exploreMobile w-screen h-full flex flex-col items-start bg-black text-white py-2 relative z-10 pb-4" v-show="mobileExploreEnable">
-				<div class="w-3/4 flex flex-col pl-6" v-for="section of Sections" :key="section">
+				<div class="w-3/4 flex flex-col pl-6" v-for="(section, index) in Sections" :key="index">
 					<h3 class="py-2">{{section.title}}</h3>
 					<div class="flex justify-between items-center">
 						<img class="cursor-pointer w-2/4" :src="section.img" alt="">
@@ -80,6 +80,9 @@ export default {
 	name: 'Header',
 	mounted() {
 		this.onResize()
+		EventBus.$on("REMOVE_SIGN_POPUP", () => {
+			this.isSignOpened = false
+		});
   	},
 	data() {
 		return {
@@ -147,13 +150,6 @@ export default {
 			this.isSignOpened = !this.isSignOpened;
 		}
 	},
-	mounted() {
-    EventBus.$on("REMOVE_SIGN_POPUP", () => {
-      if (this.isSignOpened) {
-        this.isSignOpened = false;
-      }
-    });
-  },
 };
 </script>
 
