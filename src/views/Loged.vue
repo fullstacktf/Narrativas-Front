@@ -1,9 +1,9 @@
 <template>
   <div>
     <Slider />
-    <GridCardsStories title="STORIES" />
+    <GridCardsStories title="STORIES" :total="5" />
     <LateralSlide image="parallaxHome" />
-    <GridCardsCharacters title="CHARACTERS" />
+    <GridCardsCharacters title="CHARACTERS" :total="21" />
   </div>
 </template>
 

@@ -15,7 +15,7 @@
     <div class="name text-black pb-2 flex justify-between w-full">
       <h1>{{ name }}</h1>
       <button>
-        <i class="fa fa-pencil text-gray-400" aria-hidden="true"></i>
+        <i class="fa fa-pencil text-gray-500" aria-hidden="true"></i>
       </button>
     </div>
   </div>
