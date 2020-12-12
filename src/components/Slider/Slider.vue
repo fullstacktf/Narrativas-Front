@@ -27,7 +27,7 @@
             tristique. Praesent posuere lacus vel sem tincidunt gravida.
           </p>
           <button
-            class="bg-secondary hover:bg-secondary-dark text-white font-bold py-2 px-4 rounded-full text-xl mt-4 focus:outline-none"
+            class="bg-secondary hover:bg-secondary-dark text-white font-bold py-2 px-4 rounded-full text-xs mt-4 focus:outline-none"
           >
             Get Started
           </button>
