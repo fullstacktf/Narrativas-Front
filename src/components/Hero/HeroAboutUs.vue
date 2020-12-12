@@ -11,7 +11,7 @@
           <h3 class="text-black font-bold">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit
           </h3>
-          <p class="py-2">
+          <p class="py-2 text-white font-bold text-shadow">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor finibus
             lorem, ut cursus quam ullamcorper quis. Sed ac laoreet dolor. Vestibulum ut
             orci consectetur, imperdiet nibh sit amet, luctus odio.
@@ -77,6 +77,7 @@ export default {
   background-image: url("../../assets/img/heroAboutUsMobile.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  /* filter: brightness(50%); */
 }
 
 .text-shadow {
