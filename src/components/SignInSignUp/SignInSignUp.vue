@@ -1,5 +1,5 @@
 <template>
-  <div class="container mx-auto">
+  <div role="signPopup" class="container mx-auto">
     <div class="flex justify-center px-6 my-12">
       <div class="w-full xl:w-3/4 lg:w-11/12 flex">
         <div
@@ -58,6 +58,7 @@
                   type="text"
                   placeholder="Username"
                   autocomplete="on"
+                  required
                 />
               </div>
 

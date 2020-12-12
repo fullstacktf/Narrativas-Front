@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div role="slider">
     <div class="leading-normal tracking-normal w-full h-64">
       <div
         class="h-full w-full flex"
