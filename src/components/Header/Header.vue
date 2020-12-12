@@ -30,10 +30,10 @@
 		<div class="flex flex-col text-left w-screen bg-black text-white text-md md:hidden absolute z-10" v-if="hamburgerEnable">
 			<a class="py-2 pl-10 hover:bg-primary flex justify-between cursor-pointer" v-on:click="mobileExploreState">Explore <span class="text-md text-white pr-12"><i class="fas fa-sort-down"></i></span></a>
 			
-			<div class = "exploreMobile w-screen h-full flex flex-col items-start bg-black text-white py-2 relative z-10" v-show="mobileExploreEnable" v-for="section of Sections" :key="section">
-				<div class="w-3/4 flex flex-col pl-6">
+			<div class = "exploreMobile w-screen h-full flex flex-col items-start bg-black text-white py-2 relative z-10 pb-4" v-show="mobileExploreEnable">
+				<div class="w-3/4 flex flex-col pl-6" v-for="section of Sections" :key="section">
 					<h3 class="py-2">{{section.title}}</h3>
-					<div class="flex justify-between">
+					<div class="flex justify-between items-center">
 						<img class="cursor-pointer w-2/4" :src="section.img" alt="">
 						<p class="py-4 pl-4 text-gray-500 text-xs">{{section.description}}</p>
 					</div>
@@ -57,23 +57,23 @@ export default {
 	data() {
 		return {
 			enable: false,
-      hamburgerEnable: false,
+      		hamburgerEnable: false,
 			mobileExploreEnable: false,
 			screenWidth: window.innerWidth,
 			Sections: [
 				{
-					img: "@/assets/img/explore_1.jpg",
+					img: require("../../assets/img/explore_1.jpg"),
 					title: "Create your own stories online",
 					description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sollicitudin consectetur faucibus.",
 				},
 				{
-					img: "@/assets/img/explore_2.jpg",
+					img: require("../../assets/img/explore_2.jpg"),
 					title: "Customize your character",
 					description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sollicitudin consectetur faucibus.",
 				},
 				{
-					img: "@/assets/img/explore_3.jpg",
-					title: "Any one can create a story",
+					img: require("../../assets/img/explore_3.jpg"),
+					title: "Anyone can create a story",
 					description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sollicitudin consectetur faucibus.",
 				}
 			]
