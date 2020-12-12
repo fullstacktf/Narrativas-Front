@@ -1,21 +1,46 @@
 <template>
-	<div> 
-		<nav class="navigationBar max-w-full h-18 lg:h-20 bg-black text-gray-600 text-lg flex items-center justify-between flex-row relative z-20">
-			<div class="flex flex-row items-center">
-				<img class="h-20 mr-6 lg:mx-10 xl:mx-20" src="@/assets/img/logo.svg" alt="Logo"/>
-				<div class="flex flex-row" v-if="!isMobile">
-					<a class="hover:text-white mr-10 lg:mr-16 xl:mr-32  cursor-pointer" v-on:click="exploreMenuState">Explore</a>
-					<a class="hover:text-white truncate">About us</a>
-				</div>
-			</div>  
-			<div class="pr-32 flex flex-row items-center" v-if="!isMobile">
-				<a class="hover:text-white mr-6 lg:mr-10 xl:mr-20" href="">Sign in</a>
-				<a class="text-white inline-block rounded-lg bg-primary py-2 px-4" href="">Sign up</a>
-			</div>
-			<div class="mr-10" v-if="isMobile">
-					<i class="fas fa-bars hambugerButton text-white text-2xl cursor-pointer" v-on:click="hamburgerMenuState"></i>
-			</div>
-		</nav>
+  <header role="header">
+    <nav
+      class="navigationBar max-w-full h-18 lg:h-20 bg-black text-gray-400 text-lg flex items-center justify-between flex-row relative z-20"
+    >
+      <div class="flex flex-row items-center">
+        <a href="/">
+          <img
+            class="h-20 mr-6 lg:mx-10 xl:mx-20"
+            src="@/assets/img/logo.svg"
+            alt="Logo"
+          />
+        </a>
+        <div class="flex flex-row" v-if="!isMobile">
+          <a
+            class="hover:text-white mr-10 lg:mr-16 xl:mr-32 cursor-pointer"
+            v-on:click="exploreMenuState"
+            >Explore</a
+          >
+          <a class="hover:text-white truncate" href="/about">About us</a>
+        </div>
+      </div>
+      <div class="pr-32 flex flex-row items-center" v-if="!isMobile">
+        <a
+          class="hover:text-white mr-6 lg:mr-10 xl:mr-20"
+          href="#"
+          v-on:click="emitSignPopup(false)"
+          >Sign in</a
+        >
+        <a
+          class="text-white inline-block rounded-lg bg-primary py-2 px-4"
+          href="#"
+          v-on:click="emitSignPopup(true)"
+          >Sign up</a
+        >
+      </div>
+      <div class="mr-10" v-if="isMobile">
+        <i
+          class="fas fa-bars hambugerButton text-white text-2xl cursor-pointer"
+          v-on:click="hamburgerMenuState"
+        ></i>
+      </div>
+    </nav>
 
 		<!-- Explore menu -->
 		<div class = "invisible md:visible w-screen flex flex-row justify-center bg-black text-white pt-10 absolute z-10" v-if="enable">
@@ -40,15 +65,17 @@
 				</div>
 			</div>
 
-			<a class="py-2 pl-10 hover:bg-primary" href="">About us</a>
+			<a class="py-2 pl-10 hover:bg-primary" href="/about">About us</a>
 			<a class="py-2 pl-10 hover:bg-primary" href="">Sign in</a>
 			<a class="py-2 pl-10 hover:bg-primary" href="">Sign up</a>
 		</div>
-	</div>
+	</header>
 
 </template>
 
 <script>
+import EventBus from "@/event-bus";
+
 export default {
 	name: 'Header',
 	mounted() {
@@ -60,6 +87,7 @@ export default {
       		hamburgerEnable: false,
 			mobileExploreEnable: false,
 			screenWidth: window.innerWidth,
+			isSignOpened: false,
 			Sections: [
 				{
 					img: require("../../assets/img/explore_1.jpg"),
@@ -109,8 +137,23 @@ export default {
 			this.mobileExploreEnable = !this.mobileExploreEnable;
 			const element  = this.$el.querySelector(".exploreMobile");
 			element.classList.toggle("lineLeft");
-    },
+		},
+		emitSignPopup(isSignUp) {
+			if (this.isSignOpened) {
+				EventBus.$emit("DELETE_SIGN_POPUP");
+			} else {
+				EventBus.$emit("SIGN_POPUP", isSignUp);
+			}
+			this.isSignOpened = !this.isSignOpened;
+		}
 	},
+	mounted() {
+    EventBus.$on("REMOVE_SIGN_POPUP", () => {
+      if (this.isSignOpened) {
+        this.isSignOpened = false;
+      }
+    });
+  },
 };
 </script>
 

@@ -10,28 +10,29 @@
         <div class="w-full lg:w-1/2 bg-white p-5 rounded-lg lg:rounded-l-none">
           <div class="flex justify-end">
             <span class="text-right text-xs text-gray-600 px-4">
-              <div v-if="isSignUp">New to rollify?</div>
-              <div v-else>Already a member?</div>
+              <div v-if="isSignUp">Already a member?</div>
+              <div v-else>New to rollify?</div>
             </span>
             <span
               class="text-right text-xs text-gray-800 underline cursor-pointer"
             >
               <a v-if="isSignUp" v-on:click="alterSign"
-                >Sign Up</a
+                >Sign In</a
               >
               <a v-else v-on:click="alterSign"
-                >Sign In</a
+                >Sign Up</a
               >
             </span>
             <button
               class="ml-8 text-xs style text-decoration-none focus:outline-none"
+              v-on:click="emitRemovePopup()"
             >
               X
             </button>
           </div>
           <h3 class="pt-4 text-2xl text-center my-8">
-            <div v-if="isSignUp">Sign in to Rollify</div>
-            <div v-else>Sign up to Rollify</div>
+            <div v-if="isSignUp">Sign up to Rollify</div>
+            <div v-else>Sign in to Rollify</div>
           </h3>
 
           <div class="px-8 pt-4 pb-8 mb-2 text-center">
@@ -73,7 +74,7 @@
             <div class="mb-4">
               <input
                 v-model="password"
-                class="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border border-red-500 rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                class="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
                 type="password"
                 placeholder="Password"
                 autocomplete="on"
@@ -83,7 +84,7 @@
               </p>
             </div>
 
-            <div class="mb-4" v-if="isSignUp">
+            <div class="mb-4" v-if="!isSignUp">
               <input
                 class="mr-2 leading-tight"
                 type="checkbox"
@@ -104,7 +105,7 @@
             </div>
             <hr class="mb-6 border-t" />
 
-            <div v-if="isSignUp" class="text-center">
+            <div v-if="!isSignUp" class="text-center">
               <a
                 class="inline-block text-sm text-primary align-baseline hover:text-primary-dark cursor-pointer"
                 v-on:click="screen = `sign-up`"
@@ -132,6 +133,8 @@
 <script>
 import '../../assets/styles/index.css';
 import '../../assets/styles/base.css';
+import EventBus from '@/event-bus'
+
 export default {
   name: "SignInSignUp",
   props: {
@@ -164,7 +167,10 @@ export default {
     },
     alterSign: function (event) {
       this.signType = !this.signType;
-    }
+    },
+    emitRemovePopup () {
+      EventBus.$emit('REMOVE_SIGN_POPUP');
+    },
   }
 };
 </script>
