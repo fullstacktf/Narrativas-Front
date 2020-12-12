@@ -128,7 +128,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
     .card {
         clip-path: polygon(78% 0, 83% 9%, 100% 9%, 100% 100%, 0 100%, 0 9%, 73% 9%);
     }

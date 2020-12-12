@@ -1,8 +1,9 @@
 <template>
   <div id="app">
-    <HeaderFather />
+    <Character />
+    <!-- <HeaderFather />
     <router-view />
-    <Footer />
+    <Footer /> -->
   </div>
 </template>
 
@@ -11,16 +12,16 @@ import "tailwindcss/tailwind.css";
 import "./assets/styles/index.css";
 import "./assets/styles/base.css";
 
-import Footer from "./components/Footer/Footer";
-import HeaderFather from "./components/Header/HeaderFather";
-// import Character from "./components/Characters/character";
+// import Footer from "./components/Footer/Footer";
+// import HeaderFather from "./components/Header/HeaderFather";
+import Character from "./components/Characters/character";
 
 export default {
   name: "App",
   components: {
-    HeaderFather,
-    // Character,
-    Footer
+    // HeaderFather,
+    Character,
+    // Footer
   },
 };
 </script>

@@ -153,7 +153,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 	.line {
 		box-shadow: 0px 1px 0px 0px #fff;
 	}
