@@ -13,7 +13,7 @@
       <PersonCard
         name="Kevin Eliezer García Peña"
         filename="Kevin"
-        description="Fullstack"
+        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin mi mauris, dapibus vel massa et, posuere lacinia urna. Morbi quam magna, bibendum in dui ac, sodales cursus orci."
       />
       <PersonCard
         name="Himar Manuel Barquín Carrasco"

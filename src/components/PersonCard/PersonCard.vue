@@ -1,14 +1,21 @@
 <template>
-  <div role="personCard" class="w-56 rounded overflow-hidden shadow-lg flex flex-col items-center">
-    <img alt="Character image" class="w-32 h-32 mt-8 rounded-full" :src="setUrl(filename)" />
+  <div
+    role="personCard"
+    class="w-56 h-88 rounded overflow-hidden shadow-2xl text-left text-sm bg-white"
+  >
+    <img
+      alt="Character image"
+      class="w-32 h-32 mt-8 rounded-full"
+      :src="setUrl(filename)"
+    />
     <h3 class="mt-2 mx-4 text-secondary font-bold">{{ name }}</h3>
-    <p class="mx-2 mb-4 text-sm">{{ description }}</p>
+    <p class="mt-4 mx-4 mb-4">{{ description }}</p>
   </div>
 </template>
 
 <script>
-import '../../assets/styles/index.css';
-import '../../assets/styles/base.css';
+import "../../assets/styles/index.css";
+import "../../assets/styles/base.css";
 export default {
   name: "PersonCard",
   props: {
@@ -23,4 +30,3 @@ export default {
   },
 };
 </script>
-
