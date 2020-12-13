@@ -100,7 +100,7 @@ export default {
   },
 };
 </script>
-<style>
+<style scoped>
 .copyright-mobile {
   margin: 30px 0;
   border-top: 1px solid #94a3b8;

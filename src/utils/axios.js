@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const DOMAIN = "http://127.0.0.1:9090"
+const DOMAIN = "http://172.23.248.0:49153"
 
 export default class Client {
   async getUserStories() {

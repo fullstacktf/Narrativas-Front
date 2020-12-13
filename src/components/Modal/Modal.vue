@@ -1,6 +1,5 @@
 <template>
-  <div ref="insertLogin" class="center-screen w-full h-full">
-  </div>
+  <div ref="insertLogin"></div>
 </template>
 
 <script>
@@ -15,11 +14,16 @@ export default {
       this.instance.$destroy();
       this.$el.removeChild(this.instance.$el);
       this.instance = null;
+      this.$refs.insertLogin.removeAttribute("class");
     },
   },
   mounted() {
     EventBus.$on("SIGN_POPUP", (payload) => {
       if (!this.instance) {
+        this.$refs.insertLogin.classList.add("center-screen");
+        this.$refs.insertLogin.classList.add("w-full");
+        this.$refs.insertLogin.classList.add("h-full");
+
         let signComponent = Vue.extend(SignInSignUp);
         this.instance = new signComponent();
         this.instance.$mount();

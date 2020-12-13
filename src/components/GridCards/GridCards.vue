@@ -6,36 +6,21 @@
     <div
       class="cards flex flex-col md:flex-row items-center md:justify-center space-y-10 md:space-y-0 md:space-x-10 md:m-10"
     >
-      <Card
-        name="BUZZ LIGHTYEAR"
-        title="Description"
-        content="Lorem ipsum bla bla bla"
-        filename="character_1"
-      />
-      <Card
-        name="ARIEL"
-        title="Description"
-        content="Lorem ipsum bla bla bla"
-        filename="character_2"
-      />
-      <Card
-        name="JEAN GRAY"
-        title="Description"
-        content="Lorem ipsum bla bla bla"
-        filename="character_3"
-      />
-      <NewCard
-        name="ADD NEW ITEM"
-        title="Description"
-        content="Lorem ipsum bla bla bla"
-        filename="newCharacter"
-      />
+      <a v-bind:href="path">
+        <NewCard
+          name="ADD NEW ITEM"
+          title="Description"
+          content="Lorem ipsum bla bla bla"
+          filename="newCharacter"
+        />
+      </a>
     </div>
-    <button>
+    <a v-bind:href="viewAllPath">
       <h1 class="mb-5 mt-5 md:mt-0">
-        SEE MORE <i class="fa fa-eye text-xl text-primary" aria-hidden="true"></i>
+        SEE MORE
+        <i class="fa fa-eye text-xl text-primary ml-2" aria-hidden="true"></i>
       </h1>
-    </button>
+    </a>
   </div>
 </template>
 
@@ -48,11 +33,13 @@ export default {
   props: {
     title: String,
     total: Number,
+    path: String,
+    viewAllPath: String,
   },
   components: {
-    Card,
     NewCard,
   },
+  beforeMount() {},
 };
 </script>
 

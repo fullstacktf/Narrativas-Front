@@ -1,9 +1,9 @@
 <template>
   <div v-if="isConnected">
     <Slider />
-    <GridCardsStories title="STORIES" />
+    <GridCards title="STORIES" path="/story-creation" viewAllPath="/stories" />
     <LateralSlide image="parallaxHome" />
-    <GridCardsCharacters title="CHARACTERS" />
+    <GridCards title="CHARACTERS" path="/character-creation" viewAllPath="/characters" />
     <Modal />
   </div>
 
@@ -22,8 +22,7 @@ import InformationBlock from "@/components/InformationBlock/InformationBlock.vue
 import LateralSlide from "@/components/Slider/LateralSlide.vue";
 import StoryGrid from "@/components/ImagesGrid/StoryGrid.vue";
 import Slider from "@/components/Slider/Slider.vue";
-import GridCardsStories from "@/components/GridCards/GridCards.vue";
-import GridCardsCharacters from "@/components/GridCards/GridCards.vue";
+import GridCards from "@/components/GridCards/GridCards.vue";
 import Modal from "@/components/Modal/Modal.vue";
 import EventBus from "@/event-bus";
 import { getCookie, setCookie, deleteCookie } from "@/utils/utils";
@@ -37,9 +36,8 @@ export default {
     LateralSlide,
     StoryGrid,
     Slider,
-    GridCardsStories,
+    GridCards,
     LateralSlide,
-    GridCardsCharacters,
     Modal,
   },
   data() {

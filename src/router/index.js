@@ -2,8 +2,9 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home';
 import About from '../views/About';
+import Characters from '../views/Characters';
 import CharacterCreation from '../views/CharacterCreation';
-
+import { getCookie } from '@/utils/utils'
 
 Vue.use(VueRouter)
 
@@ -19,9 +20,22 @@ const routes = [
     component: About
   },
   {
+    path: '/characters',
+    name: 'Characters',
+    component: Characters
+  },
+  {
     path: '/character-creation',
     name: 'Character Creation',
-    component: CharacterCreation
+    component: CharacterCreation,
+    beforeEnter: (to, from, next) => {
+      if (getCookie("token")) {
+        next();
+      }
+      else {
+        next('/');
+      }
+    }
   }
 ]
 
