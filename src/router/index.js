@@ -2,7 +2,9 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home';
 import About from '../views/About';
+import Characters from '../views/Characters';
 import CharacterCreation from '../views/CharacterCreation';
+import PageNotFound from '../views/PageNotFound';
 import { getCookie } from '@/utils/utils'
 
 Vue.use(VueRouter)
@@ -19,6 +21,11 @@ const routes = [
     component: About
   },
   {
+    path: '/characters',
+    name: 'Characters',
+    component: Characters
+  },
+  {
     path: '/character-creation',
     name: 'Character Creation',
     component: CharacterCreation,
@@ -29,6 +36,11 @@ const routes = [
         next('/');
       }
     }
+  },
+  {
+    path: "*",
+    name: "404",
+    component: PageNotFound
   },
 ]
 
