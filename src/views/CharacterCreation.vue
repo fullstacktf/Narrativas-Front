@@ -5,7 +5,9 @@
 <script>
 import Character from "../components/Characters/character.vue";
 export default {
-  components: { Character },
+  components: {
+    Character,
+  },
 };
 </script>
 
