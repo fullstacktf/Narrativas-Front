@@ -4,7 +4,7 @@
     <div class="w-full md:w-2/4 bg-gray-100 flex flex-col items-center justify-center">
         <div class="w-8/12 text-left">
             <h1 class="text-4xl pt-2">CHARACTER CREATION</h1>
-            <button class="outline-none bg-primary text-white px-4 py-2 mt-1 mb-2" v-on:click="createSection">Create section</button>
+            <button class="focus:outline-none bg-primary text-white px-4 py-2 mt-1 mb-2" v-on:click="createSection">Create section</button>
         </div>
         <div ref="sectionzone" class="w-8/12">
             
@@ -19,8 +19,8 @@
             <div class="w-56 h-68 bg-cover img" v-bind:style="{ backgroundImage: `url(${this.image})` }"></div>
         </div>
         <form class="flex flex-col items-center w-10/12 xl:w-6/12">
-            <input class="outline-none border border-gray-400 w-full my-2 py-2 pl-2" type="text" placeholder="Name" autocomplete="on" />
-            <textarea class="outline-none border border-gray-400 w-full my-2 py-2 pl-2 h-40" cols="30" rows="10" placeholder="Description" autocomplete="on"></textarea>
+            <input class="focus:outline-none border border-gray-400 w-full my-2 py-2 pl-2" type="text" placeholder="Name" autocomplete="on" />
+            <textarea class="focus:outline-none border border-gray-400 w-full my-2 py-2 pl-2 h-40" cols="30" rows="10" placeholder="Description" autocomplete="on"></textarea>
         </form>
     </div>
     

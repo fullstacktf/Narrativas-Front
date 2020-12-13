@@ -1,9 +1,9 @@
 <template>
   <div class="mb-6 w-full">
       <div class="w-4/12 flex mx-2 flex items-center">
-          <input class="title outline-none bg-gray-100" contenteditable="true" type="text" placeholder="NAME"/>
-          <button v-on:click="createSection" class="outline-none mr-2"><i class="fas fa-plus font-bold"></i></button>
-          <button v-on:click="emitRemoveBlockSection" class="outline-none"><i class="fas fa-times font-bold"></i></button>
+          <input class="title focus:outline-none bg-gray-100" contenteditable="true" type="text" placeholder="NAME"/>
+          <button v-on:click="createSection" class="focus:outline-none mr-2"><i class="fas fa-plus font-bold"></i></button>
+          <button v-on:click="emitRemoveBlockSection" class="focus:outline-none"><i class="fas fa-times font-bold"></i></button>
       </div>
   </div>
 </template>
