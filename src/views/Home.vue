@@ -29,7 +29,6 @@ export default {
       this.instance.$destroy();
       this.$el.removeChild(this.instance.$el);
       this.instance = null;
-      // document.body.classList.remove("overflow-hidden");
     },
   },
   mounted() {
@@ -47,7 +46,6 @@ export default {
         this.instance.$el.style.transform = `translate(-50%, -50%)`;
 
         this.$el.appendChild(this.instance.$el);
-        // document.body.classList.add("overflow-hidden");
       }
     });
 
