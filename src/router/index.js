@@ -4,6 +4,7 @@ import Home from '../views/Home';
 import About from '../views/About';
 import Characters from '../views/Characters';
 import CharacterCreation from '../views/CharacterCreation';
+import PageNotFound from '../views/PageNotFound';
 import { getCookie } from '@/utils/utils'
 
 Vue.use(VueRouter)
@@ -36,7 +37,12 @@ const routes = [
         next('/');
       }
     }
-  }
+  },
+  {
+    path: "*",
+    name: "404",
+    component: PageNotFound
+  },
 ]
 
 const router = new VueRouter({
