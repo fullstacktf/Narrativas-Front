@@ -1,7 +1,7 @@
 <template>
-<div class="max-w-screen h-screen flex">
+<div class="max-w-screen h-auto py-20 flex flex-col-reverse md:flex-row">
     <!-- Left section -->
-    <div class="w-2/4 bg-gray-100 flex flex-col items-center justify-center">
+    <div class="w-full md:w-2/4 bg-gray-100 flex flex-col items-center justify-center">
         <div class="w-8/12 text-left">
             <h1 class="text-4xl pt-2">CHARACTER CREATION</h1>
             <button class="outline-none bg-primary text-white px-4 py-2 mt-1 mb-2" v-on:click="createSection">Create section</button>
@@ -14,7 +14,7 @@
 
     <!-- rigth section -->
 
-    <div class="w-2/4 bg-gray-100 flex flex-col items-center justify-center">
+    <div class="w-full md:w-2/4 bg-gray-100 flex flex-col items-center">
         <div class="w-56 pb-4">
             <div class="w-56 h-68 bg-cover img" v-bind:style="{ backgroundImage: `url(${this.image})` }"></div>
         </div>

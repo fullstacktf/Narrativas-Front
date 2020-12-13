@@ -3,9 +3,11 @@
 </template>
 
 <script>
-import character from '../components/Characters/character.vue'
+import Character from '../components/Characters/character.vue'
 export default {
-  components: { character },
+  components: { 
+    Character 
+  },
 
 }
 </script>

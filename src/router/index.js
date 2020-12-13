@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home';
 import About from '../views/About';
-import Loged from '../views/Loged';
+import CharacterCreation from '../views/CharacterCreation';
 
 
 Vue.use(VueRouter)
@@ -19,9 +19,9 @@ const routes = [
     component: About
   },
   {
-    path: '/loged',
-    name: 'Loged',
-    component: Loged
+    path: '/character-creation',
+    name: 'Character Creation',
+    component: CharacterCreation
   }
 ]
 

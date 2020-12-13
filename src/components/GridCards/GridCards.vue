@@ -1,6 +1,8 @@
 <template>
   <div>
-    <h1 class="text-4xl m-10">{{ title }}</h1>
+    <h1 class="text-4xl m-10">
+      {{ title }} <span class="text-gray-500">({{ total }})</span>
+    </h1>
     <div
       class="cards flex flex-col md:flex-row items-center md:justify-center space-y-10 md:space-y-0 md:space-x-10 md:m-10"
     >
@@ -23,7 +25,7 @@
         filename="character_3"
       />
       <NewCard
-        name="ADD NEW CHARACTER"
+        name="ADD NEW ITEM"
         title="Description"
         content="Lorem ipsum bla bla bla"
         filename="newCharacter"
@@ -40,10 +42,12 @@
 <script>
 import Card from "@/components/GridCards/Card.vue";
 import NewCard from "@/components/GridCards/NewCard.vue";
+
 export default {
   name: "GridCards",
   props: {
     title: String,
+    total: Number,
   },
   components: {
     Card,
