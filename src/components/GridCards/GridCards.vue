@@ -31,11 +31,9 @@
         filename="newCharacter"
       />
     </div>
-    <button>
-      <h1 class="mb-5 mt-5 md:mt-0">
-        SEE MORE <i class="fa fa-eye text-xl text-primary" aria-hidden="true"></i>
-      </h1>
-    </button>
+    <a class="mb-5 mt-5 md:mt-0 font-oswald" href="/characters"
+      >SEE MORE <i class="fa fa-eye text-xl text-primary" aria-hidden="true"></i
+    ></a>
   </div>
 </template>
 

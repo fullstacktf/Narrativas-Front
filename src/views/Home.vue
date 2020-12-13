@@ -1,9 +1,9 @@
 <template>
   <div v-if="isConnected">
     <Slider />
-    <GridCardsStories title="STORIES" />
+    <GridCardsStories title="STORIES" :total="18" />
     <LateralSlide image="parallaxHome" />
-    <GridCardsCharacters title="CHARACTERS" />
+    <GridCardsCharacters title="CHARACTERS" :total="5" />
   </div>
 
   <div v-else>
