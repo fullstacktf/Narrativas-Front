@@ -25,10 +25,11 @@ const routes = [
     beforeEnter: (to, from, next) => {
       if (getCookie("token")) {
         next();
+      } else {
+        next('/');
       }
-      next('/');
     }
-  }
+  },
 ]
 
 const router = new VueRouter({
