@@ -4,6 +4,7 @@ import Home from '../views/Home';
 import About from '../views/About';
 import Characters from '../views/Characters';
 import CharacterCreation from '../views/CharacterCreation';
+import PageNotFound from '../views/PageNotFound';
 import { getCookie } from '@/utils/utils'
 
 Vue.use(VueRouter)
@@ -31,12 +32,16 @@ const routes = [
     beforeEnter: (to, from, next) => {
       if (getCookie("token")) {
         next();
-      }
-      else {
+      } else {
         next('/');
       }
     }
-  }
+  },
+  {
+    path: "*",
+    name: "404",
+    component: PageNotFound
+  },
 ]
 
 const router = new VueRouter({
