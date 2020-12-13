@@ -3,24 +3,30 @@
     <nav
       class="navigationBar max-w-full h-18 lg:h-20 bg-black text-gray-600 text-lg flex items-center justify-between md:justify-around flex-row relative z-10"
     >
-      <img
-        v-if="!isMobile"
-        class="h-20 m-0 py-2 mr-6 lg:mx-10 xl:mx-20"
-        src="@/assets/img/logo_completo.jpg"
-        alt="Logo"
-      />
-      <img
-        v-else
-        class="logo m-0 w-2/12 mr-6 lg:mx-10 xl:mx-20"
-        src="@/assets/img/logo.svg"
-        alt="Logo"
-      />
-      <div class="" v-if="!isMobile">
-        <a class="hover:text-white truncate cursor-pointer">About us</a>
+      <a href="/">
+        <img
+          v-if="!isMobile"
+          class="h-20 m-0 py-2 mr-6 lg:mx-10 xl:mx-20"
+          src="@/assets/img/logo_completo.jpg"
+          alt="Logo"
+        />
+        <img
+          v-else
+          class="logo m-0 w-2/12 mr-6 lg:mx-10 xl:mx-20"
+          src="@/assets/img/logo.svg"
+          alt="Logo"
+        />
+      </a>
+      <div v-if="!isMobile">
+        <a class="hover:text-white truncate cursor-pointer" href="/about"
+          >About us</a
+        >
         <a class="hover:text-white truncate ml-10 lg:ml-16 cursor-pointer"
           >Explore Story</a
         >
-        <a class="hover:text-white truncate m-10 lg:ml-16 cursor-pointer">Dashboard</a>
+        <a class="hover:text-white truncate m-10 lg:ml-16 cursor-pointer"
+          >Dashboard</a
+        >
       </div>
       <div class="flex items-center" v-if="!isMobile">
         <button v-on:click="menuState" class="cursor-pointer outline-none">
@@ -33,7 +39,8 @@
           v-if="enable"
         >
           <span class="h-3 bg-white"></span>
-          <a class="pb-2 pt-2 px-5 hover:bg-primary hover:text-white cursor-pointer"
+          <a
+            class="pb-2 pt-2 px-5 hover:bg-primary hover:text-white cursor-pointer"
             >New story</a
           >
           <a class="py-2 px-5 hover:bg-primary hover:text-white cursor-pointer"
@@ -41,7 +48,10 @@
           >
         </div>
 
-        <button class="flex items-center outline-none" v-on:click="profileState">
+        <button
+          class="flex items-center outline-none"
+          v-on:click="profileState"
+        >
           <div class="bg-white w-12 h-12 rounded-full ml-5 mr-1"></div>
           <i class="fas fa-sort-down text-white"></i>
         </button>
@@ -55,23 +65,29 @@
             <p class="font-bold">User name</p>
           </div>
           <div class="flex flex-col border-b-2 border-gray-400">
-            <a class="pb-2 pt-2 px-5 hover:bg-primary hover:text-white cursor-pointer"
+            <a
+              class="pb-2 pt-2 px-5 hover:bg-primary hover:text-white cursor-pointer"
               >Profile</a
             >
           </div>
           <div class="flex flex-col border-b-2 border-gray-400">
-            <a class="pb-2 pt-2 px-5 hover:bg-primary hover:text-white cursor-pointer"
+            <a
+              class="pb-2 pt-2 px-5 hover:bg-primary hover:text-white cursor-pointer"
               >Your stories</a
             >
-            <a class="py-2 px-5 hover:bg-primary hover:text-white cursor-pointer"
+            <a
+              class="py-2 px-5 hover:bg-primary hover:text-white cursor-pointer"
               >Your character</a
             >
           </div>
           <div class="flex flex-col">
-            <a class="pb-2 pt-2 px-5 hover:bg-primary hover:text-white cursor-pointer"
+            <a
+              class="pb-2 pt-2 px-5 hover:bg-primary hover:text-white cursor-pointer"
               >Settings</a
             >
-            <a class="py-2 px-5 hover:bg-primary hover:text-white cursor-pointer" v-on:click="disconnect()"
+            <a
+              class="py-2 px-5 hover:bg-primary hover:text-white cursor-pointer"
+              v-on:click="disconnect()"
               >Log Out</a
             >
           </div>
@@ -92,7 +108,7 @@
       v-if="hamburgerEnable"
     >
       <div class="flex flex-col border-b-2 border-white">
-        <a class="py-2 pl-10 hover:bg-primary" href="">About us</a>
+        <a class="py-2 pl-10 hover:bg-primary" href="/about">About us</a>
         <a class="py-2 pl-10 hover:bg-primary" href="">Explore Stories</a>
         <a class="py-2 pl-10 hover:bg-primary" href="">Dashboard</a>
         <a class="py-2 pl-10 hover:bg-primary" href="">Your stories</a>
@@ -175,7 +191,7 @@ export default {
     },
     disconnect() {
       EventBus.$emit("DISCONNECT");
-    }
+    },
   },
 };
 </script>

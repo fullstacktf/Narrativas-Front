@@ -30,19 +30,18 @@ export default {
   beforeMount() {
     const cookie = getCookie("token");
     if (cookie) {
-      console.log("tiene la cookie");
       this.isSignedIn = true;
     }
 
     EventBus.$on("SIGNED_IN", () => {
       this.isSignedIn = true;
-      location.reload();
+      location.assign("/");
     });
 
     EventBus.$on("DISCONNECT", () => {
       this.isSignedIn = false;
       deleteCookie("token");
-      location.reload();
+      location.assign("/");
     });
   },
 };
