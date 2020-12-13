@@ -32,7 +32,9 @@ const routes = [
       if (getCookie("token")) {
         next();
       }
-      next('/');
+      else {
+        next('/');
+      }
     }
   }
 ]
