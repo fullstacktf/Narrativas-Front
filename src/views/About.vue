@@ -1,20 +1,20 @@
 <template>
   <div>
-    <HeroAboutUs />
+    <HeroAbout />
     <Team />
     <Modal />
   </div>
 </template>
 
 <script>
-import HeroAboutUs from "@/components/Hero/HeroAboutUs.vue";
+import HeroAbout from "@/components/Hero/HeroAbout.vue";
 import Team from "@/components/PersonCard/Team.vue";
 import Modal from "@/components/Modal/Modal.vue";
 
 export default {
   name: "About",
   components: {
-    HeroAboutUs,
+    HeroAbout,
     Team,
     Modal,
   },
