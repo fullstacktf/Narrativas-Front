@@ -3,7 +3,7 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home';
 import About from '../views/About';
 import CharacterCreation from '../views/CharacterCreation';
-
+import { getCookie } from '@/utils/utils'
 
 Vue.use(VueRouter)
 
@@ -21,7 +21,13 @@ const routes = [
   {
     path: '/character-creation',
     name: 'Character Creation',
-    component: CharacterCreation
+    component: CharacterCreation,
+    beforeEnter: (to, from, next) => {
+      if (getCookie("token")) {
+        next();
+      }
+      next('/');
+    }
   }
 ]
 
