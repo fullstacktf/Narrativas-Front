@@ -3,10 +3,16 @@
 </template>
 
 <script>
-import character from '../components/Characters/character.vue'
+import Character from '../components/Characters/character.vue'
 export default {
-  components: { character },
+<<<<<<< HEAD
+  components: { 
+    Character 
+  },
 
+=======
+  components: { character },
+>>>>>>> 570b391f842072f2f138bdffe2c10f92219e26b1
 }
 </script>
 

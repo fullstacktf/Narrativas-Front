@@ -178,17 +178,17 @@ export default {
 </script>
 
 <style scoped>
-.line {
-  box-shadow: 0px 1px 0px 0px #fff;
-}
+	.line {
+		box-shadow: 0px 1px 0px 0px #fff;
+	}
 
-.tall {
-  height: 4rem;
-}
+	.tall {
+  		height: 4rem;
+	}
 
-.lineLeft {
-  border-left: 1px solid #fff;
-  margin-left: 40px;
-  padding-left: 30px;
-}
+	.lineLeft {
+		border-left: 1px solid #fff;
+		margin-left: 40px;
+		padding-left: 30px;
+	}
 </style>
