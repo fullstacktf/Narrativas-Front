@@ -5,3 +5,7 @@ export const characterImageUpload = async (data) => {
   return await client.uploadCharacterImage(data)
 }
 
+export const createCharacter = async (data) => {
+  const client = new Client()
+  return await client.createCharacter(data)
+}

@@ -5,15 +5,13 @@ import { faFileUpload } from '@fortawesome/free-solid-svg-icons'
 const DOMAIN = "http://127.0.0.1:9090"
 
 async function fileUploadConfig(data) {
+  const headers = {
+    'Content-Type': 'multipart/form-data',
+    'Token': getCookie("token"),
+  }
   const formData = new FormData();
   formData.append('image', data);
-  const config = {
-    headers: {
-      'token': getCookie("token"),
-      'content-type': 'multipart/form-data',
-    }
-  }
-  return { formData, config }
+  return { formData, headers }
 }
 
 export default class Client {
@@ -35,11 +33,22 @@ export default class Client {
 
   async uploadCharacterImage(data) {
     const config = await fileUploadConfig(data)
-    return await axios.put(DOMAIN + '/upload/images/character', config["config"], config["formData"])
+   //  const headers = {
+   //    'Content-Type': 'multipart/form-data',
+   //    'Token': getCookie("token"),
+   //  }
+   //  const formData = new FormData();
+   //  formData.append('image', data);
+    return await axios({
+      method: 'put',
+      url: DOMAIN + '/upload/images/character',
+      headers: config["headers"],
+      data: config["formData"]
+    })
   }
 
   async uploadStoryImage(data) {
     const config = await fileUploadConfig(data)
-    return await axios.put(DOMAIN + '/upload/images/story', config["config"], config["formData"])
+    return await axios.put(DOMAIN + '/upload/images/story', config)
   }
 }

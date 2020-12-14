@@ -52,6 +52,7 @@ export default {
   },
   beforeMount() {
     let cookie = getCookie("token");
+    console.log(cookie)
     if (cookie) {
       this.isSignedIn = true;
     }

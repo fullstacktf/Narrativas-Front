@@ -178,7 +178,7 @@ export default {
         const data = { username: this.username, password: this.password };
         userLogin(data)
           .then((response) => {
-            setCookie("token", response.data);
+            setCookie("token", response.data["token"]);
             EventBus.$emit("SIGNED_IN");
           })
           .catch((error) => {

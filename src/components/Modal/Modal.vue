@@ -4,6 +4,7 @@
 
 <script>
 import SignInSignUp from "@/components/SignInSignUp/SignInSignUp.vue";
+import { deleteCookie } from "@/utils/utils"
 import Vue from "vue";
 import EventBus from "@/event-bus";
 

@@ -99,13 +99,14 @@ export default {
     },
     uploadImage(event) {
       const image = event.target.files[0];
+      console.log(event.target.files)
       const reader = new FileReader();
       reader.readAsDataURL(image);
       reader.onload = (event) => {
         this.image = event.target.result;
       };
       characterImageUpload(image).then((data) => {
-        console.log(data);
+        console.log(data["data"]["image"]);
       })
       .catch((error) => {
         console.log(error);
