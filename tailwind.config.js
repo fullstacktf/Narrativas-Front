@@ -29,11 +29,14 @@ module.exports = {
       black: "black",
       white: "white",
       "red-500": "red",
+      blue: "#67C5D6",
     },
     extend: {
       spacing: {
         '018': '0.18rem',
+        '14': '3.5rem',
         '28': '7rem',
+        '46': '12.5rem',
         '52': '13rem',
         '60': '15rem',
         '68': '17rem',
