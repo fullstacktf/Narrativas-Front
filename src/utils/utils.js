@@ -1,3 +1,5 @@
+export const DOMAIN = "http://127.0.0.1:9090"
+
 export function setCookie(cname, cvalue, exdays) {
   var d = new Date();
   d.setTime(d.getTime() + (exdays*24*60*60*1000));
