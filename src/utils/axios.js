@@ -1,8 +1,7 @@
 import axios from 'axios'
-import { getCookie } from '@/utils/utils'
+import { getCookie, DOMAIN } from '@/utils/utils'
 import { faFileUpload } from '@fortawesome/free-solid-svg-icons'
 
-const DOMAIN = "http://127.0.0.1:9090"
 
 async function fileUploadConfig(data) {
   const headers = {

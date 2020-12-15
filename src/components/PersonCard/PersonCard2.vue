@@ -41,7 +41,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
     .container{
         margin: 10px * 5 auto;
         transition: all 0.8s cubic-bezier(0.8, -0.4, 0.2, 1.7);

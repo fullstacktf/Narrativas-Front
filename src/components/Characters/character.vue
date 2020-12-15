@@ -7,10 +7,16 @@
       <div class="w-8/12 text-left">
         <h1 class="text-4xl pt-2">CHARACTER CREATION</h1>
         <button
-          class="outline-none bg-primary text-white px-4 py-2 mt-1 mb-2"
+          class="outline-none bg-primary text-white px-4 py-2 mt-1 mb-2 mr-12"
           v-on:click="createSection"
         >
           Create section
+        </button>
+        <button
+          class="outline-none bg-primary text-white px-4 py-2 mt-1 mb-2"
+          v-on:click="saveCharacter"
+        >
+          Save character
         </button>
       </div>
       <div ref="sectionzone" class="w-8/12"></div>
@@ -22,7 +28,7 @@
       <div class="w-56 pb-4">
         <div
           class="w-56 h-68 bg-cover img"
-          v-bind:style="{ backgroundImage: `url(${this.image})` }"
+          v-bind:style="{ backgroundImage: `url(${this.imagePath})` }"
         ></div>
       </div>
       <form class="mb-4 flex">
@@ -56,6 +62,7 @@
 import CharacterBlockSection from "@/components/Characters/characterBlockSection";
 import { store } from "@/store";
 import { characterImageUpload } from "@/domain/services/characterServices";
+import { DOMAIN } from "@/utils/utils"
 import EventBus from "@/event-bus";
 import Vue from "vue";
 
@@ -63,7 +70,6 @@ export default {
   name: "Character",
   mounted() {
     EventBus.$on("REMOVE_BLOCK_SECTION", (className) => {
-      console.log(className);
       for (let i = 0; i < this.blockSection.length; i++) {
         if (this.blockSection[i].$el.className.split(" ").pop() == className) {
           this.blockSection[i].$destroy();
@@ -81,7 +87,7 @@ export default {
   },
   data() {
     return {
-      image: null,
+      imagePath: DOMAIN+"/static/default/character_default.png",
       blockSection: [],
     };
   },
@@ -99,19 +105,20 @@ export default {
     },
     uploadImage(event) {
       const image = event.target.files[0];
-      console.log(event.target.files)
       const reader = new FileReader();
-      reader.readAsDataURL(image);
-      reader.onload = (event) => {
-        this.image = event.target.result;
-      };
-      characterImageUpload(image).then((data) => {
-        console.log(data["data"]["image"]);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+
+      characterImageUpload(image)
+        .then((data) => {
+          this.imagePath = DOMAIN+"/static/characters/"+data["data"]["image"];
+          this.imageName = data["data"]["image"]
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     },
+    saveCharacter(event) {
+
+    }
   },
 };
 </script>
