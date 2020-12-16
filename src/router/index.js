@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home';
 import About from '../views/About';
 import Characters from '../views/Characters';
+import Stories from '../views/Stories';
 import CharacterCreation from '../views/CharacterCreation';
 import PageNotFound from '../views/PageNotFound';
 import { getCookie } from '@/utils/utils'
@@ -24,6 +25,11 @@ const routes = [
     path: '/characters',
     name: 'Characters',
     component: Characters
+  },
+  {
+    path: '/stories',
+    name: 'Stories',
+    component: Stories
   },
   {
     path: '/character-creation',
