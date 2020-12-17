@@ -1,28 +1,31 @@
 <template>
   <div class="max-w-screen h-auto py-20 flex flex-col-reverse md:flex-row">
-    <!-- Left section -->
     <div
       class="w-full md:w-2/4 bg-gray-100 flex flex-col items-center justify-center"
     >
       <div class="w-8/12 text-left">
         <h1 class="text-4xl pt-2">CHARACTER CREATION</h1>
         <button
-          class="outline-none bg-primary text-white px-4 py-2 mt-1 mb-2 mr-12"
+          class="outline-none bg-primary text-white px-4 py-2 mt-1 mb-2 mr-6"
           v-on:click="createSection"
         >
           Create section
         </button>
         <button
-          class="outline-none bg-primary text-white px-4 py-2 mt-1 mb-2"
+          class="outline-none bg-primary text-white px-4 py-2 mt-1 mb-2 mr-6"
           v-on:click="saveCharacter"
         >
           Save character
         </button>
+        <button
+          class="outline-none bg-primary text-white px-4 py-2 mt-1 mb-2"
+          v-on:click="deleteCharacter"
+        >
+          Delete character
+        </button>
       </div>
       <div ref="sectionzone" class="w-8/12"></div>
     </div>
-
-    <!-- rigth section -->
 
     <div class="w-full md:w-2/4 bg-gray-100 flex flex-col items-center">
       <div class="w-56 pb-4">
@@ -41,12 +44,14 @@
       </form>
       <form class="flex flex-col items-center w-10/12 xl:w-6/12">
         <input
+          v-model="name"
           class="outline-none border border-gray-400 w-full my-2 py-2 pl-2"
           type="text"
           placeholder="Name"
           autocomplete="on"
         />
         <textarea
+          v-model="description"
           class="outline-none border border-gray-400 w-full my-2 py-2 pl-2 h-40"
           cols="30"
           rows="10"
@@ -61,33 +66,25 @@
 <script>
 import CharacterBlockSection from "@/components/Characters/characterBlockSection";
 import { store } from "@/store";
-import { characterImageUpload } from "@/domain/services/characterServices";
-import { DOMAIN } from "@/utils/utils"
+import {
+  characterImageUpload,
+  createCharacter,
+  deleteCharacter,
+  updateCharacter,
+  getCharacter,
+} from "@/domain/services/characterServices";
+import { DOMAIN } from "@/utils/utils";
 import EventBus from "@/event-bus";
 import Vue from "vue";
 
 export default {
   name: "Character",
-  mounted() {
-    EventBus.$on("REMOVE_BLOCK_SECTION", (className) => {
-      for (let i = 0; i < this.blockSection.length; i++) {
-        if (this.blockSection[i].$el.className.split(" ").pop() == className) {
-          this.blockSection[i].$destroy();
-          this.$refs.sectionzone.removeChild(this.blockSection[i].$el);
-          this.blockSection.splice(i, 1);
-        }
-      }
-    });
-
-    this.createSection();
-    this.createSection();
-  },
-  destroyed() {
-    store.commit("resetBlockSection");
-  },
   data() {
     return {
-      imagePath: DOMAIN+"/static/default/character_default.png",
+      name: "",
+      description: "",
+      imagePath: DOMAIN + "/static/default/character_default.png",
+      imageName: "",
       blockSection: [],
     };
   },
@@ -109,16 +106,46 @@ export default {
 
       characterImageUpload(image)
         .then((data) => {
-          this.imagePath = DOMAIN+"/static/characters/"+data["data"]["image"];
-          this.imageName = data["data"]["image"]
+          this.imagePath =
+            DOMAIN + "/static/characters/" + data["data"]["image"];
+          this.imageName = data["data"]["image"];
         })
         .catch((error) => {
           console.log(error);
         });
     },
     saveCharacter(event) {
+      const data = {
+        name: this.name,
+        biography: this.description,
+        image: this.imageName,
+      };
+      createCharacter(data)
+        .then((response) => {
+          console.log(response);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+    deleteCharacter(event) {},
+  },
+  mounted() {
+    EventBus.$on("REMOVE_BLOCK_SECTION", (className) => {
+      for (let i = 0; i < this.blockSection.length; i++) {
+        if (this.blockSection[i].$el.className.split(" ").pop() == className) {
+          this.blockSection[i].$destroy();
+          this.$refs.sectionzone.removeChild(this.blockSection[i].$el);
+          this.blockSection.splice(i, 1);
+        }
+      }
+    });
 
-    }
+    this.createSection();
+    this.createSection();
+  },
+  destroyed() {
+    store.commit("resetBlockSection");
   },
 };
 </script>

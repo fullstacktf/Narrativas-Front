@@ -1,7 +1,12 @@
 import axios from 'axios'
 import { getCookie, DOMAIN } from '@/utils/utils'
-import { faFileUpload } from '@fortawesome/free-solid-svg-icons'
 
+async function authHeader() {
+  const headers = {
+    'Token': getCookie("token"),
+  }
+  return headers
+}
 
 async function fileUploadConfig(data) {
   const headers = {
@@ -15,11 +20,37 @@ async function fileUploadConfig(data) {
 
 export default class Client {
   async getUserStories() {
-    return await axios.get('https://api.rollify.me/stories').then(response => response.data)
+    return await axios.get(DOMAIN + '/stories/').then(response => response.data)
   }
 
-  async getUserCharacters() {
-    return await axios.get('https://api.rollify.me/characters').then(response => response.data)
+  async getCharacters() {
+    return await axios.get(DOMAIN + '/characters/').then(response => response.data)
+  }
+
+  async getCharacter(id) {
+    const headers = await authHeader()
+    return await axios.get(DOMAIN + '/characters/' + str(id), { headers: headers }).then(response => response.data)
+  }
+
+  async postCharacter(data) {
+    const headers = await authHeader()
+
+    return await axios({
+      method: 'post',
+      url: DOMAIN + '/characters/',
+      data: data,
+      headers: headers
+    });
+  }
+
+  async putCharacter() {
+    const headers = await authHeader()
+    return await axios.put(DOMAIN + '/characters', { headers: headers }).then(response => response.data)
+  }
+
+  async deleteCharacter(id) {
+    const headers = await authHeader()
+    return await axios.delete(DOMAIN + '/characters/' + str(id), { headers: headers }).then(response => response.data)
   }
 
   async userRegister(data) {
@@ -32,12 +63,7 @@ export default class Client {
 
   async uploadCharacterImage(data) {
     const config = await fileUploadConfig(data)
-   //  const headers = {
-   //    'Content-Type': 'multipart/form-data',
-   //    'Token': getCookie("token"),
-   //  }
-   //  const formData = new FormData();
-   //  formData.append('image', data);
+
     return await axios({
       method: 'put',
       url: DOMAIN + '/upload/images/character',
@@ -48,6 +74,12 @@ export default class Client {
 
   async uploadStoryImage(data) {
     const config = await fileUploadConfig(data)
-    return await axios.put(DOMAIN + '/upload/images/story', config)
+
+    return await axios({
+      method: 'put',
+      url: DOMAIN + '/upload/images/story',
+      headers: config["headers"],
+      data: config["formData"]
+    })
   }
 }
