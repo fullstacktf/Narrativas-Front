@@ -24,7 +24,8 @@ export default class Client {
   }
 
   async getCharacters() {
-    return await axios.get(DOMAIN + '/characters/').then(response => response.data)
+    const headers = await authHeader()
+    return await axios.get(DOMAIN + '/characters/', { headers: headers }).then(response => response.data)
   }
 
   async getCharacter(id) {

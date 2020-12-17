@@ -1,6 +1,8 @@
 <template>
   <div class="m-20">
-    <div class="flex flex-col md:flex-row justify-center md:justify-between mx-5">
+    <div
+      class="flex flex-col md:flex-row justify-center md:justify-between mx-5"
+    >
       <h1 class="text-4xl md:text-left">
         {{ title }} <span class="text-gray-500">({{ total }})</span>
       </h1>
@@ -23,9 +25,9 @@
       <div v-for="(n, index) in this.total" :key="index">
         <Card
           :name="cards[index].name"
-          :title="cards[index].title"
-          :content="cards[index].content"
-          :filename="cards[index].filename"
+          title="description"
+          :content="cards[index].biography"
+          :filename="path+cards[index].image"
           class="md:mr-10 my-5"
         />
       </div>
@@ -38,6 +40,14 @@ import Card from "@/components/GridCards/Card.vue";
 
 export default {
   name: "ShowAllCards",
+  components: {
+    Card,
+  },
+  props: {
+    title: String,
+    path: String,
+    cards: Array,
+  },
   data() {
     return {
       total: this.cards.length,
@@ -45,16 +55,8 @@ export default {
   },
   computed: {
     isStory() {
-      console.log(this.title);
       return this.title == "Stories";
     },
-  },
-  props: {
-    title: String,
-    cards: Array,
-  },
-  components: {
-    Card,
   },
 };
 </script>

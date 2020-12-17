@@ -31,7 +31,7 @@ export default {
   },
   computed: {
     getBgImage() {
-      return require("@/assets/img/" + this.filename + ".jpg");
+      return this.filename;
     },
   },
 };

@@ -67,7 +67,8 @@
         class="py-2 pl-10 hover:bg-primary flex justify-between cursor-pointer"
         v-on:click="mobileExploreState"
         >Explore
-        <span class="text-md text-white pr-12"><i class="fas fa-sort-down"></i></span
+        <span class="text-md text-white pr-12"
+          ><i class="fas fa-sort-down"></i></span
       ></a>
 
       <div
@@ -82,14 +83,20 @@
           <h3 class="py-2">{{ section.title }}</h3>
           <div class="flex justify-between items-center">
             <img class="cursor-pointer w-2/4" :src="section.img" alt="" />
-            <p class="py-4 pl-4 text-gray-500 text-xs">{{ section.description }}</p>
+            <p class="py-4 pl-4 text-gray-500 text-xs">
+              {{ section.description }}
+            </p>
           </div>
         </div>
       </div>
 
       <a class="py-2 pl-10 hover:bg-primary" href="/about">About us</a>
-      <a class="py-2 pl-10 hover:bg-primary" href="">Sign in</a>
-      <a class="py-2 pl-10 hover:bg-primary" href="">Sign up</a>
+      <a class="py-2 pl-10 hover:bg-primary" v-on:click="emitSignPopup(false)"
+        >Sign in</a
+      >
+      <a class="py-2 pl-10 hover:bg-primary" v-on:click="emitSignPopup(true)"
+        >Sign up</a
+      >
     </div>
   </header>
 </template>
@@ -178,17 +185,17 @@ export default {
 </script>
 
 <style scoped>
-	.line {
-		box-shadow: 0px 1px 0px 0px #fff;
-	}
+.line {
+  box-shadow: 0px 1px 0px 0px #fff;
+}
 
-	.tall {
-  		height: 4rem;
-	}
+.tall {
+  height: 4rem;
+}
 
-	.lineLeft {
-		border-left: 1px solid #fff;
-		margin-left: 40px;
-		padding-left: 30px;
-	}
+.lineLeft {
+  border-left: 1px solid #fff;
+  margin-left: 40px;
+  padding-left: 30px;
+}
 </style>
