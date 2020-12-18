@@ -1,6 +1,6 @@
 <template>
   <div class="mb-6 w-full">
-      <div class="w-4/12 flex mx-2 flex items-center">
+      <div class="w-4/12 flex mx-2 items-center">
           <input class="title focus:outline-none bg-gray-100" contenteditable="true" type="text" placeholder="NAME"/>
           <button v-on:click="createSection" class="focus:outline-none mr-2"><i class="fas fa-plus font-bold"></i></button>
           <button v-on:click="emitRemoveBlockSection" class="focus:outline-none"><i class="fas fa-times font-bold"></i></button>
@@ -17,7 +17,7 @@ import Vue from "vue";
 export default {
     name: "CharacterBlockSection",
     mounted() {
-       EventBus.$on("REMOVE_SECTION", (className) => { 
+       EventBus.$on("REMOVE_SECTION", (className) => {
           for(let i = 0; i < this.sections.length; i++) {
             if(this.sections[i].$el.className.split(' ').pop() == className) {
               this.sections[i].$destroy();
@@ -29,9 +29,7 @@ export default {
 
       this.createSection()
       this.createSection()
-
       this.resizeInput()
-      
     },
     destroyed() {
       store.commit('resetSection')
@@ -39,14 +37,13 @@ export default {
     data() {
       return {
         sections: [],
-      } 
+      }
     },
     methods: {
       createSection() {
         let sectionComponentClass = Vue.extend(CharacterSection);
         let sectionComponent = new sectionComponentClass();
         sectionComponent.$mount();
-        console.log(sectionComponent);
         sectionComponent.$el.classList.add(`section-${store.state.sectionCount}`);
         store.commit('incrementSection');
         this.sections.push(sectionComponent);
@@ -85,6 +82,6 @@ export default {
     font-size: 1.2rem;
     text-transform: uppercase;
     width: var(--size, 50px);
-  } 
+  }
 
 </style>

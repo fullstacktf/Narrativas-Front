@@ -3,7 +3,11 @@
     <Slider />
     <GridCards title="STORIES" path="/story-creation" viewAllPath="/stories" />
     <LateralSlide image="parallaxHome" />
-    <GridCards title="CHARACTERS" path="/character-creation" viewAllPath="/characters" />
+    <GridCards
+      title="CHARACTERS"
+      path="/character-creation"
+      viewAllPath="/characters"
+    />
     <Modal />
   </div>
 
@@ -52,6 +56,7 @@ export default {
   },
   beforeMount() {
     let cookie = getCookie("token");
+
     if (cookie) {
       this.isSignedIn = true;
     }
