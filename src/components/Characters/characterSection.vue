@@ -9,7 +9,7 @@
             <input class="focus:outline-none border mx-2 border-gray-400 w-5/12 py-2 pl-2" type="text" autocomplete="on" />
             <input class="focus:outline-none border border-gray-400 w-2/12 py-2 pl-2" type="text" autocomplete="on" />
             <input class="focus:outline-none border mx-2 border-gray-400 w-5/12 py-2 pl-2" type="text" autocomplete="on" />
-            <button type='focus:outline-none button' v-on:click="emitRemoveSection"><i class="fas fa-trash"></i></button>
+            <button class="focus:outline-none" type='button' v-on:click="emitRemoveSection"><i class="fas fa-trash"></i></button>
         </form> 
     </div>
 </template>

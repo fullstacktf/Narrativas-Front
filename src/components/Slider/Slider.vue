@@ -36,10 +36,10 @@
           <div class="mt-12 md:mt-8">
             <h1 class="text-xl">CREATE YOUR</h1>
             <h1 class="text-4xl md:text-6xl">{{ title }}</h1>
-            <button
+            <button 
               class="bg-secondary hover:bg-secondary-dark text-white font-bold py-2 px-4 rounded-full text-xl mt-4 focus:outline-none"
             >
-              Get Started
+              <a :href="url">Get Started</a>
             </button>
           </div>
         </div>
@@ -90,6 +90,9 @@ export default {
     },
   },
   computed: {
+    url() {
+      return this.isStorySlider ? "/character-creation" : "story-creation"
+    },
     title: function () {
       return this.isStorySlider ? "CHARACTERS" : "STORIES";
     },

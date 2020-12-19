@@ -6,6 +6,7 @@ import Characters from '../views/Characters';
 import Stories from '../views/Stories';
 import CharacterCreation from '../views/CharacterCreation';
 import PageNotFound from '../views/PageNotFound';
+import StoriesCreation from '../views/StoriesCreation';
 import { getCookie } from '@/utils/utils'
 
 Vue.use(VueRouter)
@@ -47,6 +48,11 @@ const routes = [
     path: "*",
     name: "404",
     component: PageNotFound
+  },
+  {
+    path: '/story-creation',
+    name: 'StoriesCreation',
+    component: StoriesCreation
   },
 ]
 
