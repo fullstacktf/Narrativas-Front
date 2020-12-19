@@ -203,14 +203,14 @@ export default {
   clip-path: polygon(78% 0, 83% 9%, 100% 9%, 100% 100%, 0 100%, 0 9%, 73% 9%);
 }
 
-    .intoCard {
-        clip-path: polygon(79.5% 0, 83% 9%, 100% 9%, 100% 100%, 0 100%, 0 9%, 76% 9%);
-    }
+.intoCard {
+  clip-path: polygon(79.5% 0, 83% 9%, 100% 9%, 100% 100%, 0 100%, 0 9%, 76% 9%);
+}
 
-    .alignPlusMenu {
-        top: 5rem;
-        right: 11vw;
-    }
+.alignPlusMenu {
+  top: 5rem;
+  right: 11vw;
+}
 
 .alignPlusMenu {
   top: 5rem;
@@ -222,11 +222,10 @@ export default {
   right: 7vw;
 }
 
-    .changelogoWidth {
-    padding-top: 25px;
-    padding-bottom: 20px;
-    padding-left: 5vw;
-    transform: scale(2.7);
-}
+.changelogoWidth {
+  padding-top: 25px;
+  padding-bottom: 20px;
+  padding-left: 5vw;
+  transform: scale(2.7);
 }
 </style>

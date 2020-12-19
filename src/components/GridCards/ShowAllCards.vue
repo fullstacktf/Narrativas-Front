@@ -19,28 +19,16 @@
         New Character
       </a>
     </div>
-    <div class="cards flex flex-wrap justify-center">
-      <div v-for="(n, index) in this.total" :key="index">
-        <Card
-          :name="cards[index].name"
-          title="description"
-          :content="cards[index].biography"
-          :filename="path + cards[index].image"
-          class="md:mr-10 my-5"
-        />
-      </div>
-    </div>
+    <div ref="cards" class="cards flex flex-wrap justify-center"></div>
   </div>
 </template>
 
 <script>
 import Card from "@/components/GridCards/Card.vue";
+import Vue from "vue";
 
 export default {
   name: "ShowAllCards",
-  components: {
-    Card,
-  },
   props: {
     title: String,
     path: String,
@@ -55,6 +43,26 @@ export default {
     isStory() {
       return this.title == "Stories";
     },
+  },
+  mounted() {
+    let cardComponent = Vue.extend(Card);
+
+    this.cards.forEach((card) => {
+      let link = document.createElement("a");
+      link.href = "/character-creation/" + String(card.id);
+      let instance = new cardComponent({
+        propsData: {
+          name: card["name"],
+          title: "description",
+          content: card["biography"],
+          filename: this.path + card["image"],
+        },
+      });
+      link.classList.add("md:mr-10", "my-5");
+      instance.$mount();
+      link.appendChild(instance.$el);
+      this.$refs.cards.appendChild(link);
+    });
   },
 };
 </script>
