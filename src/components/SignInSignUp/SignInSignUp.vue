@@ -13,7 +13,9 @@
               <div v-if="isSignUp">Already a member?</div>
               <div v-else>New to rollify?</div>
             </span>
-            <span class="text-right text-xs text-gray-800 underline cursor-pointer">
+            <span
+              class="text-right text-xs text-gray-800 underline cursor-pointer"
+            >
               <a v-if="isSignUp" v-on:click="alterSign">Sign In</a>
               <a v-else v-on:click="alterSign">Sign Up</a>
             </span>
@@ -80,7 +82,11 @@
             </div>
 
             <div class="mb-4" v-if="!isSignUp">
-              <input class="mr-2 leading-tight" type="checkbox" id="checkbox_id" />
+              <input
+                class="mr-2 leading-tight"
+                type="checkbox"
+                id="checkbox_id"
+              />
               <label class="text-sm" for="checkbox_id"> Remember Me </label>
             </div>
 
@@ -162,7 +168,8 @@ export default {
           userRegister(data)
             .then((response) => {
               this.$refs.information.classList.add("correct");
-              this.information = "You have completed your registration successfully";
+              this.information =
+                "You have completed your registration successfully";
               this.signType = !this.signType;
             })
             .catch((error) => {
@@ -195,13 +202,14 @@ export default {
     },
     validateFields() {
       if (
-        this.isEmptyOrSpaces(this.username) ||
-        this.isEmptyOrSpaces(this.email) ||
-        this.isEmptyOrSpaces(this.password)
+        (this.isEmptyOrSpaces(this.username) ||
+          this.isEmptyOrSpaces(this.email) ||
+          this.isEmptyOrSpaces(this.password)) &&
+        this.isSignUp
       ) {
         this.information = "You must fill in all fields";
         return false;
-      } else if (!this.emailIsValid(this.email)) {
+      } else if (!this.emailIsValid(this.email) && this.isSignUp) {
         this.information = "You must enter a valid email";
         return false;
       } else if (this.password.length < 8) {
