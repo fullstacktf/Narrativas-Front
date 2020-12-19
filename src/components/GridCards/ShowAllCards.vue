@@ -22,15 +22,6 @@
       </a>
     </div>
     <div ref="cards" class="cards flex flex-wrap justify-center">
-      <!--<a v-bind:href="'/character-creation/' + cards[index].id">
-          <Card
-            :name="cards[index].name"
-            title="description"
-            :content="cards[index].biography"
-            :filename="path + cards[index].image"
-            class="md:mr-10 my-5"
-          />
-        </a>-->
     </div>
   </div>
 </template>

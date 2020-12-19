@@ -33,7 +33,7 @@ const routes = [
     component: Stories
   },
   {
-    path: '/character-creation',
+    path: '/character-creation/:id?',
     name: 'Character Creation',
     component: CharacterCreation,
     beforeEnter: (to, from, next) => {

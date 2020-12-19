@@ -30,7 +30,7 @@ export default class Client {
 
   async getCharacter(id) {
     const headers = await authHeader()
-    return await axios.get(DOMAIN + '/characters/' + str(id), { headers: headers }).then(response => response.data)
+    return await axios.get(DOMAIN + '/characters/' + String(id), { headers: headers }).then(response => response.data)
   }
 
   async postCharacter(data) {
@@ -51,7 +51,7 @@ export default class Client {
 
   async deleteCharacter(id) {
     const headers = await authHeader()
-    return await axios.delete(DOMAIN + '/characters/' + str(id), { headers: headers }).then(response => response.data)
+    return await axios.delete(DOMAIN + '/characters/' + String(id), { headers: headers }).then(response => response.data)
   }
 
   async userRegister(data) {

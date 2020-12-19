@@ -81,6 +81,7 @@ export default {
   name: "Character",
   data() {
     return {
+      id: "",
       name: "",
       description: "",
       imagePath: DOMAIN + "/static/default/character_default.png",
@@ -140,9 +141,16 @@ export default {
         }
       }
     });
+    this.id = window.location.pathname.split("/").pop();
 
-    this.createSection();
-    this.createSection();
+    if (this.id) {
+      getCharacter(this.id).then(data => {
+        console.log(data);
+      })
+    } else {
+      this.createSection();
+      this.createSection();
+    }
   },
   destroyed() {
     store.commit("resetBlockSection");
