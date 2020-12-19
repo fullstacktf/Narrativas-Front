@@ -152,34 +152,35 @@ export default {
   methods: {
     sendData: function () {
       this.information = "";
-
-      if (this.signType) {
-        const data = {
-          username: this.username,
-          email: this.email,
-          password: this.password,
-        };
-        userRegister(data)
-          .then((response) => {
-            this.$refs.information.classList.add("correct");
-            this.information = "Registro correcto";
-            this.signType = !this.signType;
-          })
-          .catch((error) => {
-            this.$refs.information.classList.remove("correct");
-            this.information = error.response.data.error;
-          });
-      } else {
-        const data = { username: this.username, password: this.password };
-        userLogin(data)
-          .then((response) => {
-            setCookie("token", response.data["token"]);
-            EventBus.$emit("SIGNED_IN");
-          })
-          .catch((error) => {
-            this.$refs.information.classList.remove("correct");
-            this.information = error.response.data.error;
-          });
+      if (this.validateFields()) {
+        if (this.signType) {
+          const data = {
+            username: this.username,
+            email: this.email,
+            password: this.password,
+          };
+          userRegister(data)
+            .then((response) => {
+              this.$refs.information.classList.add("correct");
+              this.information = "You have completed your registration successfully";
+              this.signType = !this.signType;
+            })
+            .catch((error) => {
+              this.$refs.information.classList.remove("correct");
+              this.information = error.response.data.error;
+            });
+        } else {
+          const data = { username: this.username, password: this.password };
+          userLogin(data)
+            .then((response) => {
+              setCookie("token", response.data["token"]);
+              EventBus.$emit("SIGNED_IN");
+            })
+            .catch((error) => {
+              this.$refs.information.classList.remove("correct");
+              this.information = error.response.data.error;
+            });
+        }
       }
     },
     alterSign: function (event) {
@@ -191,6 +192,30 @@ export default {
     },
     emitRemovePopup() {
       EventBus.$emit("REMOVE_SIGN_POPUP");
+    },
+    validateFields() {
+      if (
+        this.isEmptyOrSpaces(this.username) ||
+        this.isEmptyOrSpaces(this.email) ||
+        this.isEmptyOrSpaces(this.password)
+      ) {
+        this.information = "You must fill in all fields";
+        return false;
+      } else if (!this.emailIsValid(this.email)) {
+        this.information = "You must enter a valid email";
+        return false;
+      } else if (this.password.length < 8) {
+        this.information = "Password cannot be less than 8 characters";
+        return false;
+      }
+
+      return true;
+    },
+    emailIsValid(email) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    },
+    isEmptyOrSpaces(str) {
+      return str === null || str.match(/^ *$/) !== null;
     },
   },
 };
