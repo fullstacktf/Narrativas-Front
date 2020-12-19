@@ -11,6 +11,7 @@
 </template>
 
 <script>
+import EventBus from "@/event-bus";
 export default {
     name: "StoryCard",
     mounted() {
@@ -35,6 +36,10 @@ export default {
         },
         openCard() {
             console.log("He clicado");
+        },
+        emitRemoveSection () {
+            let str = this.$el.className
+            EventBus.$emit("REMOVE_STORY_CARD", str.split(' ').pop());
         },
     }
 }

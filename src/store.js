@@ -6,7 +6,8 @@ Vue.use(Vuex)
 export const store = new Vuex.Store({
   state: {
     sectionCount: 0,
-    blockSectionCount: 0
+    blockSectionCount: 0,
+    cardStoryCount: 0
   },
   mutations: {
     incrementSection (state) {
@@ -14,6 +15,12 @@ export const store = new Vuex.Store({
     },
     incrementBlockSection (state) {
       state.blockSectionCount++
+    },
+    incrementCardStory () {
+      state.cardStoryCount++
+    },
+    resetCardStory (state) {
+      state.cardStoryCount = 0
     },
     resetSection (state) {
         state.sectionCount = 0
