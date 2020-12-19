@@ -27,5 +27,10 @@ export const updateCharacter = async () => {
 
 export const deleteCharacter = async (id) => {
   const client = new Client();
-  return await client.deleteCharacter(id)
+  return await client.deleteCharacter(id);
+}
+
+export const createSection = async (data, id) => {
+  const client = new Client();
+  return await client.postSection(data, id);
 }
