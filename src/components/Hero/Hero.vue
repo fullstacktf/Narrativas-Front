@@ -12,7 +12,8 @@
         </div>
         <div class="startBtn mt-10">
           <button
-            class="rounded-full py-3 px-6 bg-primary hover:bg-primary-dark md:bg-secondary md:hover:bg-secondary-dark text-xs font-bold"
+            class="rounded-full py-3 px-6 bg-primary hover:bg-primary-dark md:bg-secondary md:hover:bg-secondary-dark text-xs font-bold focus:outline-none"
+            v-on:click="emitSignPopup(true)"
           >
             Get Started
           </button>
@@ -31,10 +32,14 @@
 <script>
 import "../../assets/styles/index.css";
 import "../../assets/styles/base.css";
+import EventBus from "@/event-bus";
 export default {
   name: "Hero",
   mounted() {
     this.onResize();
+    EventBus.$on("REMOVE_SIGN_POPUP", () => {
+      this.isSignOpened = false;
+    });
   },
   data() {
     return {
@@ -65,6 +70,14 @@ export default {
         container.querySelector(".start").classList.remove("bg-img");
         container.querySelector(".title").classList.remove("text-shadow");
       }
+    },
+    emitSignPopup(isSignUp) {
+      if (this.isSignOpened) {
+        EventBus.$emit("DELETE_SIGN_POPUP");
+      } else {
+        EventBus.$emit("SIGN_POPUP", isSignUp);
+      }
+      this.isSignOpened = !this.isSignOpened;
     },
   },
 };

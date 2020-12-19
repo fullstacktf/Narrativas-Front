@@ -52,7 +52,7 @@
         v-for="(section, index) in Sections"
         :key="index"
       >
-        <img class="cursor-pointer" :src="section.img" alt="" />
+        <img :src="section.img" alt="" />
         <h3 class="py-2">{{ section.title }}</h3>
         <p class="pb-4 text-gray-700 text-sm">{{ section.description }}</p>
       </div>
@@ -81,7 +81,7 @@
         >
           <h3 class="py-2">{{ section.title }}</h3>
           <div class="flex justify-between items-center">
-            <img class="cursor-pointer w-2/4" :src="section.img" alt="" />
+            <img class="w-2/4" :src="section.img" alt="" />
             <p class="py-4 pl-4 text-gray-500 text-xs">
               {{ section.description }}
             </p>

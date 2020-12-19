@@ -7,7 +7,7 @@
         class="w-52 h-40 pt-5"
         alt="ROLLIFY"
       />
-      <img v-else src="@/assets/img/logo_completo.png" class="w-52 h-40" alt="ROLLIFY" />
+      <img v-else src="@/assets/img/logo_completo.jpg" class="my-10 w-88 h-20" alt="ROLLIFY" />
     </div>
 
     <div
