@@ -14,22 +14,15 @@
         ></div>
         <div
           v-if="isMobile"
-          class="flex flex-col items-center justify-center h-full text-center font-title text-white absolute z-5"
+          class="flex flex-col items-center justify-center w-full h-full text-center font-title text-white absolute z-5"
         >
           <h1 class="text-3xl">CREATE YOUR</h1>
-          <h1 class="text-6xl md:text-6xl">{{ title }}</h1>
-          <p class="w-4/5">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eu
-            sollicitudin neque. Vivamus luctus pulvinar fermentum. In hac habitasse platea
-            dictumst. Pellentesque quis sem non mi eleifend pulvinar. Nullam ut lacinia
-            erat. Duis euismod orci a velit porttitor, cursus vulputate nisl mattis.
-            Integer finibus dignissim tincidunt. Aliquam malesuada semper nisi sed
-            tristique. Praesent posuere lacus vel sem tincidunt gravida.
-          </p>
+          <h1 class="text-6xl md:text-6xl">{{ this.title }}</h1>
+          <p class="w-2/5">{{ this.description }}</p>
           <button
             class="bg-secondary hover:bg-secondary-dark text-white font-bold py-2 px-4 rounded-full text-xs mt-4 focus:outline-none"
           >
-            Get Started
+            <a :href="url">Get Started</a>
           </button>
         </div>
         <div v-if="!isMobile" class="w-1/2 h-full text-center font-title">
@@ -65,10 +58,15 @@ import "../../assets/styles/index.css";
 import "../../assets/styles/base.css";
 export default {
   name: "Slider",
+  mounted() {
+
+  },
   data: function () {
     return {
       isStorySlider: true,
       screenWidth: window.innerWidth,
+      character_data: "Alex puto amo aqui va la descripcion de characters",
+      story_data: "Alex puto amo aqui va la descripcion amo stories",
     };
   },
   methods: {
@@ -95,6 +93,9 @@ export default {
     },
     title: function () {
       return this.isStorySlider ? "CHARACTERS" : "STORIES";
+    },
+    description() {
+      return this.isStorySlider ? this.character_data : this.story_data
     },
     isMobile() {
       return this.screenWidth < 768;
