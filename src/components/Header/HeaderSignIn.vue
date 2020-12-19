@@ -61,10 +61,10 @@
         </button>
 
         <div
-          class="card alignProfile bg-gray-500 w-auto absolute z-10 text-left h-80 pr-1 h-auto py-1"
+          class="cardProfile alignProfile bg-gray-400 w-auto absolute z-10 text-left h-80 pr-1 h-auto py-1"
           v-if="profile"
         >
-          <div class="intoCard flex flex-col bg-white ml-1">
+          <div class="intoCardProfile flex flex-col bg-white ml-1">
               <div class="pl-4 pt-10 pb-4 flex flex-col border-b-2 border-gray-400">
                 <p>Sign in as</p>
                 <p class="font-bold">User name</p>
@@ -193,9 +193,11 @@ export default {
     },
     menuState() {
       this.enable = !this.enable;
+      this.profile = false;
     },
     profileState() {
       this.profile = !this.profile;
+      this.enable = false;
     },
     disconnect() {
       EventBus.$emit("DISCONNECT");
@@ -213,6 +215,14 @@ export default {
         clip-path: polygon(79.5% 0, 83% 9%, 100% 9%, 100% 100%, 0 100%, 0 9%, 76% 9%);
     }
 
+    .cardProfile {
+        clip-path: polygon(78% 6%, 83% 9%, 100% 9%, 100% 100%, 0 100%, 0 9%, 73% 9%);
+    }
+
+    .intoCardProfile {
+        clip-path: polygon(79.5% 6%, 83% 9%, 100% 9%, 100% 100%, 0 100%, 0 9%, 76% 9%);
+    }
+
     .alignPlusMenu {
         top: 5rem;
         right: 11vw;
@@ -224,7 +234,7 @@ export default {
     }
 
     .alignProfile {
-    top: 5rem;
+    top: 4rem;
     right: 7vw;
     }
 
