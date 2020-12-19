@@ -48,13 +48,13 @@
       v-if="enable"
     >
       <div
-        class="md:w-8/12 xl:w-3/12 pr-10 md:px-16 flex flex-col justify-center"
+        class="md:w-8/12 xl:w-3/12 pr-10 md:px-16 flex flex-col justify-center items-center"
         v-for="(section, index) in Sections"
         :key="index"
       >
         <img :src="section.img" alt="" />
         <h3 class="py-2">{{ section.title }}</h3>
-        <p class="pb-4 text-gray-700 text-sm">{{ section.description }}</p>
+        <p class="pb-4 text-gray-700 text-sm h-28 w-80">{{ section.description }}</p>
       </div>
     </div>
 

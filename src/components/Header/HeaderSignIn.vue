@@ -57,41 +57,43 @@
         </button>
 
         <div
-          class="card alignProfile bg-gray-500 w-auto absolute z-10 text-left h-80 pr-1 h-auto py-1"
+          class="cardProfile alignProfile bg-gray-400 w-auto absolute z-10 text-left h-80 pr-1 h-auto py-1"
           v-if="profile"
         >
-          <div class="intoCard flex flex-col bg-white ml-1">
-            <div class="pl-4 pt-10 pb-4 flex flex-col border-b-2 border-gray-400">
-              <p>Sign in as</p>
-              <p class="font-bold">User name</p>
-            </div>
-            <div class="flex flex-col border-b-2 border-gray-400">
-              <a class="pb-2 pt-2 px-5 hover:bg-primary hover:text-white cursor-pointer"
-                >Profile</a
-              >
-            </div>
-            <div class="flex flex-col border-b-2 border-gray-400">
-              <a
-                class="pb-2 pt-2 px-5 hover:bg-primary hover:text-white cursor-pointer"
-                href="/Stories"
-                >Your stories</a
-              >
-              <a
-                class="py-2 px-5 hover:bg-primary hover:text-white cursor-pointer"
-                href="Characters"
-                >Your character</a
-              >
-            </div>
-            <div class="flex flex-col">
-              <a class="pb-2 pt-2 px-5 hover:bg-primary hover:text-white cursor-pointer"
-                >Settings</a
-              >
-              <a
-                class="py-2 px-5 hover:bg-primary hover:text-white cursor-pointer"
-                v-on:click="disconnect()"
-                >Log Out</a
-              >
-            </div>
+          <div class="intoCardProfile flex flex-col bg-white ml-1">
+              <div class="pl-4 pt-10 pb-4 flex flex-col border-b-2 border-gray-400">
+                <p>Sign in as</p>
+                <p class="font-bold">User name</p>
+              </div>
+              <div class="flex flex-col border-b-2 border-gray-400">
+                <a
+                  class="pb-2 pt-2 px-5 hover:bg-primary hover:text-white cursor-pointer"
+                  >Profile</a
+                >
+              </div>
+              <div class="flex flex-col border-b-2 border-gray-400">
+                <a
+                  class="pb-2 pt-2 px-5 hover:bg-primary hover:text-white cursor-pointer"
+                  href="/Stories"
+                  >Your stories</a
+                >
+                <a
+                  class="py-2 px-5 hover:bg-primary hover:text-white cursor-pointer"
+                  href="Characters"
+                  >Your character</a
+                >
+              </div>
+              <div class="flex flex-col">
+                <a
+                  class="pb-2 pt-2 px-5 hover:bg-primary hover:text-white cursor-pointer"
+                  >Settings</a
+                >
+                <a
+                  class="py-2 px-5 hover:bg-primary hover:text-white cursor-pointer"
+                  v-on:click="disconnect()"
+                  >Log Out</a
+                >
+              </div>
           </div>
         </div>
       </div>
@@ -161,7 +163,7 @@ export default {
       ],
     };
   },
-  computed: {
+   computed: {
     isMobile() {
       return this.screenWidth < 768;
     },
@@ -187,9 +189,11 @@ export default {
     },
     menuState() {
       this.enable = !this.enable;
+      this.profile = false;
     },
     profileState() {
       this.profile = !this.profile;
+      this.enable = false;
     },
     disconnect() {
       EventBus.$emit("DISCONNECT");
@@ -199,33 +203,57 @@ export default {
 </script>
 
 <style scoped>
-.card {
-  clip-path: polygon(78% 0, 83% 9%, 100% 9%, 100% 100%, 0 100%, 0 9%, 73% 9%);
-}
+  .card {
+    clip-path: polygon(78% 0, 83% 9%, 100% 9%, 100% 100%, 0 100%, 0 9%, 73% 9%);
+  }
 
-.intoCard {
-  clip-path: polygon(79.5% 0, 83% 9%, 100% 9%, 100% 100%, 0 100%, 0 9%, 76% 9%);
-}
+  .intoCard {
+    clip-path: polygon(79.5% 0, 83% 9%, 100% 9%, 100% 100%, 0 100%, 0 9%, 76% 9%);
+  }
 
-.alignPlusMenu {
-  top: 5rem;
-  right: 11vw;
-}
+  .cardProfile {
+    clip-path: polygon(78% 6%, 83% 9%, 100% 9%, 100% 100%, 0 100%, 0 9%, 73% 9%);
+  }
 
-.alignPlusMenu {
-  top: 5rem;
-  right: 11vw;
-}
+  .intoCardProfile {
+    clip-path: polygon(79.5% 6%, 83% 9%, 100% 9%, 100% 100%, 0 100%, 0 9%, 76% 9%);
+  }
 
-.alignProfile {
-  top: 5rem;
-  right: 7vw;
-}
+  .alignPlusMenu {
+    top: 5.5rem;
+    right: 11vw;
+  }
 
-.changelogoWidth {
-  padding-top: 25px;
-  padding-bottom: 20px;
-  padding-left: 5vw;
-  transform: scale(2.7);
-}
+  .alignProfile {
+    top: 4rem;
+    right: 7vw;
+  }
+
+  @media screen and (max-width: 1800px) {
+    .alignProfile {
+      right: 5vw;
+    }
+
+    .alignPlusMenu {
+      right: 10vw;
+    }
+  }
+
+  
+  @media screen and (max-width: 1600px) {
+    .alignProfile {
+      right: 3vw;
+    }
+
+    .alignPlusMenu {
+      right: 9vw;
+    }
+  }
+
+  .changelogoWidth {
+    padding-top: 25px;
+    padding-bottom: 20px;
+    padding-left: 5vw;
+    transform: scale(2.7);
+  }
 </style>
