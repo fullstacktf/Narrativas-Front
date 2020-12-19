@@ -67,8 +67,7 @@
         class="py-2 pl-10 hover:bg-primary flex justify-between cursor-pointer"
         v-on:click="mobileExploreState"
         >Explore
-        <span class="text-md text-white pr-12"
-          ><i class="fas fa-sort-down"></i></span
+        <span class="text-md text-white pr-12"><i class="fas fa-sort-down"></i></span
       ></a>
 
       <div
@@ -91,12 +90,8 @@
       </div>
 
       <a class="py-2 pl-10 hover:bg-primary" href="/about">About us</a>
-      <a class="py-2 pl-10 hover:bg-primary" v-on:click="emitSignPopup(false)"
-        >Sign in</a
-      >
-      <a class="py-2 pl-10 hover:bg-primary" v-on:click="emitSignPopup(true)"
-        >Sign up</a
-      >
+      <a class="py-2 pl-10 hover:bg-primary" v-on:click="emitSignPopup(false)">Sign in</a>
+      <a class="py-2 pl-10 hover:bg-primary" v-on:click="emitSignPopup(true)">Sign up</a>
     </div>
   </header>
 </template>
@@ -124,19 +119,19 @@ export default {
           img: require("../../assets/img/explore_1.jpg"),
           title: "Create your own stories online",
           description:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sollicitudin consectetur faucibus.",
+            "We offer you the tools to invent and conceive stories in an entertaining and intuitive way.",
         },
         {
           img: require("../../assets/img/explore_2.jpg"),
           title: "Customize your character",
           description:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sollicitudin consectetur faucibus.",
+            "Create all kinds of characters without restrictions. The limit is your imagination!!!",
         },
         {
           img: require("../../assets/img/explore_3.jpg"),
           title: "Anyone can create a story",
           description:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sollicitudin consectetur faucibus.",
+            "Let your imagination fly and immerse yourself in your stories. You will have the ability to create that adventure that you always dreamed of.",
         },
       ],
     };

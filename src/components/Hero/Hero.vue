@@ -1,5 +1,5 @@
 <template>
-  <div role="hero" class="container flex text-white h-screen max-w-full relative z-0 ">
+  <div role="hero" class="container flex text-white h-screen max-w-full relative z-0">
     <div v-show="!isMobile" class="heroImg w-3/5 bg-white">
       <img src="@/assets/img/Hero.jpg" alt="Imagine" />
     </div>
@@ -30,8 +30,8 @@
 </template>
 
 <script>
-import '../../assets/styles/index.css';
-import '../../assets/styles/base.css';
+import "../../assets/styles/index.css";
+import "../../assets/styles/base.css";
 import EventBus from "@/event-bus";
 export default {
   name: "Hero",

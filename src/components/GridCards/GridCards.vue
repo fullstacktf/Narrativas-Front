@@ -1,19 +1,14 @@
 <template>
   <div>
     <h1 class="text-4xl m-10">
-      {{ title }} <span class="text-gray-500">({{ total }})</span>
+      {{ title }} <span class="text-gray-500">({{ this.numberOfCharacters }})</span>
     </h1>
     <div
       ref="cards"
       class="cards flex flex-wrap flex-col-reverse md:flex-row-reverse items-center md:justify-center"
     >
       <a v-bind:href="path" class="mx-6 my-3">
-        <NewCard
-          name="ADD NEW ITEM"
-          title="Description"
-          content="Lorem ipsum bla bla bla"
-          filename="newCharacter"
-        />
+        <NewCard name="ADD NEW ITEM" filename="newCharacter" />
       </a>
     </div>
     <a v-bind:href="viewAllPath">
@@ -48,30 +43,34 @@ export default {
   components: {
     NewCard,
   },
-  computed() {
-    return this.total;
+  computed: {
+    numberOfCharacters() {
+      return this.total;
+    },
   },
   mounted() {
     if (this.title == "CHARACTERS") {
       getCharacters()
         .then((data) => {
-          this.total = data.length;
-          for (let i = data.length - 1; i >= 0 && i >= data.length - 3; i--) {
-            let link = document.createElement("a");
-            link.href = this.path + String(data[i].id);
-            link.classList.add("mx-6", "my-4");
-            let card = Vue.extend(Card);
-            let image = DOMAIN + "/static" + this.viewAllPath + data[i].image;
-            let instance = new card({
-              propsData: {
-                name: data[i].name,
-                content: data[i].biography,
-                filename: image,
-              },
-            });
-            instance.$mount();
-            link.appendChild(instance.$el);
-            this.$refs.cards.appendChild(link);
+          if (data) {
+            this.total = data.length;
+            for (let i = data.length - 1; i >= 0 && i >= data.length - 3; i--) {
+              let link = document.createElement("a");
+              link.href = this.path + String(data[i].id);
+              link.classList.add("mx-6", "my-4");
+              let card = Vue.extend(Card);
+              let image = DOMAIN + "/static" + this.viewAllPath + data[i].image;
+              let instance = new card({
+                propsData: {
+                  name: data[i].name,
+                  content: data[i].biography,
+                  filename: image,
+                },
+              });
+              instance.$mount();
+              link.appendChild(instance.$el);
+              this.$refs.cards.appendChild(link);
+            }
           }
         })
         .catch();

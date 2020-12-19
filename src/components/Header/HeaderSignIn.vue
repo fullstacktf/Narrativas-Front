@@ -18,9 +18,7 @@
         />
       </a>
       <div v-if="!isMobile">
-        <a class="hover:text-white truncate cursor-pointer" href="/about"
-          >About us</a
-        >
+        <a class="hover:text-white truncate cursor-pointer" href="/about">About us</a>
         <a class="hover:text-white truncate ml-10 lg:ml-16 cursor-pointer"
           >Explore Story</a
         >
@@ -38,33 +36,31 @@
           class="card alignPlusMenu flex justify-center items-center absolute z-10 bg-gray-400 text-left w-auto h-26 pr-1"
           v-if="enable"
         >
-          <div class="intoCard flex flex-col bg-white h-24 ml-1 ">
+          <div class="intoCard flex flex-col bg-white h-24 ml-1">
             <span class="h-3 w-auto bg-white"></span>
             <a
               class="pb-2 pt-2 px-5 hover:bg-primary hover:text-white cursor-pointer"
               href="/story-creation"
               >New story</a
             >
-            <a class="py-2 px-5 hover:bg-primary hover:text-white cursor-pointer"
-            href="/character-creation"
+            <a
+              class="py-2 px-5 hover:bg-primary hover:text-white cursor-pointer"
+              href="/character-creation"
               >New character</a
             >
           </div>
         </div>
 
-        <button
-          class="flex items-center focus:outline-none"
-          v-on:click="profileState"
-        >
+        <button class="flex items-center focus:outline-none" v-on:click="profileState">
           <div class="bg-white w-12 h-12 rounded-full ml-5 mr-1"></div>
           <i class="fas fa-sort-down text-white"></i>
         </button>
 
         <div
-          class="card alignProfile bg-gray-500 w-auto absolute z-10 text-left h-80 pr-1 h-auto py-1"
+          class="cardProfile alignProfile bg-gray-400 w-auto absolute z-10 text-left h-80 pr-1 h-auto py-1"
           v-if="profile"
         >
-          <div class="intoCard flex flex-col bg-white ml-1">
+          <div class="intoCardProfile flex flex-col bg-white ml-1">
               <div class="pl-4 pt-10 pb-4 flex flex-col border-b-2 border-gray-400">
                 <p>Sign in as</p>
                 <p class="font-bold">User name</p>
@@ -150,24 +146,24 @@ export default {
           img: "@/assets/img/explore_1.jpg",
           title: "Create your own stories online",
           description:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sollicitudin consectetur faucibus.",
+            "We offer you the tools to invent and conceive stories in an entertaining and intuitive way.",
         },
         {
           img: "@/assets/img/explore_2.jpg",
           title: "Customize your character",
           description:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sollicitudin consectetur faucibus.",
+            "Create all kinds of characters without restrictions. The limit is your imagination!!!",
         },
         {
           img: "@/assets/img/explore_3.jpg",
           title: "Any one can create a story",
           description:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sollicitudin consectetur faucibus.",
+            "Let your imagination fly and immerse yourself in your stories. You will have the ability to create that adventure that you always dreamed of.",
         },
       ],
     };
   },
-  computed: {
+   computed: {
     isMobile() {
       return this.screenWidth < 768;
     },
@@ -193,9 +189,11 @@ export default {
     },
     menuState() {
       this.enable = !this.enable;
+      this.profile = false;
     },
     profileState() {
       this.profile = !this.profile;
+      this.enable = false;
     },
     disconnect() {
       EventBus.$emit("DISCONNECT");
@@ -205,33 +203,57 @@ export default {
 </script>
 
 <style scoped>
-    .card {
-        clip-path: polygon(78% 0, 83% 9%, 100% 9%, 100% 100%, 0 100%, 0 9%, 73% 9%);
-    }
+  .card {
+    clip-path: polygon(78% 0, 83% 9%, 100% 9%, 100% 100%, 0 100%, 0 9%, 73% 9%);
+  }
 
-    .intoCard {
-        clip-path: polygon(79.5% 0, 83% 9%, 100% 9%, 100% 100%, 0 100%, 0 9%, 76% 9%);
-    }
+  .intoCard {
+    clip-path: polygon(79.5% 0, 83% 9%, 100% 9%, 100% 100%, 0 100%, 0 9%, 76% 9%);
+  }
 
-    .alignPlusMenu {
-        top: 5rem;
-        right: 11vw;
-    }
+  .cardProfile {
+    clip-path: polygon(78% 6%, 83% 9%, 100% 9%, 100% 100%, 0 100%, 0 9%, 73% 9%);
+  }
 
-    .alignPlusMenu {
-    top: 5rem;
+  .intoCardProfile {
+    clip-path: polygon(79.5% 6%, 83% 9%, 100% 9%, 100% 100%, 0 100%, 0 9%, 76% 9%);
+  }
+
+  .alignPlusMenu {
+    top: 5.5rem;
     right: 11vw;
-    }
+  }
 
-    .alignProfile {
-    top: 5rem;
+  .alignProfile {
+    top: 4rem;
     right: 7vw;
+  }
+
+  @media screen and (max-width: 1800px) {
+    .alignProfile {
+      right: 5vw;
     }
 
-    .changelogoWidth {
+    .alignPlusMenu {
+      right: 10vw;
+    }
+  }
+
+  
+  @media screen and (max-width: 1600px) {
+    .alignProfile {
+      right: 3vw;
+    }
+
+    .alignPlusMenu {
+      right: 9vw;
+    }
+  }
+
+  .changelogoWidth {
     padding-top: 25px;
     padding-bottom: 20px;
     padding-left: 5vw;
     transform: scale(2.7);
-}
+  }
 </style>
