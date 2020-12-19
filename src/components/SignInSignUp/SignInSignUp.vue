@@ -13,9 +13,7 @@
               <div v-if="isSignUp">Already a member?</div>
               <div v-else>New to rollify?</div>
             </span>
-            <span
-              class="text-right text-xs text-gray-800 underline cursor-pointer"
-            >
+            <span class="text-right text-xs text-gray-800 underline cursor-pointer">
               <a v-if="isSignUp" v-on:click="alterSign">Sign In</a>
               <a v-else v-on:click="alterSign">Sign Up</a>
             </span>
@@ -76,17 +74,13 @@
                 placeholder="Password"
                 autocomplete="on"
               />
-              <p id="information" class="text-xs italic text-red-500">
+              <p ref="information" class="text-xs italic text-red-500">
                 {{ this.information }}
               </p>
             </div>
 
             <div class="mb-4" v-if="!isSignUp">
-              <input
-                class="mr-2 leading-tight"
-                type="checkbox"
-                id="checkbox_id"
-              />
+              <input class="mr-2 leading-tight" type="checkbox" id="checkbox_id" />
               <label class="text-sm" for="checkbox_id"> Remember Me </label>
             </div>
 
@@ -125,7 +119,6 @@
     </div>
   </div>
 </template>
-
 
 <script>
 import "../../assets/styles/index.css";
@@ -168,10 +161,12 @@ export default {
         };
         userRegister(data)
           .then((response) => {
+            this.$refs.information.classList.add("correct");
             this.information = "Registro correcto";
             this.signType = !this.signType;
           })
           .catch((error) => {
+            this.$refs.information.classList.remove("correct");
             this.information = error.response.data.error;
           });
       } else {
@@ -182,6 +177,7 @@ export default {
             EventBus.$emit("SIGNED_IN");
           })
           .catch((error) => {
+            this.$refs.information.classList.remove("correct");
             this.information = error.response.data.error;
           });
       }
@@ -200,3 +196,8 @@ export default {
 };
 </script>
 
+<style scoped>
+.correct {
+  color: green;
+}
+</style>
