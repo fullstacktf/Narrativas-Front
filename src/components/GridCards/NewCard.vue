@@ -20,7 +20,6 @@ export default {
   name: "NewCard",
   props: {
     name: String,
-    content: String,
     filename: String,
   },
   computed: {
