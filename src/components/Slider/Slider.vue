@@ -17,8 +17,8 @@
           class="flex flex-col items-center justify-center w-full h-full text-center font-title text-white absolute z-5"
         >
           <h1 class="text-3xl">CREATE YOUR</h1>
-          <h1 class="text-6xl md:text-6xl">{{ this.title }}</h1>
-          <p class="w-2/5">{{ this.description }}</p>
+          <h1 class="text-6xl">{{ this.title }}</h1>
+          <p class="w-2/5 text-lg">{{ this.description }}</p>
           <button
             class="bg-secondary hover:bg-secondary-dark text-white font-bold py-2 px-4 rounded-full text-xs mt-4 focus:outline-none"
           >
@@ -29,7 +29,7 @@
           <div class="mt-12 md:mt-8">
             <h1 class="text-xl">CREATE YOUR</h1>
             <h1 class="text-4xl md:text-6xl">{{ title }}</h1>
-            <button 
+            <button
               class="bg-secondary hover:bg-secondary-dark text-white font-bold py-2 px-4 rounded-full text-xl mt-4 focus:outline-none"
             >
               <a :href="url">Get Started</a>
@@ -58,15 +58,15 @@ import "../../assets/styles/index.css";
 import "../../assets/styles/base.css";
 export default {
   name: "Slider",
-  mounted() {
-
-  },
+  mounted() {},
   data: function () {
     return {
       isStorySlider: true,
       screenWidth: window.innerWidth,
-      character_data: "Alex puto amo aqui va la descripcion de characters",
-      story_data: "Alex puto amo aqui va la descripcion amo stories",
+      character_data:
+        "Create all kinds of characters without restrictions. The limit is your imagination!!!",
+      story_data:
+        "Let your imagination fly and immerse yourself in your stories. You will have the ability to create that adventure that you always dreamed of.",
     };
   },
   methods: {
@@ -89,13 +89,13 @@ export default {
   },
   computed: {
     url() {
-      return this.isStorySlider ? "/character-creation" : "story-creation"
+      return this.isStorySlider ? "/character-creation" : "story-creation";
     },
     title: function () {
       return this.isStorySlider ? "CHARACTERS" : "STORIES";
     },
     description() {
-      return this.isStorySlider ? this.character_data : this.story_data
+      return this.isStorySlider ? this.character_data : this.story_data;
     },
     isMobile() {
       return this.screenWidth < 768;
