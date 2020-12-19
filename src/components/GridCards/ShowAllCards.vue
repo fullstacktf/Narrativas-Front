@@ -1,6 +1,8 @@
 <template>
   <div class="m-20">
-    <div class="flex flex-col md:flex-row justify-center md:justify-between mx-5">
+    <div
+      class="flex flex-col md:flex-row justify-center md:justify-between mx-5"
+    >
       <h1 class="text-4xl md:text-left">
         {{ title }} <span class="text-gray-500">({{ total }})</span>
       </h1>
@@ -19,12 +21,7 @@
         New Character
       </a>
     </div>
-<<<<<<< HEAD
-    <div ref="cards" class="cards flex flex-wrap justify-center">
-    </div>
-=======
     <div ref="cards" class="cards flex flex-wrap justify-center"></div>
->>>>>>> 982aa938a3e59af129670fe016275ddf26dd5250
   </div>
 </template>
 
@@ -51,23 +48,26 @@ export default {
   },
   mounted() {
     let cardComponent = Vue.extend(Card);
-
-    this.cards.forEach((card) => {
-      let link = document.createElement("a");
-      link.href = "/character-creation/" + String(card.id);
-      let instance = new cardComponent({
-        propsData: {
-          name: card["name"],
-          title: "description",
-          content: card["biography"],
-          filename: this.path + card["image"],
-        },
+    try {
+      this.cards.forEach((card) => {
+        let link = document.createElement("a");
+        link.href = "/character-creation/" + String(card.id);
+        let instance = new cardComponent({
+          propsData: {
+            name: card["name"],
+            title: "description",
+            content: card["biography"],
+            filename: this.path + card["image"],
+          },
+        });
+        link.classList.add("md:mr-10", "my-5");
+        instance.$mount();
+        link.appendChild(instance.$el);
+        this.$refs.cards.appendChild(link);
       });
-      link.classList.add("md:mr-10", "my-5");
-      instance.$mount();
-      link.appendChild(instance.$el);
-      this.$refs.cards.appendChild(link);
-    });
+    } catch (error) {
+      console.log(error)
+    };
   },
 };
 </script>
