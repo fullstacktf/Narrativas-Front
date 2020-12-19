@@ -37,17 +37,25 @@ export default {
   name: "GridCards",
   props: {
     title: String,
-    total: Number,
     path: String,
     viewAllPath: String,
   },
+  data() {
+    return {
+      total: 0,
+    };
+  },
   components: {
     NewCard,
+  },
+  computed() {
+    return this.total;
   },
   mounted() {
     if (this.title == "CHARACTERS") {
       getCharacters()
         .then((data) => {
+          this.total = data.length;
           for (let i = data.length - 1; i >= 0 && i >= data.length - 3; i--) {
             let link = document.createElement("a");
             link.href = this.path + String(data[i].id);

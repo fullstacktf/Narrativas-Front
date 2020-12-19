@@ -6,7 +6,7 @@
 <script>
 import ShowAllCards from "@/components/GridCards/ShowAllCards.vue";
 import { getCharacters } from "@/domain/services/characterServices";
-import DOMAIN from "@/utils/utils";
+import { DOMAIN } from "@/utils/utils";
 import Vue from "vue";
 
 export default {
@@ -30,7 +30,7 @@ export default {
           propsData: {
             title: "Characters",
             cards: infoCards,
-            path: "http://127.0.0.1:9090" + "/static/characters/",
+            path: DOMAIN + "/static/characters/",
           },
         });
         instance.$mount();
