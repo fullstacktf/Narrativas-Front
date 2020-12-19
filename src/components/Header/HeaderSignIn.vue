@@ -35,19 +35,21 @@
         </button>
 
         <div
-          class="card alignPlusMenu flex flex-col absolute z-10 bg-white text-left w-auto"
+          class="card alignPlusMenu flex justify-center items-center absolute z-10 bg-gray-400 text-left w-auto h-26 pr-1"
           v-if="enable"
         >
-          <span class="h-3 bg-white"></span>
-          <a
-            class="pb-2 pt-2 px-5 hover:bg-primary hover:text-white cursor-pointer"
-            href="/story-creation"
-            >New story</a
-          >
-          <a class="py-2 px-5 hover:bg-primary hover:text-white cursor-pointer"
-          href="/character-creation"
-            >New character</a
-          >
+          <div class="intoCard flex flex-col bg-white h-24 ml-1 ">
+            <span class="h-3 w-auto bg-white"></span>
+            <a
+              class="pb-2 pt-2 px-5 hover:bg-primary hover:text-white cursor-pointer"
+              href="/story-creation"
+              >New story</a
+            >
+            <a class="py-2 px-5 hover:bg-primary hover:text-white cursor-pointer"
+            href="/character-creation"
+              >New character</a
+            >
+          </div>
         </div>
 
         <button
@@ -59,41 +61,43 @@
         </button>
 
         <div
-          class="card alignProfile bg-white w-auto absolute z-10 text-left"
+          class="card alignProfile bg-gray-500 w-auto absolute z-10 text-left h-80 pr-1 h-auto py-1"
           v-if="profile"
         >
-          <div class="pl-4 pt-10 pb-4 flex flex-col border-b-2 border-gray-400">
-            <p>Sign in as</p>
-            <p class="font-bold">User name</p>
-          </div>
-          <div class="flex flex-col border-b-2 border-gray-400">
-            <a
-              class="pb-2 pt-2 px-5 hover:bg-primary hover:text-white cursor-pointer"
-              >Profile</a
-            >
-          </div>
-          <div class="flex flex-col border-b-2 border-gray-400">
-            <a
-              class="pb-2 pt-2 px-5 hover:bg-primary hover:text-white cursor-pointer"
-              href="/Stories"
-              >Your stories</a
-            >
-            <a
-              class="py-2 px-5 hover:bg-primary hover:text-white cursor-pointer"
-              href="Characters"
-              >Your character</a
-            >
-          </div>
-          <div class="flex flex-col">
-            <a
-              class="pb-2 pt-2 px-5 hover:bg-primary hover:text-white cursor-pointer"
-              >Settings</a
-            >
-            <a
-              class="py-2 px-5 hover:bg-primary hover:text-white cursor-pointer"
-              v-on:click="disconnect()"
-              >Log Out</a
-            >
+          <div class="intoCard flex flex-col bg-white ml-1">
+              <div class="pl-4 pt-10 pb-4 flex flex-col border-b-2 border-gray-400">
+                <p>Sign in as</p>
+                <p class="font-bold">User name</p>
+              </div>
+              <div class="flex flex-col border-b-2 border-gray-400">
+                <a
+                  class="pb-2 pt-2 px-5 hover:bg-primary hover:text-white cursor-pointer"
+                  >Profile</a
+                >
+              </div>
+              <div class="flex flex-col border-b-2 border-gray-400">
+                <a
+                  class="pb-2 pt-2 px-5 hover:bg-primary hover:text-white cursor-pointer"
+                  href="/Stories"
+                  >Your stories</a
+                >
+                <a
+                  class="py-2 px-5 hover:bg-primary hover:text-white cursor-pointer"
+                  href="Characters"
+                  >Your character</a
+                >
+              </div>
+              <div class="flex flex-col">
+                <a
+                  class="pb-2 pt-2 px-5 hover:bg-primary hover:text-white cursor-pointer"
+                  >Settings</a
+                >
+                <a
+                  class="py-2 px-5 hover:bg-primary hover:text-white cursor-pointer"
+                  v-on:click="disconnect()"
+                  >Log Out</a
+                >
+              </div>
           </div>
         </div>
       </div>
@@ -203,6 +207,10 @@ export default {
 <style scoped>
     .card {
         clip-path: polygon(78% 0, 83% 9%, 100% 9%, 100% 100%, 0 100%, 0 9%, 73% 9%);
+    }
+
+    .intoCard {
+        clip-path: polygon(79.5% 0, 83% 9%, 100% 9%, 100% 100%, 0 100%, 0 9%, 76% 9%);
     }
 
     .alignPlusMenu {
