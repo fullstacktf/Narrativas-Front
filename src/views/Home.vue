@@ -1,12 +1,12 @@
 <template>
   <div v-if="isConnected">
     <Slider />
-    <GridCards title="STORIES" path="/story-creation" viewAllPath="/stories" />
+    <GridCards title="STORIES" path="/story-creation/" viewAllPath="/stories/" />
     <LateralSlide image="parallaxHome" />
     <GridCards
       title="CHARACTERS"
-      path="/character-creation"
-      viewAllPath="/characters"
+      path="/character-creation/"
+      viewAllPath="/characters/"
     />
     <Modal />
   </div>
