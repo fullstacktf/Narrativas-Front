@@ -7,12 +7,7 @@
       class="cards flex flex-col md:flex-row items-center md:justify-center space-y-10 md:space-y-0 md:space-x-10 md:m-10"
     >
       <a v-bind:href="path">
-        <NewCard
-          name="ADD NEW ITEM"
-          title="Description"
-          content="Lorem ipsum bla bla bla"
-          filename="newCharacter"
-        />
+        <NewCard name="ADD NEW ITEM" filename="newCharacter" />
       </a>
     </div>
     <a v-bind:href="viewAllPath">

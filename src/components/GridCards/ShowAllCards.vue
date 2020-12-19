@@ -1,8 +1,6 @@
 <template>
   <div class="m-20">
-    <div
-      class="flex flex-col md:flex-row justify-center md:justify-between mx-5"
-    >
+    <div class="flex flex-col md:flex-row justify-center md:justify-between mx-5">
       <h1 class="text-4xl md:text-left">
         {{ title }} <span class="text-gray-500">({{ total }})</span>
       </h1>
@@ -27,7 +25,7 @@
           :name="cards[index].name"
           title="description"
           :content="cards[index].biography"
-          :filename="path+cards[index].image"
+          :filename="path + cards[index].image"
           class="md:mr-10 my-5"
         />
       </div>
