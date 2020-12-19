@@ -20,6 +20,7 @@
         <button
           class="focus:outline-none bg-primary text-white px-4 py-2 mt-1 mb-2"
           v-on:click="deleteCharacter"
+          v-if="this.id"
         >
           Delete character
         </button>
@@ -31,7 +32,7 @@
       <div class="w-56 pb-4">
         <div
           class="w-56 h-68 bg-cover img"
-          v-bind:style="{ backgroundImage: `url(${this.imagePath})` }"
+          v-bind:style="{ backgroundImage: `url(${this.getBgImage})` }"
         ></div>
       </div>
       <form class="mb-4 flex">
@@ -81,7 +82,7 @@ export default {
   name: "Character",
   data() {
     return {
-      id: "",
+      id: 0,
       name: "",
       description: "",
       imagePath: DOMAIN + "/static/default/character_default.png",
@@ -116,20 +117,51 @@ export default {
         });
     },
     saveCharacter(event) {
-      const data = {
-        name: this.name,
-        biography: this.description,
-        image: this.imageName,
-      };
-      createCharacter(data)
-        .then((response) => {
-          console.log(response);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
+      if (!this.id) {
+        const data = {
+          name: this.name,
+          biography: this.description,
+          image: this.imageName,
+        };
+        createCharacter(data)
+          .then((response) => {
+            history.pushState(
+              {},
+              null,
+              "/character-creation/" + String(response.id)
+            );
+            this.id = response.id;
+            EventBus.$emit("SAVE_CHARACTER");
+            alert("Character saved");
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      } else {
+        updateCharacter(data)
+          .then((response) => {
+            const data = {
+              name: this.name,
+              biography: this.description,
+              image: this.imageName,
+            };
+            EventBus.$emit("SAVE_CHARACTER");
+            alert("Character updated");
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      }
     },
-    deleteCharacter(event) {},
+    deleteCharacter(event) {
+      deleteCharacter(this.id);
+      location.href = "/"
+    },
+  },
+  computed: {
+    getBgImage() {
+      return this.imagePath;
+    },
   },
   mounted() {
     EventBus.$on("REMOVE_BLOCK_SECTION", (className) => {
@@ -144,9 +176,13 @@ export default {
     this.id = window.location.pathname.split("/").pop();
 
     if (this.id) {
-      getCharacter(this.id).then(data => {
-        console.log(data);
-      })
+      getCharacter(this.id).then((data) => {
+        this.id = data.id;
+        this.name = data.name;
+        this.imagePath = DOMAIN + "/static/characters/" + data.image;
+        this.imageName = data.image;
+        this.description = data.biography;
+      });
     } else {
       this.createSection();
       this.createSection();

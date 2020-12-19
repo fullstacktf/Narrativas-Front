@@ -41,7 +41,18 @@ export default class Client {
       url: DOMAIN + '/characters/',
       data: data,
       headers: headers
-    });
+    }).then(response => response.data)
+  }
+
+  async postSection(data, id) {
+    const headers = await authHeader()
+
+    return await axios({
+      method: 'post',
+      url: DOMAIN + '/characters/' + String(id) + '/section',
+      data: data,
+      headers: headers
+    }).then(response => response.data)
   }
 
   async putCharacter() {
