@@ -4,7 +4,7 @@
 
 <script>
 import SignInSignUp from "@/components/SignInSignUp/SignInSignUp.vue";
-import { deleteCookie } from "@/utils/utils"
+import { deleteCookie } from "@/utils/utils";
 import Vue from "vue";
 import EventBus from "@/event-bus";
 
@@ -20,13 +20,19 @@ export default {
   },
   mounted() {
     EventBus.$on("SIGN_POPUP", (payload) => {
+      console.log("payload: " + payload);
       if (!this.instance) {
+        console.log("instance: " + this.instance);
         this.$refs.insertLogin.classList.add("center-screen");
         this.$refs.insertLogin.classList.add("w-full");
         this.$refs.insertLogin.classList.add("h-full");
 
         let signComponent = Vue.extend(SignInSignUp);
-        this.instance = new signComponent();
+        this.instance = new signComponent({
+          propsData: {
+            type: payload,
+          },
+        });
         this.instance.$mount();
 
         this.$refs.insertLogin.appendChild(this.instance.$el);
