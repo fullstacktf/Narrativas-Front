@@ -61,39 +61,39 @@
           v-if="profile"
         >
           <div class="intoCardProfile flex flex-col bg-white ml-1">
-              <div class="pl-4 pt-10 pb-4 flex flex-col border-b-2 border-gray-400">
-                <p>Sign in as</p>
-                <p class="font-bold">User name</p>
-              </div>
-              <div class="flex flex-col border-b-2 border-gray-400">
-                <a
-                  class="pb-2 pt-2 px-5 hover:bg-primary hover:text-white cursor-pointer"
-                  >Profile</a
-                >
-              </div>
-              <div class="flex flex-col border-b-2 border-gray-400">
-                <a
-                  class="pb-2 pt-2 px-5 hover:bg-primary hover:text-white cursor-pointer"
-                  href="/Stories"
-                  >Your stories</a
-                >
-                <a
-                  class="py-2 px-5 hover:bg-primary hover:text-white cursor-pointer"
-                  href="Characters"
-                  >Your character</a
-                >
-              </div>
-              <div class="flex flex-col">
-                <a
-                  class="pb-2 pt-2 px-5 hover:bg-primary hover:text-white cursor-pointer"
-                  >Settings</a
-                >
-                <a
-                  class="py-2 px-5 hover:bg-primary hover:text-white cursor-pointer"
-                  v-on:click="disconnect()"
-                  >Log Out</a
-                >
-              </div>
+            <div class="pl-4 pt-10 pb-4 flex flex-col border-b-2 border-gray-400">
+              <p>Sign in as</p>
+              <p class="font-bold">User name</p>
+            </div>
+            <div class="flex flex-col border-b-2 border-gray-400">
+              <a
+                class="pb-2 pt-2 px-5 hover:bg-primary hover:text-white cursor-pointer"
+                href="/profile"
+                >Profile</a
+              >
+            </div>
+            <div class="flex flex-col border-b-2 border-gray-400">
+              <a
+                class="pb-2 pt-2 px-5 hover:bg-primary hover:text-white cursor-pointer"
+                href="/stories"
+                >Your stories</a
+              >
+              <a
+                class="py-2 px-5 hover:bg-primary hover:text-white cursor-pointer"
+                href="/characters"
+                >Your character</a
+              >
+            </div>
+            <div class="flex flex-col">
+              <a class="pb-2 pt-2 px-5 hover:bg-primary hover:text-white cursor-pointer"
+                >Settings</a
+              >
+              <a
+                class="py-2 px-5 hover:bg-primary hover:text-white cursor-pointer"
+                v-on:click="disconnect()"
+                >Log Out</a
+              >
+            </div>
           </div>
         </div>
       </div>
@@ -114,14 +114,14 @@
       <div class="flex flex-col border-b-2 border-white">
         <a class="py-2 pl-10 hover:bg-primary" href="/about">About us</a>
         <a class="py-2 pl-10 hover:bg-primary" href="">Explore Stories</a>
-        <a class="py-2 pl-10 hover:bg-primary" href="">Dashboard</a>
-        <a class="py-2 pl-10 hover:bg-primary" href="">Your stories</a>
-        <a class="py-2 pl-10 hover:bg-primary" href="">Your character</a>
+        <a class="py-2 pl-10 hover:bg-primary" href="/stories">Dashboard</a>
+        <a class="py-2 pl-10 hover:bg-primary" href="/stories">Your stories</a>
+        <a class="py-2 pl-10 hover:bg-primary" href="/characters">Your character</a>
       </div>
       <div class="flex flex-col">
         <a class="py-2 pl-10 hover:bg-primary" href="">Settings</a>
-        <a class="py-2 pl-10 hover:bg-primary" href="">Profile</a>
-        <a class="py-2 pl-10 hover:bg-primary" href="">Logout</a>
+        <a class="py-2 pl-10 hover:bg-primary" href="/profile">Profile</a>
+        <a class="py-2 pl-10 hover:bg-primary" v-on:click="disconnect()">Logout</a>
       </div>
     </div>
   </div>
@@ -163,7 +163,7 @@ export default {
       ],
     };
   },
-   computed: {
+  computed: {
     isMobile() {
       return this.screenWidth < 768;
     },
@@ -203,57 +203,56 @@ export default {
 </script>
 
 <style scoped>
-  .card {
-    clip-path: polygon(78% 0, 83% 9%, 100% 9%, 100% 100%, 0 100%, 0 9%, 73% 9%);
-  }
+.card {
+  clip-path: polygon(78% 0, 83% 9%, 100% 9%, 100% 100%, 0 100%, 0 9%, 73% 9%);
+}
 
-  .intoCard {
-    clip-path: polygon(79.5% 0, 83% 9%, 100% 9%, 100% 100%, 0 100%, 0 9%, 76% 9%);
-  }
+.intoCard {
+  clip-path: polygon(79.5% 0, 83% 9%, 100% 9%, 100% 100%, 0 100%, 0 9%, 76% 9%);
+}
 
-  .cardProfile {
-    clip-path: polygon(78% 6%, 83% 9%, 100% 9%, 100% 100%, 0 100%, 0 9%, 73% 9%);
-  }
+.cardProfile {
+  clip-path: polygon(78% 6%, 83% 9%, 100% 9%, 100% 100%, 0 100%, 0 9%, 73% 9%);
+}
 
-  .intoCardProfile {
-    clip-path: polygon(79.5% 6%, 83% 9%, 100% 9%, 100% 100%, 0 100%, 0 9%, 76% 9%);
+.intoCardProfile {
+  clip-path: polygon(79.5% 6%, 83% 9%, 100% 9%, 100% 100%, 0 100%, 0 9%, 76% 9%);
+}
+
+.alignPlusMenu {
+  top: 5.5rem;
+  right: 11vw;
+}
+
+.alignProfile {
+  top: 4rem;
+  right: 7vw;
+}
+
+@media screen and (max-width: 1800px) {
+  .alignProfile {
+    right: 5vw;
   }
 
   .alignPlusMenu {
-    top: 5.5rem;
-    right: 11vw;
+    right: 10vw;
   }
+}
 
+@media screen and (max-width: 1600px) {
   .alignProfile {
-    top: 4rem;
-    right: 7vw;
+    right: 3vw;
   }
 
-  @media screen and (max-width: 1800px) {
-    .alignProfile {
-      right: 5vw;
-    }
-
-    .alignPlusMenu {
-      right: 10vw;
-    }
+  .alignPlusMenu {
+    right: 9vw;
   }
+}
 
-  
-  @media screen and (max-width: 1600px) {
-    .alignProfile {
-      right: 3vw;
-    }
-
-    .alignPlusMenu {
-      right: 9vw;
-    }
-  }
-
-  .changelogoWidth {
-    padding-top: 25px;
-    padding-bottom: 20px;
-    padding-left: 5vw;
-    transform: scale(2.7);
-  }
+.changelogoWidth {
+  padding-top: 25px;
+  padding-bottom: 20px;
+  padding-left: 5vw;
+  transform: scale(2.7);
+}
 </style>

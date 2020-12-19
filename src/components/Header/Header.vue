@@ -172,7 +172,6 @@ export default {
         EventBus.$emit("DELETE_SIGN_POPUP");
       } else {
         EventBus.$emit("SIGN_POPUP", isSignUp);
-        console.log("isSignUp: " + isSignUp);
       }
       this.isSignOpened = !this.isSignOpened;
     },
