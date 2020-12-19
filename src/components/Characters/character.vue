@@ -6,19 +6,19 @@
       <div class="w-8/12 text-left">
         <h1 class="text-4xl pt-2">CHARACTER CREATION</h1>
         <button
-          class="outline-none bg-primary text-white px-4 py-2 mt-1 mb-2 mr-6"
+          class="focus:outline-none bg-primary text-white px-4 py-2 mt-1 mb-2 mr-6"
           v-on:click="createSection"
         >
           Create section
         </button>
         <button
-          class="outline-none bg-primary text-white px-4 py-2 mt-1 mb-2 mr-6"
+          class="focus:outline-none bg-primary text-white px-4 py-2 mt-1 mb-2 mr-6"
           v-on:click="saveCharacter"
         >
           Save character
         </button>
         <button
-          class="outline-none bg-primary text-white px-4 py-2 mt-1 mb-2"
+          class="focus:outline-none bg-primary text-white px-4 py-2 mt-1 mb-2"
           v-on:click="deleteCharacter"
         >
           Delete character

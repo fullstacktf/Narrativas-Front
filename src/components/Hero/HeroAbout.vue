@@ -18,7 +18,7 @@
             </div>
             <button
             role = "button"
-            class="cursor-pointer w-3/12 mt-2 text-white rounded-full py-3 px-6 bg-secondary hover:bg-secondary-dark text-xs font-bold"
+            class="cursor-pointer w-3/12 mt-2 text-white rounded-full py-3 px-6 bg-secondary hover:bg-secondary-dark text-xs font-bold focus:outline-none"
             >
             Get Started
             </button>
