@@ -1,6 +1,5 @@
 <template>
   <div>
-    <!-- <ShowAllCards title="Characters" :cards="infoCards" /> -->
   </div>
 </template>
 
@@ -19,33 +18,13 @@ export default {
   },
   methods: {
     generateArrayObjects() {
-      // const infoCards = [
-      //   {
-      //     name: "Buzz Lightyear",
-      //     title: "Description",
-      //     content: "Bla bla bla bla bla ",
-      //     filename: "character_1",
-      //   },
-      //   {
-      //     name: "Ariel",
-      //     title: "Description",
-      //     content: "Bla bla bla bla bla ",
-      //     filename: "character_2",
-      //   },
-      //   {
-      //     name: "Jean Gray",
-      //     title: "Description",
-      //     content: "Bla bla bla bla bla ",
-      //     filename: "character_3",
-      //   },
-      // ];
       return this.infoCards;
     },
   },
   mounted() {
     getCharacters()
       .then((data) => {
-        const infoCards = data;
+        let infoCards = data;
         let ShowCards = Vue.extend(ShowAllCards);
         let instance = new ShowCards({
           propsData: {
@@ -58,7 +37,7 @@ export default {
         this.$el.appendChild(instance.$el);
       })
       .catch((error) => {
-        console.log(error);
+        return [];
       });
   },
 };
