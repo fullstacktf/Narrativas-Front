@@ -1,5 +1,5 @@
 <template>
-  <div role="hero" class="container flex text-white h-screen max-w-full relative z-0 ">
+  <div role="hero" class="container flex text-white h-screen max-w-full relative z-0">
     <div v-show="!isMobile" class="heroImg w-3/5 bg-white">
       <img src="@/assets/img/Hero.jpg" alt="Imagine" />
     </div>
@@ -18,7 +18,7 @@
           </button>
         </div>
       </div>
-      <div class="bottom lg:mt-24" v-show="!isMobile">
+      <div class="bottom" v-show="!isMobile">
         <p role="description">
           Create non-linear stories and share them with people. As a writer or videogame
           developer, Rollify allows you to map your idea before making it come true.
@@ -29,8 +29,8 @@
 </template>
 
 <script>
-import '../../assets/styles/index.css';
-import '../../assets/styles/base.css';
+import "../../assets/styles/index.css";
+import "../../assets/styles/base.css";
 export default {
   name: "Hero",
   mounted() {
