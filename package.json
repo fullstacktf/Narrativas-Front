@@ -20,8 +20,6 @@
     "axios": "^0.21.0",
     "core-js": "^3.6.5",
     "stylelint-config-standard": "^20.0.0",
-    "vis-data": "^7.1.1",
-    "vis-network": "^8.5.4",
     "vue": "^2.6.11",
     "vue-drag-resize": "^1.4.2",
     "vue-router": "^3.4.9",
