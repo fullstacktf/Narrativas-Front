@@ -1,13 +1,13 @@
 <template>
-  <div role="hero" class="container flex text-white h-screen max-w-full relative z-0">
+  <div role="hero" class="container flex text-white h-screen md:h-136 xl:h-screen max-w-full relative z-0">
     <div v-show="!isMobile" class="heroImg w-3/5 bg-white">
       <img src="@/assets/img/Hero.jpg" alt="Imagine" />
     </div>
     <div
-      class="start md:text-left md:bg-tertiary p-6 md:w-2/5 pl-10 flex flex-col justify-around"
+      class="start w-full bg-center md:text-left md:bg-tertiary p-6 md:w-2/5 pl-10 flex flex-col justify-around"
     >
       <div class="top">
-        <div class="title text-5xl md:text-6xl text-shadow">
+        <div class="title text-5xl md:text-3xl xl:text-6xl text-shadow">
           <h1>CREATE YOUR OWN UNIQUE STORY</h1>
         </div>
         <div class="startBtn mt-10">
@@ -19,10 +19,9 @@
           </button>
         </div>
       </div>
-      <div class="bottom" v-show="!isMobile">
+      <div class="bottom mb-20 xl:mb-6" v-show="!isMobile">
         <p role="description">
-          Create non-linear stories and share them with people. As a writer or videogame
-          developer, Rollify allows you to map your idea before making it come true.
+          Create non-linear stories and share them with people. With Rollify you can map your idea before making it come true.
         </p>
       </div>
     </div>
