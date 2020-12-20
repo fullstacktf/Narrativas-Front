@@ -22,7 +22,7 @@
         <a class="hover:text-white truncate ml-10 lg:ml-16 cursor-pointer"
           >Explore Story</a
         >
-        <a class="hover:text-white truncate m-10 lg:ml-16 cursor-pointer" href="Stories"
+        <a class="hover:text-white truncate m-10 lg:ml-16 cursor-pointer" href="stories"
           >Dashboard</a
         >
       </div>
@@ -239,7 +239,7 @@ export default {
     }
   }
 
-  
+
   @media screen and (max-width: 1600px) {
     .alignProfile {
       right: 3vw;
