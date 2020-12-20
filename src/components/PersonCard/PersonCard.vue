@@ -3,16 +3,16 @@
     role="personCard"
     class="container w-60 h-88 rounded overflow-hidden shadow-2xl text-left text-sm bg-white flex flex-col items-center cursor-pointer"
   >
-        <div class="bg bg-secondary w-full h-56 bg-contain" v-bind:style="{ backgroundImage: `url(${this.background})`}"></div>
+        <div role="background" class="bg bg-secondary w-full h-56 bg-contain" v-bind:style="{ backgroundImage: `url(${this.background})`}"></div>
         <div role="CharacterImage" class="profile w-32 h-32 rounded-full border-solid border-4 border-white shadow-md absolute z-5 mt-12 bg-contain" v-bind:style="{ backgroundImage: `url(${this.bgFilename(this.filename)})` }"></div>
         <div class="icons text-white flex mt-14">
-            <a :href="this.twitter">
+            <a role="twitterLink" :href="this.twitter">
                 <i class="fab fa-twitter mx-8"></i>
             </a>
-            <a :href="this.github">
+            <a role="githubLink" :href="this.github">
                 <i class="fab fa-github"></i>
             </a>
-            <a :href="this.linkedin">
+            <a role="linkedinLink" :href="this.linkedin">
                 <i class="fab fa-linkedin-in mx-8"></i>
             </a>
         </div>
