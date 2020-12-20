@@ -98,8 +98,8 @@ export default {
         blockSectionComponent = new blockSectionComponentClass({
           propsData: {
             sectionTitle: sectionData["title"],
-            fields: sectionData["fields"]
-          }
+            fields: sectionData["fields"],
+          },
         });
       } else {
         blockSectionComponent = new blockSectionComponentClass();
@@ -155,7 +155,14 @@ export default {
         };
         updateCharacter(data)
           .then((response) => {
-            EventBus.$emit("UPDATE_CHARACTER");
+            console.log(response)
+            history.pushState(
+              {},
+              null,
+              "/character-creation/" + String(response.id)
+            );
+            this.id = response.id;
+            EventBus.$emit("SAVE_SECTION");
           })
           .catch((error) => {
             console.log(error);
@@ -192,9 +199,11 @@ export default {
         this.imageName = data.image;
         this.description = data.biography;
 
-        data.sections.forEach((section) => {
-          this.createSection(section)
-        })
+        if (data["sections"]) {
+          data.sections.forEach((section) => {
+            this.createSection(section);
+          });
+        }
       });
     } else {
       this.createSection();

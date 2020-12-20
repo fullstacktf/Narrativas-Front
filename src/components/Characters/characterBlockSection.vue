@@ -70,10 +70,15 @@ export default {
       EventBus.$emit("REMOVE_BLOCK_SECTION", str.split(" ").pop());
     },
     resizeInput() {
-      const nameInput = this.$el.querySelector("input");
+      let nameInput = this.$el.querySelector("input");
+
+      if (this.title) {
+        let size = Math.max(50, this.title.length * 11);
+        nameInput.style.setProperty("--size", `${size}px`);
+      }
 
       nameInput.addEventListener("input", () => {
-        const size = Math.max(50, nameInput.value.length * 10);
+        let size = Math.max(50, nameInput.value.length * 11);
         nameInput.style.setProperty("--size", `${size}px`);
       });
     },
@@ -108,14 +113,14 @@ export default {
           });
       }
     });
-    if (this.sectionTitle == "") {
-      this.createSection();
-      this.createSection();
-    } else {
+    if (this.sectionTitle) {
       this.title = this.sectionTitle;
       this.fields.forEach((field) => {
         this.createSection(field);
       });
+    } else {
+      this.createSection();
+      this.createSection();
     }
     this.resizeInput();
   },
