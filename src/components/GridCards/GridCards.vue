@@ -57,7 +57,7 @@ export default {
             for (let i = data.length - 1; i >= 0 && i >= data.length - 3; i--) {
               let link = document.createElement("a");
               link.href = this.path + String(data[i].id);
-              link.classList.add("mx-6", "my-4");
+              link.classList.add("mx-6", "my-3");
               let card = Vue.extend(Card);
               let image = DOMAIN + "/static" + this.viewAllPath + data[i].image;
               let instance = new card({
