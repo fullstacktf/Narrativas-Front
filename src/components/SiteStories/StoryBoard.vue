@@ -1,12 +1,7 @@
 <template>
-    <div class="max-w-full h-92vh bg-gray-500">
+    <div class="max-w-full h-92vh bg-gray-500 relative z-0">
         <div ref="boardzone" class="h-85vh">
-            <div class="w-full h-full bg-secondary flex justify-center">
-                <NewStoryCard/>
-                <!-- title="Prueba"
-                    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sapien nibh, venenatis in convallis vitae, mattis eu purus."
-                    :related_character = "this.related_character" -->
-            </div>
+            
         </div>
         <nav class="w-full bg-white h-7vh flex items-center justify-between px-8">
             <div class="flex items-center">
@@ -14,7 +9,7 @@
                 <span class="text-lg text-gray-400 p-2">{{this.name}}</span>
                 <i class="fas fa-sort-up text-gray-600 pt-2"></i>
             </div>
-            <button class="py-2 px-4 bg-green text-white focus:outline-none" v-on:click="createCard()">
+            <button class="py-2 px-4 bg-green text-white focus:outline-none" v-on:click="createNewCard()">
                 <i class="fas fa-plus pr-2"></i>
                 <span>Event</span>
             </button>
@@ -24,33 +19,29 @@
 </template>
 
 <script>
-import StoryCard from "@/components/SiteStories/StoryCard"
-// import StoryCardOpen from "@/components/SiteStories/StoryCardOpen"
-import NewStoryCard from "@/components/SiteStories/NewStoryCard"
+import NewStoryCard from "@/components/SiteStories/NewStoryCard";
+import StoryCard from "@/components/SiteStories/StoryCard";
 import { store } from "@/store";
 import EventBus from "@/event-bus";
 import Vue from "vue";
 export default {
     name:"StoryBoard",
-    components: {
-        // StoryCardOpen,
-        NewStoryCard,
-    },
     mounted() {
-        EventBus.$on("REMOVE_STORY_CARD", (className) => {
-          for(let i = 0; i < this.storyCards.length; i++) {
-            if(this.storyCards[i].$el.className.split(' ').pop() == className) {
-              this.storyCards[i].$destroy();
-              this.$refs.boardzone.removeChild(this.storyCards[i].$el)
-              this.storyCards.splice(i, 1);
+        EventBus.$on("REMOVE_NEW_STORY_CARD", (className) => {
+          for(let i = 0; i < this.storyNewCards.length; i++) {
+            if(this.storyNewCards[i].$el.className.split(' ').pop() == className) {
+              this.storyNewCards[i].$destroy();
+              this.$refs.boardzone.removeChild(this.storyNewCards[i].$el)
+              this.storyNewCards.splice(i, 1);
             }
           }
-        });
+        }); 
 
-        EventBus.$on("OPEN_CARD", (id) => {
-          createOpenCard(id);
+        EventBus.$on("DATA_CARD", (data) => {
+            this.storyCardsData.push(data);
+            console.log(this.storyCardsData.length)
+            store.commit("incrementStoryData")
         });
-        
     },
      destroyed() {
       store.commit('resetCardStory')
@@ -58,33 +49,52 @@ export default {
     data() {
         return{
             name: "Prueba",
-            storyCards: [],
-            related_character: [
-                        {
-                            img: 'Alex',
-                            name: 'Alex puto amo'
-                        },
-                        {
-                            img: 'Kevin',
-                            name: 'Kevin puto amo'
-                        }
-                    ],   
+            storyNewCards: [],
+            storyCardsData: [],
+
         }
     },
     methods: {
-        createCard() {
-        let storyCardClass = Vue.extend(StoryCard);
+        createNewCard() {
+        let storyCardClass = Vue.extend(NewStoryCard);
         let cardComponent = new storyCardClass();
         cardComponent.$mount();
         cardComponent.$el.classList.add(`cardStory-${store.state.cardStoryCount}`);
+        this.storyNewCards.push(cardComponent);
+        this.$refs.boardzone.appendChild(cardComponent.$el); 
+      },
+
+      createCard(index) {
+        let storyCardClass = Vue.extend(StoryCard);
+        let cardComponent = new storyCardClass({
+                propsData: {
+                  id: `cardStory-${store.state.cardStoryCount}`,  
+                  name: this.storyCardsData[index].title,
+                  description: this.storyCardsData[index].description,
+                },
+              });
+        cardComponent.$mount();
+        cardComponent.$el.classList.add(`cardStory-${store.state.cardStoryCount}`);
         store.commit('incrementCardStory');
-        this.storyCards.push(cardComponent);
+        this.storyCardsData.push(cardComponent);
         this.$refs.boardzone.appendChild(cardComponent.$el); 
       },
 
       createOpenCard(id) {
 
       }
+    },
+    computed: {
+        arraySize() {
+            return store.state.dataStoryArrayCount > 0 ? true : false;
+        }
+    },
+    watch: {
+        arraySize() {
+            for (let i = 0; i < store.state.dataStoryArrayCount; i++) {
+                this.createCard(i)
+            }
+        }
     }
 }
 </script>

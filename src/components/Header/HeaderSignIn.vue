@@ -141,26 +141,6 @@ export default {
       enable: false,
       profile: false,
       screenWidth: window.innerWidth,
-      Sections: [
-        {
-          img: "@/assets/img/explore_1.jpg",
-          title: "Create your own stories online",
-          description:
-            "We offer you the tools to invent and conceive stories in an entertaining and intuitive way.",
-        },
-        {
-          img: "@/assets/img/explore_2.jpg",
-          title: "Customize your character",
-          description:
-            "Create all kinds of characters without restrictions. The limit is your imagination!!!",
-        },
-        {
-          img: "@/assets/img/explore_3.jpg",
-          title: "Any one can create a story",
-          description:
-            "Let your imagination fly and immerse yourself in your stories. You will have the ability to create that adventure that you always dreamed of.",
-        },
-      ],
     };
   },
    computed: {

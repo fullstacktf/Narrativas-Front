@@ -9,6 +9,8 @@ export const store = new Vuex.Store({
     blockSectionCount: 0,
     cardStoryCount: 0,
     inputCount: 0,
+    saveEvent: false,
+    dataStoryArrayCount: 0,
   },
   mutations: {
     incrementSection (state) {
@@ -23,6 +25,9 @@ export const store = new Vuex.Store({
     incrementInput (state) {
       state.inputCount++
     },
+    incrementStoryData (state) {
+      state.dataStoryArrayCount++
+    },
     resetCardStory (state) {
       state.cardStoryCount = 0
     },
@@ -34,6 +39,12 @@ export const store = new Vuex.Store({
     },
     resetInput (state) {
       state.inputCount = 0
+    },
+    resetState (state) {
+      state.saveEvent = !state.saveEvent;
+    },
+    resetStoryData (state) {
+      state.dataStoryArrayCount = 0;
     }
-  }
+  },
 })

@@ -13,7 +13,7 @@
         <div class="startBtn mt-10">
           <button
             class="rounded-full py-3 px-6 bg-primary hover:bg-primary-dark md:bg-secondary md:hover:bg-secondary-dark text-xs font-bold focus:outline-none"
-            v-on:click="emitSignPopup(true)"
+            v-on:click="emitSignPopup(false)"
           >
             Get Started
           </button>

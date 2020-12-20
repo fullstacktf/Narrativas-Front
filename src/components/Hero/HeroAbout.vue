@@ -40,9 +40,7 @@ export default {
     onResize() {
       addEventListener("resize", () => {
         this.screenWidth = window.innerWidth;
-        this.addRemoveClasses();
       });
-      this.addRemoveClasses();
     },
     bgImg() {
       return this.isMobile
