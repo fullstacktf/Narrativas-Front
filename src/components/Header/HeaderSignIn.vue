@@ -19,7 +19,9 @@
       </a>
       <div v-if="!isMobile">
         <a class="hover:text-white truncate cursor-pointer" href="/about">About us</a>
-        <a class="hover:text-white truncate ml-10 lg:ml-16 cursor-pointer"
+        <a
+          class="hover:text-white truncate ml-10 lg:ml-16 cursor-pointer"
+          href="/explore-stories"
           >Explore Stories</a
         >
         <a class="hover:text-white truncate m-10 lg:ml-16 cursor-pointer" href="Stories"
@@ -121,7 +123,7 @@
     >
       <div class="flex flex-col border-b-2 border-white">
         <a class="py-2 pl-10 hover:bg-primary" href="/about">About us</a>
-        <a class="py-2 pl-10 hover:bg-primary" href="">Explore Stories</a>
+        <a class="py-2 pl-10 hover:bg-primary" href="/explore-stories">Explore Stories</a>
         <a class="py-2 pl-10 hover:bg-primary" href="/stories">Dashboard</a>
         <a class="py-2 pl-10 hover:bg-primary" href="/stories">Your stories</a>
         <a class="py-2 pl-10 hover:bg-primary" href="/characters">Your character</a>

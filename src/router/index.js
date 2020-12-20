@@ -8,6 +8,7 @@ import CharacterCreation from '../views/CharacterCreation';
 import PageNotFound from '../views/PageNotFound';
 import StoriesCreation from '../views/StoriesCreation';
 import Profile from '../views/Profile';
+import ExploreStories from '../views/ExploreStories';
 import { getCookie } from '@/utils/utils'
 
 Vue.use(VueRouter)
@@ -37,6 +38,11 @@ const routes = [
     path: '/profile',
     name: 'Profile',
     component: Profile
+  },
+  {
+    path: '/explore-stories',
+    name: 'ExploreStories',
+    component: ExploreStories
   },
   {
     path: '/character-creation/:id?',
