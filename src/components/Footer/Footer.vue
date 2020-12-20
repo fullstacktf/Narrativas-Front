@@ -58,16 +58,6 @@
 <script>
 import "../../assets/styles/index.css";
 import "../../assets/styles/base.css";
-import { library } from "@fortawesome/fontawesome-svg-core";
-import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
-import {
-  faTwitter,
-  faInstagram,
-  faGithub,
-  faFacebook,
-} from "@fortawesome/free-brands-svg-icons";
-
-library.add(faTwitter, faInstagram, faGithub, faFacebook);
 
 export default {
   name: "Footer",
