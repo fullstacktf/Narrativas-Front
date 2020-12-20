@@ -104,18 +104,4 @@ describe('SignInSignUp', () => {
       expect(link).toBeInTheDocument();
     });
   });
-
-  // describe('functionality', () => {
-  //   test('when clicking on Continue with Google', () => {
-  //     // TODO
-  //   });
-
-  //   test('when typing into username input', () => {
-  //     // TODO
-  //   });
-
-  //   test('when typing into password input', () => {
-  //     // TODO
-  //   });
-  // });
 });
