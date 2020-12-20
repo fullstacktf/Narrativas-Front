@@ -6,43 +6,72 @@ import { render, screen } from '@testing-library/vue';
 const propsByDefault = {
   name: "Adal",
   filename: "Adal",
-  description: "Adal es un Adal muy Adal"
+  location: "",
+  twitter: "",
+  github: "",
+  linkedin: ""
 };
+
+const renderPersonCard = () => {
+  render(PersonCard, {
+    props: propsByDefault
+  });
+}
 
 describe('PersonCard', () => {
   test('should render component', () => {
-    render(PersonCard, {
-      props: propsByDefault
-    });
+    renderPersonCard();
 
     const personCard = screen.getByRole('personCard');
     expect(personCard).toBeInTheDocument();
   });
 
-  test('should render image', () => {
-    render(PersonCard, {
-      props: propsByDefault
-    });
+  test('should render background', () => {
+    renderPersonCard();
 
-    const image = screen.getByAltText('Character image');
+    const background = screen.getByRole('background');
+    expect(background).toBeInTheDocument();
+  });
+
+  test('should render image', () => {
+    renderPersonCard();
+
+    const image = screen.getByRole('CharacterImage');
     expect(image).toBeInTheDocument();
   });
 
   test('should render title', () => {
-    render(PersonCard, {
-      props: propsByDefault
-    });
+    renderPersonCard();
 
     const title = screen.getByText('Adal');
     expect(title).toBeInTheDocument();
   });
 
-  test('should render description', () => {
-    render(PersonCard, {
-      props: propsByDefault
-    });
+  test('should render hover indication', () => {
+    renderPersonCard();
 
-    const description = screen.getByText('Adal es un Adal muy Adal');
-    expect(description).toBeInTheDocument();
+    const hoverIndication = screen.getByText('Hover to find me');
+    expect(hoverIndication).toBeInTheDocument();
+  });
+
+  test('should render github', () => {
+    renderPersonCard();
+
+    const githubLink = screen.getByRole('githubLink');
+    expect(githubLink).toBeInTheDocument();
+  });
+
+  test('should render linkedin', () => {
+    renderPersonCard();
+
+    const linkedinLink = screen.getByRole('linkedinLink');
+    expect(linkedinLink).toBeInTheDocument();
+  });
+
+  test('should render twitter', () => {
+    renderPersonCard();
+
+    const twitterLink = screen.getByRole('twitterLink');
+    expect(twitterLink).toBeInTheDocument();
   });
 });

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div role="headerSignIn">
     <nav
       class="navigationBar max-w-full h-18 lg:h-20 bg-black text-gray-400 text-lg flex items-center justify-between md:justify-around flex-row relative z-10"
     >
@@ -20,14 +20,18 @@
       <div v-if="!isMobile">
         <a class="hover:text-white truncate cursor-pointer" href="/about">About us</a>
         <a class="hover:text-white truncate ml-10 lg:ml-16 cursor-pointer"
-          >Explore Story</a
+          >Explore Stories</a
         >
         <a class="hover:text-white truncate m-10 lg:ml-16 cursor-pointer" href="Stories"
           >Dashboard</a
         >
       </div>
       <div class="flex items-center" v-if="!isMobile">
-        <button v-on:click="menuState" class="cursor-pointer focus:outline-none">
+        <button
+          role="addButton"
+          v-on:click="menuState"
+          class="cursor-pointer focus:outline-none"
+        >
           <i class="fas fa-plus pr-1 text-white"></i
           ><i class="fas fa-sort-down text-white"></i>
         </button>
@@ -51,7 +55,11 @@
           </div>
         </div>
 
-        <button class="flex items-center focus:outline-none" v-on:click="profileState">
+        <button
+          role="profileButton"
+          class="flex items-center focus:outline-none"
+          v-on:click="profileState"
+        >
           <div class="profile-pic w-12 h-12 rounded-full ml-5 mr-1"></div>
           <i class="fas fa-sort-down text-white"></i>
         </button>
@@ -62,8 +70,8 @@
         >
           <div class="intoCardProfile flex flex-col bg-white ml-1">
             <div class="pl-4 pt-10 pb-4 flex flex-col border-b-2 border-gray-400">
-              <p>Sign in as</p>
-              <p class="font-bold">User name</p>
+              <p>Signed in as</p>
+              <p class="font-bold">Username</p>
             </div>
             <div class="flex flex-col border-b-2 border-gray-400">
               <a
@@ -141,26 +149,6 @@ export default {
       enable: false,
       profile: false,
       screenWidth: window.innerWidth,
-      Sections: [
-        {
-          img: "@/assets/img/explore_1.jpg",
-          title: "Create your own stories online",
-          description:
-            "We offer you the tools to invent and conceive stories in an entertaining and intuitive way.",
-        },
-        {
-          img: "@/assets/img/explore_2.jpg",
-          title: "Customize your character",
-          description:
-            "Create all kinds of characters without restrictions. The limit is your imagination!!!",
-        },
-        {
-          img: "@/assets/img/explore_3.jpg",
-          title: "Any one can create a story",
-          description:
-            "Let your imagination fly and immerse yourself in your stories. You will have the ability to create that adventure that you always dreamed of.",
-        },
-      ],
     };
   },
   computed: {

@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col items-center w-screen">
+  <div role="team" class="flex flex-col items-center w-screen">
     <h3 class="text-secondary font-bold text-5xl pt-10">Team</h3>
     <div
       class="pb-10 flex flex-col flex-wrap md:flex-row items-center md:justify-center space-y-10 md:space-y-0 md:space-x-10 md:m-10"
