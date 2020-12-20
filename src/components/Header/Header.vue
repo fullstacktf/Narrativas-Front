@@ -48,7 +48,7 @@
       v-if="enable"
     >
       <div
-        class="md:w-8/12 xl:w-3/12 px-10 lg:px-16 flex flex-col justify-center items-center"
+        class="md:w-8/12 xl:w-3/12 px-10 lg:px-16 flex flex-col items-center"
         v-for="(section, index) in Sections"
         :key="index"
       >
