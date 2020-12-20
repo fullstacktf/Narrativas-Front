@@ -1,7 +1,7 @@
 <template>
   <div>
     <nav
-      class="navigationBar max-w-full h-18 lg:h-20 bg-black text-gray-600 text-lg flex items-center justify-between md:justify-around flex-row relative z-10"
+      class="navigationBar max-w-full h-18 lg:h-20 bg-black text-gray-400 text-lg flex items-center justify-between md:justify-around flex-row relative z-10"
     >
       <a href="/">
         <img
@@ -37,7 +37,7 @@
           v-if="enable"
         >
           <div class="intoCard flex flex-col bg-white h-24 ml-1">
-            <span class="h-3 w-auto bg-white"></span>
+            <span class="h-3 w-auto bg-red"></span>
             <a
               class="pb-2 pt-2 px-5 hover:bg-primary hover:text-white cursor-pointer"
               href="/story-creation"
@@ -52,7 +52,7 @@
         </div>
 
         <button class="flex items-center focus:outline-none" v-on:click="profileState">
-          <div class="bg-white w-12 h-12 rounded-full ml-5 mr-1"></div>
+          <div class="profile-pic w-12 h-12 rounded-full ml-5 mr-1"></div>
           <i class="fas fa-sort-down text-white"></i>
         </button>
 
@@ -254,5 +254,11 @@ export default {
   padding-bottom: 20px;
   padding-left: 5vw;
   transform: scale(2.7);
+}
+
+.profile-pic {
+  background: url("../../assets/img/profile1.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 </style>
