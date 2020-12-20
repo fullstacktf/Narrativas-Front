@@ -6,7 +6,10 @@ import { render, screen } from '@testing-library/vue';
 const propsByDefault = {
   name: "Adal",
   filename: "Adal",
-  description: "Adal es un Adal muy Adal"
+  location: "",
+  twitter: "",
+  github: "",
+  linkedin: ""
 };
 
 describe('PersonCard', () => {
@@ -24,7 +27,7 @@ describe('PersonCard', () => {
       props: propsByDefault
     });
 
-    const image = screen.getByAltText('Character image');
+    const image = screen.getByRole('CharacterImage');
     expect(image).toBeInTheDocument();
   });
 
@@ -35,14 +38,5 @@ describe('PersonCard', () => {
 
     const title = screen.getByText('Adal');
     expect(title).toBeInTheDocument();
-  });
-
-  test('should render description', () => {
-    render(PersonCard, {
-      props: propsByDefault
-    });
-
-    const description = screen.getByText('Adal es un Adal muy Adal');
-    expect(description).toBeInTheDocument();
   });
 });
