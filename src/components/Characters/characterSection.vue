@@ -38,10 +38,15 @@
 
 <script>
 import EventBus from "@/event-bus";
+import { createSectionField } from "@/domain/services/characterServices";
 
 export default {
   name: "CharacterSection",
   props: {
+    fieldId: {
+      type: Number,
+      default: 0,
+    },
     name: {
       type: String,
       default: "",
@@ -57,6 +62,7 @@ export default {
   },
   data() {
     return {
+      id: 0,
       fieldName: this.name ? this.name : "",
       fieldValue: this.value ? this.value : "",
       fieldDescription: this.description ? this.value : "",
@@ -69,14 +75,24 @@ export default {
     },
   },
   mounted() {
-      // EventBus.$on("SAVE_CHARACTER", () => {
-      //   let data = {
-      //     name: this.fieldName,
-      //     value: this.fieldValue,
-      //     description: this.fieldDescription,
-      //   }
-      //   EventBus.$emit("SAVE_SECTION", data)
-      // });
-  }
+    EventBus.$on("SAVE_FIELD", (fieldid, sectionid) => {
+      if ((this.fieldName) && (fieldid == this.fieldId)) {
+        const data = {
+          name: this.fieldName,
+          value: this.fieldValue,
+          description: this.fieldDescription,
+        };
+
+        const characterid = window.location.pathname.split("/").pop();
+        createSectionField(data, characterid, sectionid)
+          .then((data) => {
+            this.id = data.id;
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      }
+    });
+  },
 };
 </script>

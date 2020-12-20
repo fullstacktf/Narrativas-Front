@@ -49,15 +49,26 @@ export default class Client {
 
     return await axios({
       method: 'post',
-      url: DOMAIN + '/characters/' + String(id) + '/section',
+      url: DOMAIN + '/characters/' + String(id) + '/sections',
       data: data,
       headers: headers
     }).then(response => response.data)
   }
 
-  async putCharacter() {
+  async postSectionField(data, id, id2) {
     const headers = await authHeader()
-    return await axios.put(DOMAIN + '/characters', { headers: headers }).then(response => response.data)
+
+    return await axios({
+      method: 'post',
+      url: DOMAIN + '/characters/' + String(id) + '/sections/' + String(id2) + '/fields',
+      data: data,
+      headers: headers
+    }).then(response => response.data)
+  }
+
+  async putCharacter(data) {
+    const headers = await authHeader()
+    return await axios.put(DOMAIN + '/characters/', data,{ headers: headers }).then(response => response.data)
   }
 
   async deleteCharacter(id) {

@@ -91,9 +91,19 @@ export default {
     };
   },
   methods: {
-    createSection() {
+    createSection(sectionData) {
       let blockSectionComponentClass = Vue.extend(CharacterBlockSection);
-      let blockSectionComponent = new blockSectionComponentClass();
+      let blockSectionComponent;
+      if (sectionData) {
+        blockSectionComponent = new blockSectionComponentClass({
+          propsData: {
+            sectionTitle: sectionData["title"],
+            fields: sectionData["fields"]
+          }
+        });
+      } else {
+        blockSectionComponent = new blockSectionComponentClass();
+      }
       blockSectionComponent.$mount();
       blockSectionComponent.$el.classList.add(
         `blockSection-${store.state.blockSectionCount}`
@@ -131,22 +141,21 @@ export default {
               "/character-creation/" + String(response.id)
             );
             this.id = response.id;
-            EventBus.$emit("SAVE_CHARACTER");
-            alert("Character saved");
+            EventBus.$emit("SAVE_SECTION");
           })
           .catch((error) => {
             console.log(error);
           });
       } else {
+        const data = {
+          id: this.id,
+          name: this.name,
+          biography: this.description,
+          image: this.imageName,
+        };
         updateCharacter(data)
           .then((response) => {
-            const data = {
-              name: this.name,
-              biography: this.description,
-              image: this.imageName,
-            };
-            EventBus.$emit("SAVE_CHARACTER");
-            alert("Character updated");
+            EventBus.$emit("UPDATE_CHARACTER");
           })
           .catch((error) => {
             console.log(error);
@@ -155,7 +164,7 @@ export default {
     },
     deleteCharacter(event) {
       deleteCharacter(this.id);
-      location.href = "/"
+      location.href = "/";
     },
   },
   computed: {
@@ -182,6 +191,10 @@ export default {
         this.imagePath = DOMAIN + "/static/characters/" + data.image;
         this.imageName = data.image;
         this.description = data.biography;
+
+        data.sections.forEach((section) => {
+          this.createSection(section)
+        })
       });
     } else {
       this.createSection();

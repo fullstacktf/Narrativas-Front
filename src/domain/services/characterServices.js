@@ -20,9 +20,9 @@ export const createCharacter = async (data) => {
   return await client.postCharacter(data)
 }
 
-export const updateCharacter = async () => {
+export const updateCharacter = async (data) => {
   const client = new Client();
-  return await client.putCharacter();
+  return await client.putCharacter(data);
 }
 
 export const deleteCharacter = async (id) => {
@@ -34,3 +34,9 @@ export const createSection = async (data, id) => {
   const client = new Client();
   return await client.postSection(data, id);
 }
+
+export const createSectionField = async (data, characterid, sectionid) => {
+  const client = new Client();
+  return await client.postSectionField(data, characterid, sectionid);
+}
+
