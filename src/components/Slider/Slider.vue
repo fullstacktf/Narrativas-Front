@@ -89,7 +89,7 @@ export default {
   },
   computed: {
     url() {
-      return this.isStorySlider ? "/character-creation" : "story-creation";
+      return this.isStorySlider ? "/character-creation/" : "story-creation";
     },
     title: function () {
       return this.isStorySlider ? "CHARACTERS" : "STORIES";

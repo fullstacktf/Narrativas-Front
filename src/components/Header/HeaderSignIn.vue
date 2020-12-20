@@ -39,7 +39,7 @@
         </button>
 
         <div
-          class="card alignPlusMenu flex justify-center items-center absolute z-10 bg-gray-400 text-left w-auto h-26 pr-1"
+          class="card alignPlusMenu text-gray-600 flex justify-center items-center absolute z-10 bg-gray-400 text-left w-auto h-26 pr-1"
           v-if="enable"
         >
           <div class="intoCard flex flex-col bg-white h-24 ml-1">
@@ -51,7 +51,7 @@
             >
             <a
               class="py-2 px-5 hover:bg-primary hover:text-white cursor-pointer"
-              href="/character-creation"
+              href="/character-creation/"
               >New character</a
             >
           </div>
@@ -70,7 +70,7 @@
           class="cardProfile alignProfile bg-gray-400 w-auto absolute z-10 text-left h-80 pr-1 h-auto py-1"
           v-if="profile"
         >
-          <div class="intoCardProfile flex flex-col bg-white ml-1">
+          <div class="intoCardProfile flex flex-col text-gray-600 bg-white ml-1">
             <div class="pl-4 pt-10 pb-4 flex flex-col border-b-2 border-gray-400">
               <p>Signed in as</p>
               <p class="font-bold">Username</p>

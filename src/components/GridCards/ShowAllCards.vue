@@ -1,8 +1,6 @@
 <template>
   <div class="m-20">
-    <div
-      class="flex flex-col md:flex-row justify-center md:justify-between mx-5"
-    >
+    <div class="flex flex-col md:flex-row justify-center md:justify-between mx-5">
       <h1 class="text-4xl md:text-left">
         {{ title }} <span class="text-gray-500">({{ total }})</span>
       </h1>
@@ -49,25 +47,42 @@ export default {
   mounted() {
     let cardComponent = Vue.extend(Card);
     try {
-      this.cards.forEach((card) => {
-        let link = document.createElement("a");
-        link.href = "/character-creation/" + String(card.id);
-        let instance = new cardComponent({
-          propsData: {
-            name: card["name"],
-            title: "description",
-            content: card["biography"],
-            filename: this.path + card["image"],
-          },
+      if (!this.isStory) {
+        this.cards.forEach((card) => {
+          let link = document.createElement("a");
+          link.href = "/character-creation/" + String(card.id);
+          let instance = new cardComponent({
+            propsData: {
+              name: card["name"],
+              content: card["biography"],
+              filename: this.path + card["image"],
+            },
+          });
+          link.classList.add("md:mr-10", "my-5");
+          instance.$mount();
+          link.appendChild(instance.$el);
+          this.$refs.cards.appendChild(link);
         });
-        link.classList.add("md:mr-10", "my-5");
-        instance.$mount();
-        link.appendChild(instance.$el);
-        this.$refs.cards.appendChild(link);
-      });
+      } else {
+        this.cards.forEach((card) => {
+          let link = document.createElement("a");
+          link.href = "/story-creation";
+          let instance = new cardComponent({
+            propsData: {
+              name: card["name"],
+              content: card["content"],
+              filename: this.path + card["filename"],
+            },
+          });
+          link.classList.add("md:mr-10", "my-5");
+          instance.$mount();
+          link.appendChild(instance.$el);
+          this.$refs.cards.appendChild(link);
+        });
+      }
     } catch (error) {
-      console.log(error)
-    };
+      console.log(error);
+    }
   },
 };
 </script>
