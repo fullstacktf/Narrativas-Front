@@ -25,13 +25,6 @@ describe('Hero', () => {
     expect(title).toBeInTheDocument();
   });
 
-  test('should render title', () => {
-    render(Hero);
-
-    const title = screen.queryByText('CREATE YOUR OWN UNIQUE STORY');
-    expect(title).toBeInTheDocument();
-  });
-
   test('should render get started button', () => {
     render(Hero);
 

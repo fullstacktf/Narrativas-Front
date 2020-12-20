@@ -12,31 +12,66 @@ const propsByDefault = {
   linkedin: ""
 };
 
+const renderPersonCard = () => {
+  render(PersonCard, {
+    props: propsByDefault
+  });
+}
+
 describe('PersonCard', () => {
   test('should render component', () => {
-    render(PersonCard, {
-      props: propsByDefault
-    });
+    renderPersonCard();
 
     const personCard = screen.getByRole('personCard');
     expect(personCard).toBeInTheDocument();
   });
 
+  test('should render background', () => {
+    renderPersonCard();
+
+    const background = screen.getByRole('background');
+    expect(background).toBeInTheDocument();
+  });
+
   test('should render image', () => {
-    render(PersonCard, {
-      props: propsByDefault
-    });
+    renderPersonCard();
 
     const image = screen.getByRole('CharacterImage');
     expect(image).toBeInTheDocument();
   });
 
   test('should render title', () => {
-    render(PersonCard, {
-      props: propsByDefault
-    });
+    renderPersonCard();
 
     const title = screen.getByText('Adal');
     expect(title).toBeInTheDocument();
+  });
+
+  test('should render hover indication', () => {
+    renderPersonCard();
+
+    const hoverIndication = screen.getByText('Hover to find me');
+    expect(hoverIndication).toBeInTheDocument();
+  });
+
+  test('should render github', () => {
+    renderPersonCard();
+
+    const githubLink = screen.getByRole('githubLink');
+    expect(githubLink).toBeInTheDocument();
+  });
+
+  test('should render linkedin', () => {
+    renderPersonCard();
+
+    const linkedinLink = screen.getByRole('linkedinLink');
+    expect(linkedinLink).toBeInTheDocument();
+  });
+
+  test('should render twitter', () => {
+    renderPersonCard();
+
+    const twitterLink = screen.getByRole('twitterLink');
+    expect(twitterLink).toBeInTheDocument();
   });
 });

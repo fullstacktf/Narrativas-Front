@@ -20,9 +20,7 @@ export default {
   },
   mounted() {
     EventBus.$on("SIGN_POPUP", (payload) => {
-      console.log("payload: " + payload);
       if (!this.instance) {
-        console.log("instance: " + this.instance);
         this.$refs.insertLogin.classList.add("center-screen");
         this.$refs.insertLogin.classList.add("w-full");
         this.$refs.insertLogin.classList.add("h-full");
