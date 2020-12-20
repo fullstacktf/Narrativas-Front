@@ -24,7 +24,7 @@
           href="/explore-stories"
           >Explore Stories</a
         >
-        <a class="hover:text-white truncate m-10 lg:ml-16 cursor-pointer" href="Stories"
+        <a class="hover:text-white truncate m-10 lg:ml-16 cursor-pointer" href="stories"
           >Dashboard</a
         >
       </div>

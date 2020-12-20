@@ -44,38 +44,41 @@
 
     <!-- Explore menu -->
     <div
-      class="invisible md:visible w-screen flex flex-row justify-center bg-black text-white pt-10 absolute z-10"
+      class="invisible md:visible w-full flex flex-row justify-center bg-black text-white pt-10 absolute z-10"
       v-if="enable"
     >
       <div
-        class="md:w-8/12 xl:w-3/12 pr-10 md:px-16 flex flex-col justify-center items-center"
+        class="md:w-8/12 xl:w-3/12 px-10 lg:px-16 flex flex-col justify-center items-center"
         v-for="(section, index) in Sections"
         :key="index"
       >
         <img :src="section.img" alt="" />
         <h3 class="py-2">{{ section.title }}</h3>
-        <p class="pb-4 text-gray-700 text-sm h-28 w-80">{{ section.description }}</p>
+        <p class="pb-4 text-gray-400 text-sm h-40 lg:h-32 xl:h-28 w-58 xl:w-80">
+          {{ section.description }}
+        </p>
       </div>
     </div>
 
     <!-- Nav list -->
     <div
-      class="flex flex-col text-left w-screen bg-black text-white text-md md:hidden absolute z-10"
+      class="flex flex-col text-left w-full bg-black text-white text-md md:hidden absolute z-10"
       v-if="hamburgerEnable"
     >
       <a
         class="py-2 pl-10 hover:bg-primary flex justify-between cursor-pointer"
         v-on:click="mobileExploreState"
         >Explore
-        <span class="text-md text-white pr-12"><i class="fas fa-sort-down"></i></span
+        <span class="text-md text-white pr-12"
+          ><i class="fas fa-sort-down"></i></span
       ></a>
 
       <div
-        class="exploreMobile w-screen h-full flex flex-col items-start bg-black text-white py-2 relative z-10 pb-4"
+        class="exploreMobile w-full h-full flex flex-col items-start bg-black text-white py-2 relative z-10 pb-4"
         v-show="mobileExploreEnable"
       >
         <div
-          class="w-3/4 flex flex-col pl-6"
+          class="w-2/4 lg:w-3/4 flex flex-col pl-6"
           v-for="(section, index) in Sections"
           :key="index"
         >
@@ -90,8 +93,12 @@
       </div>
 
       <a class="py-2 pl-10 hover:bg-primary" href="/about">About us</a>
-      <a class="py-2 pl-10 hover:bg-primary" v-on:click="emitSignPopup(false)">Sign in</a>
-      <a class="py-2 pl-10 hover:bg-primary" v-on:click="emitSignPopup(true)">Sign up</a>
+      <a class="py-2 pl-10 hover:bg-primary" v-on:click="emitSignPopup(false)"
+        >Sign in</a
+      >
+      <a class="py-2 pl-10 hover:bg-primary" v-on:click="emitSignPopup(true)"
+        >Sign up</a
+      >
     </div>
   </header>
 </template>
@@ -112,8 +119,8 @@ export default {
       enable: false,
       hamburgerEnable: false,
       mobileExploreEnable: false,
-      screenWidth: window.innerWidth,
       isSignOpened: false,
+      screenWidth: window.innerWidth,
       Sections: [
         {
           img: require("../../assets/img/explore_1.jpg"),
@@ -158,6 +165,10 @@ export default {
       this.enable = !this.enable;
       const element = this.$el.querySelector(".navigationBar");
       element.classList.toggle("line");
+      if (this.enable && this.isSignOpened) {
+        this.isSignOpened = false
+        EventBus.$emit("DELETE_SIGN_POPUP");
+      }
     },
     hamburgerMenuState() {
       this.hamburgerEnable = !this.hamburgerEnable;
@@ -172,6 +183,9 @@ export default {
         EventBus.$emit("DELETE_SIGN_POPUP");
       } else {
         EventBus.$emit("SIGN_POPUP", isSignUp);
+        if (this.enable) {
+          this.enable = !this.enable;
+        }
       }
       this.isSignOpened = !this.isSignOpened;
     },
