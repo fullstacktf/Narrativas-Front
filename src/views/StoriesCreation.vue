@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import StoryBoard from '../components/SiteStories/StoryBoard.vue';
+import StoryBoard from '@/components/SiteStories/StoryBoard.vue';
 
 export default {
   components: { StoryBoard },

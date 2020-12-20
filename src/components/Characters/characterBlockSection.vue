@@ -17,15 +17,15 @@ import Vue from "vue";
 export default {
     name: "CharacterBlockSection",
     mounted() {
-       EventBus.$on("REMOVE_SECTION", (className) => {
-          for(let i = 0; i < this.sections.length; i++) {
-            if(this.sections[i].$el.className.split(' ').pop() == className) {
-              this.sections[i].$destroy();
-              this.$el.removeChild(this.sections[i].$el)
-              this.sections.splice(i, 1);
-            }
+      EventBus.$on("REMOVE_SECTION", (className) => {
+        for(let i = 0; i < this.sections.length; i++) {
+          if(this.sections[i].$el.className.split(' ').pop() == className) {
+            this.sections[i].$destroy();
+            this.$el.removeChild(this.sections[i].$el);
+            this.sections.splice(i, 1);
           }
-        });
+        }
+      });
 
       this.createSection()
       this.createSection()
