@@ -18,5 +18,6 @@ export const personCard = Template.bind({});
 personCard.args = {
   name: "Adal",
   filename: "Adal",
-  description: "This is a savage Adal"
+  description: "This is a savage Adal",
+  location: "Some place"
 };
