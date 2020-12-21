@@ -50,6 +50,7 @@ export default {
             title: "",
             description: "",
             arrayOfInput: [],
+            arrayOfInputData: [],
         }
     },
     methods: {
@@ -63,11 +64,11 @@ export default {
             this.$refs.inputSection.appendChild(input.$el); 
         },
         saveData() {
-            store.commit("resetState")
+            store.commit("changeState")
             EventBus.$on("DATA_INPUT", (input) => {
-                this.arrayOfInput.push(input)
+                this.arrayOfInputData.push(input)
             });
-            this.emitDataCard(this.title, this.description, this.arrayOfInput)
+            this.emitDataCard(this.title, this.description, this.arrayOfInputData)
             this.emitRemoveCard()
         },
         emitRemoveCard() {

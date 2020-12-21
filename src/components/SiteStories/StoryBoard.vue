@@ -21,6 +21,7 @@
 <script>
 import NewStoryCard from "@/components/SiteStories/NewStoryCard";
 import StoryCard from "@/components/SiteStories/StoryCard";
+import StoryCardOpen from "@/components/SiteStories/StoryCardOpen";
 import { store } from "@/store";
 import EventBus from "@/event-bus";
 import Vue from "vue";
@@ -37,31 +38,55 @@ export default {
           }
         }); 
 
+        EventBus.$on("REMOVE_STORY_CARD_OPEN", (className) => {
+            if(this.storyCardOpen.$el.className.split(' ').pop() == className) {
+              this.storyCardOpen.$destroy();
+              this.$refs.boardzone.removeChild(this.storyCardOpen.$el)
+            }
+        });
+
+        EventBus.$on("REMOVE_STORY_CARD", (className) => {
+            console.log(className)
+          for(let i = 0; i < this.storyCards.length; i++) {
+              console.log(this.storyCards[i].id)
+            if(this.storyCards[i].id == className) {
+              this.storyCards[i].$destroy();
+              this.$refs.boardzone.removeChild(this.storyCards[i].$el)
+              this.storyCards.splice(i, 1);
+            }
+          }
+        }); 
+
+        EventBus.$on("OPEN_CARD", (id) => {
+            const index = id.charAt(id.length-1)
+            this.createCardOpen(index)
+        });
+
         EventBus.$on("DATA_CARD", (data) => {
             this.storyCardsData.push(data);
-            console.log(this.storyCardsData.length)
             store.commit("incrementStoryData")
+            this.createCard(this.storyCardsData.length-1)
         });
-    },
-     destroyed() {
-      store.commit('resetCardStory')
     },
     data() {
         return{
             name: "Prueba",
             storyNewCards: [],
             storyCardsData: [],
-
+            storyCards: [],
+            storyCardOpen: Object,
         }
     },
     methods: {
         createNewCard() {
+        store.commit('resetCardStory')
         let storyCardClass = Vue.extend(NewStoryCard);
         let cardComponent = new storyCardClass();
         cardComponent.$mount();
         cardComponent.$el.classList.add(`cardStory-${store.state.cardStoryCount}`);
         this.storyNewCards.push(cardComponent);
-        this.$refs.boardzone.appendChild(cardComponent.$el); 
+        this.$refs.boardzone.appendChild(cardComponent.$el);
+        store.commit('resetCardStory') 
       },
 
       createCard(index) {
@@ -76,26 +101,26 @@ export default {
         cardComponent.$mount();
         cardComponent.$el.classList.add(`cardStory-${store.state.cardStoryCount}`);
         store.commit('incrementCardStory');
-        this.storyCardsData.push(cardComponent);
+        this.storyCards.push(cardComponent);
         this.$refs.boardzone.appendChild(cardComponent.$el); 
       },
 
-      createOpenCard(id) {
-
-      }
+      createCardOpen(index) {
+        let storyCardClass = Vue.extend(StoryCardOpen);
+        let cardComponent = new storyCardClass({
+                propsData: {
+                  title: this.storyCardsData[index].title,
+                  description: this.storyCardsData[index].description,
+                  arrayOfInput: this.storyCardsData[index].arrayRelatedCharacter,
+                },
+              });
+        cardComponent.$mount();
+        cardComponent.$el.classList.add(`openCardStory-${store.state.cardStoryOpenCount}`);
+        store.commit('incrementOpenCardStory');
+        this.storyCardOpen = cardComponent
+        this.$refs.boardzone.appendChild(cardComponent.$el); 
+      },
     },
-    computed: {
-        arraySize() {
-            return store.state.dataStoryArrayCount > 0 ? true : false;
-        }
-    },
-    watch: {
-        arraySize() {
-            for (let i = 0; i < store.state.dataStoryArrayCount; i++) {
-                this.createCard(i)
-            }
-        }
-    }
 }
 </script>
 

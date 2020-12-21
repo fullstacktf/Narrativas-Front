@@ -8,19 +8,19 @@
             </div>
             <div class="w-full h-90 bg-white px-2 text-left">
                     <h1>TITLE</h1>
-                    <input class="focus:outline-none border border-gray-400" v-model="title" type="text" autocomplete="on">
+                    <input class="focus:outline-none border border-gray-400" v-model="title" type="text" value="this.title" autocomplete="on">
 
                     <h1>DESCRIPTION</h1>
-                    <textarea class="focus:outline-none border border-gray-400" v-model="description" autocomplete="on"></textarea>
+                    <textarea class="focus:outline-none border border-gray-400" v-model="description" autocomplete="on" value="this.description"></textarea>
 
                     <h1>RELATED CHARACTER</h1>
-                    <button class="focus:outline-none" v-on:click="newSection">
+                    <button class="focus:outline-none" v-on:click="newSection('')">
                         <i class="fas fa-plus"></i>
                     </button>
                     <div ref="inputSection">
                         
                     </div>
-                    <button type="submit" class="px-4 py-2 bg-primary focus:outline-none text-white text-sm mb-2" v-on:click="saveData()">Save</button>
+                    <button type="submit" class="px-4 py-2 bg-primary focus:outline-none text-white text-sm mb-2">Save</button>
             </div>
         </div>
     </div>
@@ -44,44 +44,46 @@ export default {
           }
         });
 
+        
+
+        let tam = this.arrayOfInput.length;
+        for(let i = 0; i < tam; i++) {
+            if (typeof(this.arrayOfInput[i]) === 'string') {
+                this.newSection(this.arrayOfInput[i])
+            }  
+        }
+    },
+    props: {
+        title: String,
+        description: String,
+        arrayOfInput: Array,
     },
     data() {
         return {
-            title: "",
-            description: "",
-            arrayOfInput: [],
+            titleData: "",
+            descriptionData: "",
+            arrayOfInputData: [],
         }
     },
     methods: {
-        newSection() {
+        newSection(data) {
             let inputSection = Vue.extend(InputSection);
-            let input = new inputSection();
+            let input = new inputSection({
+                propsData: {
+                    data: data,
+                }
+            });
             input.$mount();
             input.$el.classList.add(`input-${store.state.cardStoryCount}`);
             store.commit('incrementInput');
             this.arrayOfInput.push(input);
             this.$refs.inputSection.appendChild(input.$el); 
         },
-        saveData() {
-            store.commit("resetState")
-            EventBus.$on("DATA_INPUT", (input) => {
-                this.arrayOfInput.push(input)
-            });
-            this.emitDataCard(this.title, this.description, this.arrayOfInput)
-            this.emitRemoveCard()
-        },
         emitRemoveCard() {
             let str = this.$el.className
-            EventBus.$emit("REMOVE_NEW_STORY_CARD", str.split(' ').pop());
+            store.commit("resetState")
+            EventBus.$emit("REMOVE_STORY_CARD_OPEN", str.split(' ').pop());
         },
-        emitDataCard(title, description, array) {
-            const data = {
-                title: title,
-                description: description,
-                arrayRelatedCharacter: array
-            }
-            EventBus.$emit("DATA_CARD", data)
-        }
     }
 
 }

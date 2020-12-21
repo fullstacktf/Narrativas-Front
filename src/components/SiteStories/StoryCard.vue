@@ -1,5 +1,5 @@
 <template>
-    <div class="w-56 h-28 cursor-pointer absolute z-10" v-on:click="openCard" draggable="true">
+    <div class="w-56 h-28 cursor-pointer absolute z-10" v-on:click="openCard()" draggable="true">
         <div class="w-full bg-primary h-10 flex items-center justify-between text-white px-2">
             <span>{{this.name}}</span>
             <button class="focus:outline-none" v-on:click="emitRemoveCard()">
@@ -19,8 +19,8 @@ export default {
     name: "StoryCard",
     mounted() {
         this.onResize();
-        let marginTop = 11+Math.floor(Math.random() * 85);
-        let marginLeft = 6+Math.floor(Math.random() * 90);
+        let marginTop = 11+Math.floor(Math.random() * 70);
+        let marginLeft = 6+Math.floor(Math.random() * 75);
         this.$el.style.margin = `${marginTop}vh 0 0 ${marginLeft}vw`
     },
     props: {
@@ -42,11 +42,10 @@ export default {
             });
         },
         openCard() {
-            EventBus.$emit("OPEN_CARD", id);
+            EventBus.$emit("OPEN_CARD", this.id);
         },
         emitRemoveCard() {
-            let str = this.$el.className
-            EventBus.$emit("REMOVE_STORY_CARD", str.split(' ').pop());
+            EventBus.$emit("REMOVE_STORY_CARD", this.id);
         },
     }
 }

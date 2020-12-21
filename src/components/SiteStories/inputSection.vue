@@ -1,6 +1,6 @@
 <template>
   <div class="flex w-auto h-auto">
-      <input v-model="input" class="w-5/6 mr-1 my-1 border-2 border-bg-100 focus:outline-none" type="text">
+      <input v-model="value" class="w-5/6 mr-1 my-1 border-2 border-bg-100 focus:outline-none" type="text">
       <button class="focus:outline-none" v-on:click="emitRemoveInput()"><i class="fas fa-trash"></i></button>
   </div>
 </template>
@@ -11,9 +11,12 @@ import Vue from "vue";
 import { store } from "@/store";
 export default {
     name: "inputSection",
+    props: {
+        data: String,
+    },
     data() {
         return {
-            input: "",
+            value: this.data ? this.data : "",
         }
     },
     computed: {
@@ -23,7 +26,9 @@ export default {
     },
     watch: {
         StoreState() {
-            EventBus.$emit("DATA_INPUT", this.input);
+            if (store.state.saveEvent) {
+                EventBus.$emit("DATA_INPUT", this.value);
+            }
         }
     },
     methods: {

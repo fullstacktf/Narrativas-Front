@@ -8,6 +8,7 @@ export const store = new Vuex.Store({
     sectionCount: 0,
     blockSectionCount: 0,
     cardStoryCount: 0,
+    cardStoryOpenCount: 0,
     inputCount: 0,
     saveEvent: false,
     dataStoryArrayCount: 0,
@@ -21,6 +22,9 @@ export const store = new Vuex.Store({
     },
     incrementCardStory (state) {
       state.cardStoryCount++
+    },
+    incrementOpenCardStory (state) {
+      state.cardStoryOpenCount++
     },
     incrementInput (state) {
       state.inputCount++
@@ -40,8 +44,11 @@ export const store = new Vuex.Store({
     resetInput (state) {
       state.inputCount = 0
     },
+    changeState (state) {
+      state.saveEvent = true;
+    },
     resetState (state) {
-      state.saveEvent = !state.saveEvent;
+      state.saveEvent = false;
     },
     resetStoryData (state) {
       state.dataStoryArrayCount = 0;
