@@ -1,5 +1,5 @@
 <template>
-  <div class="max-w-screen h-auto py-20 flex flex-col-reverse md:flex-row">
+  <div role="character" class="max-w-screen h-auto py-20 flex flex-col-reverse md:flex-row">
     <div
       class="w-full md:w-2/4 bg-gray-100 flex flex-col items-center justify-center"
     >
@@ -31,12 +31,14 @@
     <div class="w-full md:w-2/4 bg-gray-100 flex flex-col items-center">
       <div class="w-56 pb-4">
         <div
+          role="imageProfile"
           class="w-56 h-68 bg-cover img"
           v-bind:style="{ backgroundImage: `url(${this.getBgImage})` }"
         ></div>
       </div>
       <form class="mb-4 flex">
         <input
+          role="imageProfileInput"
           type="file"
           accept="image/*"
           @change="uploadImage($event)"

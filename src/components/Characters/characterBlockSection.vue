@@ -1,5 +1,5 @@
 <template>
-  <div class="mb-6 w-full">
+  <div role="characterBlockSection" class="mb-6 w-full">
     <div class="w-4/12 flex mx-2 items-center">
       <input
         class="title focus:outline-none bg-gray-100"
