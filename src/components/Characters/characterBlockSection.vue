@@ -44,16 +44,37 @@ export default {
       this.resizeInput()
     },
   name: "CharacterBlockSection",
+  props: {
+    sectionTitle: String,
+    fields: Array,
+  },
   data() {
     return {
+      id: 0,
       sections: [],
-      title: ""
+      title: "",
     };
   },
   methods: {
-    createSection() {
+    createSection(section) {
       let sectionComponentClass = Vue.extend(CharacterSection);
-      let sectionComponent = new sectionComponentClass();
+      let sectionComponent;
+      if (section) {
+        sectionComponent = new sectionComponentClass({
+          propsData: {
+            fieldId: store.state.sectionCount,
+            name: section["name"],
+            value: section["value"],
+            description: section["description"],
+          },
+        });
+      } else {
+        sectionComponent = new sectionComponentClass({
+          propsData: {
+            fieldId: store.state.sectionCount,
+          },
+        });
+      }
       sectionComponent.$mount();
       sectionComponent.$el.classList.add(`section-${store.state.sectionCount}`);
       store.commit("incrementSection");
@@ -65,10 +86,15 @@ export default {
       EventBus.$emit("REMOVE_BLOCK_SECTION", str.split(" ").pop());
     },
     resizeInput() {
-      const nameInput = this.$el.querySelector("input");
+      let nameInput = this.$el.querySelector("input");
+
+      if (this.title) {
+        let size = Math.max(50, this.title.length * 11);
+        nameInput.style.setProperty("--size", `${size}px`);
+      }
 
       nameInput.addEventListener("input", () => {
-        const size = Math.max(50, nameInput.value.length * 10);
+        let size = Math.max(50, nameInput.value.length * 11);
         nameInput.style.setProperty("--size", `${size}px`);
       });
     },
@@ -84,20 +110,34 @@ export default {
       }
     });
 
-    EventBus.$on("SAVE_CHARACTER", () => {
-      let id = window.location.pathname.split("/").pop();
-      console.log(this.title)
-      //createSection(data, id)
-      //  .then(() => {
-      //    console.log("seccion guardada");
-      //  })
-      //  .catch(() => {
-      //    console.error("seccion no guardada");
-      //  });
+    EventBus.$on("SAVE_SECTION", () => {
+      const id = window.location.pathname.split("/").pop();
+      const data = { title: this.title };
+      if (this.title) {
+        createSection(data, id)
+          .then((data) => {
+            this.id = data.id;
+            for (let i = 0; i < this.sections.length; i++) {
+              let id = this.sections[i].$el.className
+                .split(" ")[2]
+                .split("-")[1];
+              EventBus.$emit("SAVE_FIELD", id, this.id);
+            }
+          })
+          .catch(() => {
+            console.error("seccion no guardada");
+          });
+      }
     });
-
-    this.createSection();
-    this.createSection();
+    if (this.sectionTitle) {
+      this.title = this.sectionTitle;
+      this.fields.forEach((field) => {
+        this.createSection(field);
+      });
+    } else {
+      this.createSection();
+      this.createSection();
+    }
     this.resizeInput();
   },
   destroyed() {

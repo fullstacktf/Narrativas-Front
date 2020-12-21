@@ -11,7 +11,7 @@ describe('Footer', () => {
       expect(footer).toBeInTheDocument();
     });
 
-    test('should render with logo', () => {
+    test('should render logo', () => {
       render(Footer);
 
       const logo = screen.queryByAltText('ROLLIFY');

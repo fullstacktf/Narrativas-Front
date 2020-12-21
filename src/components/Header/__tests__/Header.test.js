@@ -46,7 +46,9 @@ describe('Header', () => {
       const signup = screen.queryByText('Sign up');
       expect(signup).toBeInTheDocument();
     });
-  
+  });
+
+  describe('when user clicks in explore tab', () => {
     test('should render option stories online when clicking explore tab', async () => {
       render(Header);
       const exploreTab = screen.queryByText('Explore');
@@ -66,9 +68,7 @@ describe('Header', () => {
       const paragraph = screen.queryByText('Customize your character');
       expect(paragraph).toBeInTheDocument();
     });
-  });
-
-  describe('when user clicks in explore tab', () => {
+    
     test('should show option create a story when clicking explore tab', async () => {
       render(Header);
       const exploreTab = screen.queryByText('Explore');
