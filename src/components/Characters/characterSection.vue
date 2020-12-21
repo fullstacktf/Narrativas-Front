@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full m-0">
+  <div role="characterSection" class="w-full m-0">
     <div class="flex flex-around text-left text-gray-400 m-0">
       <span class="w-5/12 mx-2">Name</span>
       <span class="w-2/12">Value</span>

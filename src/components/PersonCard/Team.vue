@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col items-center w-full">
+  <div role="team" class="flex flex-col items-center w-full">
     <h3 class="text-secondary font-bold text-5xl pt-10 py-6">Team</h3>
     <div
       class="pb-10 flex flex-col flex-wrap md:flex-row items-center md:justify-center"

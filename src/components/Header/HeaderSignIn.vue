@@ -91,7 +91,7 @@
               <a
                 class="py-2 px-5 hover:bg-primary hover:text-white cursor-pointer"
                 href="/characters"
-                >Your character</a
+                >Your characters</a
               >
             </div>
             <div class="flex flex-col">
