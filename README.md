@@ -23,3 +23,5 @@ The front-end app wil be running at http://localhost.
 
 This app will not work properly if it is not running along side the backend.
 
+[Narrativas Backend](https://github.com/fullstacktf/Narrativas-Backend/)
+

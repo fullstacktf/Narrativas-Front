@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 export const DOMAIN = "http://127.0.0.1:9090"
+=======
+export const DOMAIN = "172.19.164.135:2345"
+>>>>>>> cbc33b3366e71a43910da4992eb0bc7a37b22b58
 
 export function setCookie(cname, cvalue, exdays) {
   var d = new Date();
