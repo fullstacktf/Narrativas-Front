@@ -1,4 +1,4 @@
-export const DOMAIN = "https://api.rollify.me"
+export const DOMAIN = "http://127.0.0.1:9090"
 
 export function setCookie(cname, cvalue, exdays) {
   var d = new Date();
