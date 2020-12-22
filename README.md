@@ -65,7 +65,7 @@ the rest are configuration files.
 
 ### src
 
-El proyecto es un SPA (Aplicaciones de una sola página). 
+The project is a SPA (Single Page Applications). 
 
 ```bash
 ├── App.vue
@@ -80,15 +80,15 @@ El proyecto es un SPA (Aplicaciones de una sola página).
 └── views
 ```
 
-* **Assets:** La carpeta assets contiene todos las imágenes y los estilos que que se aplican por defecto a cada uno de las vistas.
+* **Assets:** The assets folder contains all the images and styles that are applied by default to each of the views.
 
-* **Componentes:** En la carpeta componentes como bien indica se encuentra los componentes. Cada componentes se encuentra en una carpeta con:
-  - Los componentes hijos que lo conforman si tienen 
-  - Los test de testing Library
-  - Y los storybooks para añadir más documentación a cada componente.
-- **Domain:** Dentro de la carpeta domain están definidos los servicios. Es decir, aquí están implementado la lógica de negocio, los modelos. Son las funciones que nos permiten comunicarnos con el backend sin tener en cuenta como funciona lo que hay detrás, pero nos proporcionan funcionalidades que necesitamos para aportar servicios al cliente.
-- **utils:** En utils encontramos los controladores, que hacen de intermediario entre los servicios y el back-end. Se encarga de controlar el flujo de la información entre ellos y adaptar el formato de los datos a las necesidades de cada uno. 
-- **views:** En la carpeta views encontramos las vistas, que es la interfaz con la que actua nuestro usuario. 
+* **Components:** Components are located in the components folder as indicated. Each component is located in a folder with:
+  - The child components that make it up if they have 
+  - The Library testing tests
+  - And storybooks to add more documentation to each component.
+- **Domain:** Within the domain folder are defined services. That is, here are implemented business logic, models. They are the functions that allow us to communicate with the backend without taking into account how what is behind it works, but they provide us with functionalities that we need to provide services to the customer.
+- **utils:** In utils we find the controllers, which act as an intermediary between the services and the back-end. It is responsible for controlling the flow of information between them and adapting the format of the data to the needs of each one. 
+- **views:** In the views folder we find the views, which is the interface with which our user acts.
 
 ## Building StoryBooks
 ---
