@@ -25,19 +25,19 @@ export default {
         {
           name: "Red Hood",
           title: "Synopsis",
-          content: "Bla bla bla bla bla ",
+          content: "An innocent girl story",
           filename: "story_1.jpg",
         },
         {
           name: "Sabrina",
           title: "Synopsis",
-          content: "Bla bla bla bla bla ",
+          content: "Sabrina Spellman must reconcile her dual nature as a half-Witch, half-mortal while fighting the evil forces that threaten her, her family and the daylight world humans inhabit.",
           filename: "story_2.jpg",
         },
         {
           name: "Hänsel & Gretel",
           title: "Synopsis",
-          content: "Bla bla bla bla bla ",
+          content: "When their mother descends into madness, siblings Gretel and Hansel must fend for themselves in the dark and unforgiving woods.",
           filename: "story_3.jpg",
         },
       ];

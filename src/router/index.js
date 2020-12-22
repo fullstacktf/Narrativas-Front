@@ -40,11 +40,6 @@ const routes = [
     component: Profile
   },
   {
-    path: '/explore-stories',
-    name: 'ExploreStories',
-    component: ExploreStories
-  },
-  {
     path: '/character-creation/:id?',
     name: 'Character Creation',
     component: CharacterCreation,
@@ -57,14 +52,14 @@ const routes = [
     }
   },
   {
-    path: "*",
-    name: "404",
-    component: PageNotFound
-  },
-  {
     path: '/story-creation',
     name: 'StoriesCreation',
     component: StoriesCreation
+  },
+  {
+    path: "*",
+    name: "404",
+    component: PageNotFound
   },
 ]
 

@@ -6,20 +6,20 @@
       </h1>
       <a
         v-if="isStory"
-        href="/story-creation"
+        href="/story-creation/"
         class="mt-3 mr-10 mx-10 text-white rounded-full py-3 px-6 bg-primary hover:bg-primary-dark text-sm font-bold"
       >
         New Story
       </a>
       <a
         v-else
-        href="/character-creation"
+        href="/character-creation/"
         class="mt-3 mr-10 mx-10 text-white rounded-full py-3 px-6 bg-primary hover:bg-primary-dark text-sm font-bold"
       >
         New Character
       </a>
     </div>
-    <div ref="cards" class="cards flex flex-wrap justify-center"></div>
+    <div ref="cards" class="cards flex flex-wrap text-left justify-center"></div>
   </div>
 </template>
 
