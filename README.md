@@ -97,3 +97,14 @@ The project is a SPA (Single Page Applications).
 ```bash
 npm run storybook:serve
 ```
+
+## Test
+Launches the test runner in the interactive watch mod
+
+```bash
+npm run test
+```
+
+## Mockups 
+
+In the folder **docs** we can find the mockups mobile version and computer
