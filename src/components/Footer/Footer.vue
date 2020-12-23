@@ -7,13 +7,13 @@
         class="w-52 h-40 pt-5"
         alt="ROLLIFY"
       />
-      <img v-else src="@/assets/img/logo_completo.jpg" class="my-10 w-88 h-20" alt="ROLLIFY" />
+      <img v-else src="@/assets/img/logo_completo.jpg" class="my-10 w-104 h-20" alt="ROLLIFY" />
     </div>
 
     <div
       class="nav flex flex-col md:flex-row justify-center items-center md:space-x-10 mb-5 -mt-5"
     >
-      <a href="" class="hover:text-white md:hover:bg-primary p-3 rounded">About us</a>
+      <a href="/about" class="hover:text-white md:hover:bg-primary p-3 rounded">About us</a>
       <a href="" class="hover:text-white md:hover:bg-primary p-3 rounded"
         >Privacy Policy</a
       >
@@ -58,16 +58,6 @@
 <script>
 import "../../assets/styles/index.css";
 import "../../assets/styles/base.css";
-import { library } from "@fortawesome/fontawesome-svg-core";
-import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
-import {
-  faTwitter,
-  faInstagram,
-  faGithub,
-  faFacebook,
-} from "@fortawesome/free-brands-svg-icons";
-
-library.add(faTwitter, faInstagram, faGithub, faFacebook);
 
 export default {
   name: "Footer",

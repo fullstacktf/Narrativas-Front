@@ -7,6 +7,8 @@ import Stories from '../views/Stories';
 import CharacterCreation from '../views/CharacterCreation';
 import PageNotFound from '../views/PageNotFound';
 import StoriesCreation from '../views/StoriesCreation';
+import Profile from '../views/Profile';
+import ExploreStories from '../views/ExploreStories';
 import { getCookie } from '@/utils/utils'
 
 Vue.use(VueRouter)
@@ -33,6 +35,11 @@ const routes = [
     component: Stories
   },
   {
+    path: '/profile',
+    name: 'Profile',
+    component: Profile
+  },
+  {
     path: '/character-creation/:id?',
     name: 'Character Creation',
     component: CharacterCreation,
@@ -45,14 +52,14 @@ const routes = [
     }
   },
   {
-    path: "*",
-    name: "404",
-    component: PageNotFound
-  },
-  {
     path: '/story-creation',
     name: 'StoriesCreation',
     component: StoriesCreation
+  },
+  {
+    path: "*",
+    name: "404",
+    component: PageNotFound
   },
 ]
 

@@ -1,5 +1,5 @@
 <template>
-  <div class="mb-6 w-full">
+  <div role="characterBlockSection" class="mb-6 w-full">
     <div class="w-4/12 flex mx-2 items-center">
       <input
         class="title focus:outline-none bg-gray-100"
@@ -27,6 +27,22 @@ import { createSection } from "@/domain/services/characterServices";
 import Vue from "vue";
 
 export default {
+    name: "CharacterBlockSection",
+    mounted() {
+      EventBus.$on("REMOVE_SECTION", (className) => {
+        for(let i = 0; i < this.sections.length; i++) {
+          if(this.sections[i].$el.className.split(' ').pop() == className) {
+            this.sections[i].$destroy();
+            this.$el.removeChild(this.sections[i].$el);
+            this.sections.splice(i, 1);
+          }
+        }
+      });
+
+      this.createSection()
+      this.createSection()
+      this.resizeInput()
+    },
   name: "CharacterBlockSection",
   props: {
     sectionTitle: String,
