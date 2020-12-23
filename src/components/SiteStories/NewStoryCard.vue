@@ -1,8 +1,8 @@
 <template>
-    <div class="w-full h-full bg-secondary flex justify-center absolute z-20">
+    <div class="w-full h-full flex justify-center absolute z-20">
         <div class="w-56 h-28 cursor-pointer m-40" draggable="true">
             <div class="w-full bg-primary h-10 flex items-center justify-end pr-4 text-white px-2">
-                <button class="focus:outline-none" v-on:click="emitRemoveCard()"> 
+                <button class="focus:outline-none" v-on:click="emitRemoveCard()">
                     <i class="fas fa-times"></i>
                 </button>
             </div>
@@ -18,7 +18,7 @@
                         <i class="fas fa-plus"></i>
                     </button>
                     <div ref="inputSection">
-                        
+
                     </div>
                     <button type="submit" class="px-4 py-2 bg-primary focus:outline-none text-white text-sm mb-2" v-on:click="saveData()">Save</button>
             </div>
@@ -61,7 +61,7 @@ export default {
             input.$el.classList.add(`input-${store.state.cardStoryCount}`);
             store.commit('incrementInput');
             this.arrayOfInput.push(input);
-            this.$refs.inputSection.appendChild(input.$el); 
+            this.$refs.inputSection.appendChild(input.$el);
         },
         saveData() {
             store.commit("changeState")
